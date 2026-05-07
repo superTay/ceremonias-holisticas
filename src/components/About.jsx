@@ -18,9 +18,14 @@ export default function About() {
         {/* Portrait column */}
         <Reveal className="lg:col-span-5">
           <div className="relative">
-            {/* Frame card */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-gradient-to-br from-[#A98A6F] via-[#7D6B3D] to-[#4A3F24] shadow-2xl">
-              <PortraitOrnament />
+            {/* Portrait — Blanca in her atelier */}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-[#2D2926] shadow-2xl">
+              <img
+                src="/blanca-portrait.webp"
+                alt="Blanca Coutiño en el interior de su atelier-finca de Mallorca, con su mesa-altar de cuenco de cacao, copal, libros y flores secas"
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
 
             {/* Floating credential badges */}
@@ -107,59 +112,3 @@ export default function About() {
   )
 }
 
-function PortraitOrnament() {
-  return (
-    <svg
-      viewBox="0 0 400 500"
-      className="absolute inset-0 h-full w-full opacity-30"
-      aria-hidden
-    >
-      <defs>
-        <radialGradient id="portrait-glow" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stopColor="#F5F2E9" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#F5F2E9" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <rect width="400" height="500" fill="url(#portrait-glow)" />
-      {/* Triangle / mountain motif */}
-      <path
-        d="M200 120 L280 320 L120 320 Z"
-        fill="none"
-        stroke="#F5F2E9"
-        strokeWidth="1"
-        opacity="0.6"
-      />
-      <path
-        d="M200 160 L260 300 L140 300 Z"
-        fill="none"
-        stroke="#F5F2E9"
-        strokeWidth="0.6"
-        opacity="0.5"
-      />
-      <circle
-        cx="200"
-        cy="90"
-        r="22"
-        fill="none"
-        stroke="#F5F2E9"
-        strokeWidth="0.8"
-        opacity="0.7"
-      />
-      {/* Wave below */}
-      <path
-        d="M0 380 Q100 360 200 380 T400 380"
-        fill="none"
-        stroke="#F5F2E9"
-        strokeWidth="0.7"
-        opacity="0.5"
-      />
-      <path
-        d="M0 410 Q100 390 200 410 T400 410"
-        fill="none"
-        stroke="#F5F2E9"
-        strokeWidth="0.5"
-        opacity="0.35"
-      />
-    </svg>
-  )
-}
