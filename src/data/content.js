@@ -18,9 +18,9 @@ export const nav = {
 
 export const hero = {
   eyebrow: 'CEREMONIAS HOLÍSTICAS · MALLORCA & DESTINO',
-  headline: 'Honra el umbral de cada ciclo de tu vida.',
-  sub: 'Ceremonias maya-contemporáneas para sanar la ansiedad, abrir el corazón y celebrar los hitos que importan. Diseñadas y facilitadas por Blanca Coutinho.',
-  primaryCta: 'Consultar Disponibilidad',
+  headline: 'Ceremonias diseñadas para los momentos que no se repiten. En las calas y fincas de Mallorca.',
+  sub: 'Bodas, blessings y rituales íntimos en Santa Ponça. Diez años de tradición ceremonial maya y mediterránea, diseñados 100% a medida por Blanca Coutiño.',
+  primaryCta: 'Reservar mi llamada de diseño',
   secondaryCta: 'Ver Ceremonias',
   badges: [
     'Ceremonias frente al Mediterráneo',
@@ -28,10 +28,10 @@ export const hero = {
   ],
   nextCeremony: {
     label: 'PRÓXIMA CEREMONIA',
-    date: 'Sáb 16 May',
+    date: 'Sáb 16 May · 3 plazas',
     desc: 'Pícnic Ceremonial en Cala Vinyes',
   },
-  proof: '"Paulina M. — me ayudó con la ansiedad"',
+  proof: '«Nuestra boda no fue un evento, fue un umbral.» — Lucía & Marc, Es Trenc',
 }
 
 export const categories = [
@@ -45,8 +45,8 @@ export const categories = [
 
 export const catalog = {
   caption: 'CATÁLOGO DE CEREMONIAS',
-  headline: 'Seis caminos para honrar tu momento.',
-  sub: 'Cada ceremonia es un umbral. Elige el que tu corazón está pidiendo.',
+  headline: 'Seis ceremonias. Un único principio: nada genérico.',
+  sub: 'Filtra por el momento que estás viviendo. Cada propuesta es un punto de partida — todo se diseña contigo.',
   filters: [
     'Todas',
     'Bodas Holísticas',
@@ -64,6 +64,8 @@ export const catalog = {
       bullets: ['4 elementos · agua, fuego, tierra, aire', 'Hasta 80 invitados', 'Diseño 100% a medida'],
       price: 'desde 2.400€',
       hue: 'from-[#8B6F4E] to-[#5C3A21]',
+      image: '/card-bodas.webp',
+      imageAlt: 'Novios uniendo sus manos con un rebozo en handfasting maya frente al mar mallorquín',
     },
     {
       tag: 'BABY BLESSING',
@@ -72,6 +74,8 @@ export const catalog = {
       bullets: ['Círculo íntimo de mujeres', 'Ofrenda de copal y flores', '2 horas de ceremonia'],
       price: 'desde 480€',
       hue: 'from-[#A98A6F] to-[#7D6B3D]',
+      image: '/card-baby-blessing.webp',
+      imageAlt: 'Madre embarazada con corona de flores recibiendo la bendición de un círculo de mujeres en una finca mallorquina',
     },
     {
       tag: 'PÍCNIC',
@@ -80,6 +84,8 @@ export const catalog = {
       bullets: ['Hasta 12 personas', 'Cala Vinyes o Es Trenc', 'Incluye banquete vegetal'],
       price: 'desde 95€/pers',
       hue: 'from-[#C9A57A] to-[#B8865B]',
+      image: '/card-picnic.webp?v=3',
+      imageAlt: 'Banquete vegetal mediterráneo con cacao, copal y flores frente a una cala turquesa de Mallorca al atardecer',
     },
     {
       tag: 'PAREJAS',
@@ -88,6 +94,8 @@ export const catalog = {
       bullets: ['Sesión privada de 3 h', 'Cacao ceremonial incluido', 'Ubicación a elegir'],
       price: 'desde 380€',
       hue: 'from-[#7D6B3D] to-[#4A3F24]',
+      image: '/card-parejas.webp?v=3',
+      imageAlt: 'Matrimonio compartiendo un cuenco de cacao en una terraza de finca mallorquina rodeada de velas al atardecer',
     },
     {
       tag: 'DESPEDIDAS',
@@ -96,6 +104,8 @@ export const catalog = {
       bullets: ['Grupos de 6 a 14 mujeres', 'Ritual + actividad creativa', 'Diseño según la novia'],
       price: 'desde 75€/pers',
       hue: 'from-[#9A7A5C] to-[#5C3A21]',
+      image: '/card-despedidas.webp',
+      imageAlt: 'Círculo de mujeres en una playa mallorquina al atardecer colocando una corona de flores a la novia',
     },
     {
       tag: 'COACHING',
@@ -104,6 +114,8 @@ export const catalog = {
       bullets: ['Online o presencial', '6 sesiones de 75 min', 'Bitácora personal incluida'],
       price: 'desde 690€',
       hue: 'from-[#B8865B] to-[#7D6B3D]',
+      image: '/card-coaching.webp?v=3',
+      imageAlt: 'Sesión 1 a 1 con bitácora abierta, cacao y copal en un patio-jardín mediterráneo de Mallorca',
     },
   ],
   ctaTitle: '¿No encuentras tu ceremonia?',
@@ -114,10 +126,10 @@ export const catalog = {
 export const about = {
   eyebrow: 'SOBRE BLANCA',
   headline:
-    'Conexión, vida y bienestar son los tres pilares de mis ceremonias.',
+    'Diez años en Riviera Maya. Hoy, en Mallorca. La misma obsesión: que el momento te marque.',
   paragraphs: [
-    'Soy Blanca Coutinho. Por más de cinco años he facilitado ceremonias holísticas para mujeres, parejas y familias que buscan una pausa profunda, un cierre amoroso o un nuevo comienzo desde la esencia.',
-    'Mi práctica une la sabiduría ancestral, los rituales mediterráneos y la psicología organizacional. Cada ritual lo diseño contigo: tu intención, tu cuerpo y tu historia son el mapa.',
+    'Soy Blanca Coutiño. Llegué a Mallorca con más de diez años diseñando ceremonias en Riviera Maya — primero como wedding planner en Playa del Carmen, después como facilitadora holística para mujeres, parejas y familias.',
+    'Mi práctica une la sabiduría maya, los rituales mediterráneos y la psicología organizacional. Cada ritual lo diseño contigo: tu intención, tu cuerpo y tu historia son el mapa.',
   ],
   pullQuote: 'No facilito un servicio. Sostengo un umbral.',
   pillars: [
@@ -137,19 +149,19 @@ export const about = {
   primaryCta: 'Conocer Mi Historia',
   secondaryCta: 'Descargar CV facilitador',
   badges: [
-    'Facilitadora de ceremonias · ES',
+    'De Riviera Maya a Mallorca',
     'Psicología Organizacional',
-    '+5 años de práctica',
+    '+10 años de práctica',
   ],
 }
 
 export const testimonials = {
   eyebrow: 'TESTIMONIOS',
   headline: 'Lo que se abre después del ritual.',
-  sub: 'Historias reales de quienes cruzaron el umbral con Ceremonias Holísticas.',
+  sub: 'Historias reales de quienes diseñaron su ceremonia con Blanca.',
   metrics: [
     { value: '+200', label: 'ceremonias facilitadas' },
-    { value: '92%', label: 'reportan menos ansiedad tras 3 sesiones' },
+    { value: '+10 años', label: 'entre Riviera Maya y Mallorca' },
     { value: '+45', label: 'bodas holísticas diseñadas' },
   ],
   cards: [
@@ -172,8 +184,8 @@ export const testimonials = {
       context: 'Baby Blessing · Santa Ponça',
     },
   ],
-  press: 'MENCIONADA EN',
-  outlets: ['Vogue España', 'Revista Origen', 'El País', 'Hola'],
+  press: 'TRAYECTORIA · DE RIVIERA MAYA A MALLORCA',
+  outlets: ['Playa del Carmen', 'Tulum', 'Santa Ponça', 'Es Trenc'],
   cta: 'Quiero mi ceremonia',
 }
 
@@ -204,7 +216,7 @@ export const faq = {
     },
     {
       q: '¿Trabajáis en otros lugares fuera de Mallorca?',
-      a: 'Sí, viajamos a Ibiza, Menorca, Costa Brava y México. Para destinos requerimos un mínimo de 8 semanas de antelación.',
+      a: 'Sí, viajamos a Ibiza, Menorca y Valencia. Para destinos requerimos un mínimo de 8 semanas de antelación.',
     },
   ],
   footerText: '¿Tu pregunta no está aquí?  Pregúntale a Blanca directamente',
@@ -212,8 +224,8 @@ export const faq = {
 }
 
 export const whatsapp = {
-  eyebrow: 'MODO WHATSAPP · 90% DE APERTURA',
-  headline: 'Cierra tu ceremonia en 5 minutos.',
+  eyebrow: 'CONCIERGE PERSONAL · WHATSAPP DIRECTO',
+  headline: 'Diseña tu ceremonia en una conversación, no en un formulario.',
   sub: 'Sin formularios eternos. Blanca te responde personalmente, escucha tu intención y te propone el ritual exacto que necesitas. Una conversación breve · una decisión consciente.',
   features: [
     'Respuesta directa de Blanca (no bot).',
@@ -221,7 +233,7 @@ export const whatsapp = {
     'Sin compromiso. Cero presión comercial.',
   ],
   cta: 'Hablar con Blanca por WhatsApp',
-  secondary: 'o llámanos: +34 678 312 884',
+  secondary: 'o llámanos: +34 665 17 55 56',
   chat: {
     headerName: 'Ceremonias Holísticas',
     headerStatus: 'Blanca · en línea',
@@ -258,10 +270,10 @@ export const whatsapp = {
 
 export const footer = {
   brand: 'Ceremonias Holísticas',
-  desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Diseñadas y facilitadas por Blanca Coutinho.',
+  desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Diez años entre Riviera Maya y Mallorca, diseñadas y facilitadas por Blanca Coutiño.',
   contact: [
-    'hola@ceremoniasholisticas.mx',
-    '+34 678 312 884',
+    'etessecoutinob@yahoo.com',
+    '+34 665 17 55 56',
     'Santa Ponça · Mallorca · ES',
   ],
   columns: [
@@ -300,5 +312,5 @@ export const footer = {
   ],
   gdpr: 'Datos protegidos · RGPD',
   lang: 'Español (ES)',
-  copy: '© 2026 Ceremonias Holísticas · Blanca Coutinho. Hecho con copal y código en Santa Ponça, Mallorca.',
+  copy: '© 2026 Ceremonias Holísticas · Blanca Coutiño. Hecho con copal y código en Santa Ponça, Mallorca.',
 }

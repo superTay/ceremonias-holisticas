@@ -109,9 +109,21 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="relative lg:col-span-5"
         >
-          {/* Photo placeholder — gradient + ornamental SVG to evoke ritual */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-gradient-to-br from-[#7D6B3D] via-[#5C3A21] to-[#2D2926] shadow-2xl">
-            <RitualOrnament />
+          {/* Hero photo — Blanca officiating in a Mallorca cove */}
+          <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-[#2D2926] shadow-2xl">
+            <img
+              src="/blanca-hero.webp"
+              alt="Blanca Coutiño sosteniendo un cuenco de cacao en una cala mallorquina al atardecer"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+            {/* Soft gradient at the bottom so the date card stays legible */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"
+            />
+
             {/* Next ceremony chip */}
             <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-surface-primary/95 px-3 py-1.5 backdrop-blur">
               <span className="h-1.5 w-1.5 animate-breathe rounded-full bg-accent-cacao" />
@@ -176,73 +188,3 @@ function CategoriesStrip() {
   )
 }
 
-function RitualOrnament() {
-  return (
-    <svg
-      viewBox="0 0 400 500"
-      className="absolute inset-0 h-full w-full opacity-30"
-      aria-hidden
-    >
-      <defs>
-        <radialGradient id="glow" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stopColor="#F5F2E9" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#F5F2E9" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-      <rect width="400" height="500" fill="url(#glow)" />
-      {/* Concentric mandala-like circles */}
-      {[180, 140, 100, 60].map((r, i) => (
-        <circle
-          key={i}
-          cx="200"
-          cy="220"
-          r={r}
-          fill="none"
-          stroke="#F5F2E9"
-          strokeWidth="0.8"
-          strokeDasharray={i % 2 ? '2 6' : '0'}
-          opacity={0.55 - i * 0.08}
-        />
-      ))}
-      {/* Cross axis */}
-      <line
-        x1="20"
-        y1="220"
-        x2="380"
-        y2="220"
-        stroke="#F5F2E9"
-        strokeWidth="0.6"
-        opacity="0.4"
-      />
-      <line
-        x1="200"
-        y1="40"
-        x2="200"
-        y2="400"
-        stroke="#F5F2E9"
-        strokeWidth="0.6"
-        opacity="0.4"
-      />
-      {/* Sun rays */}
-      {Array.from({ length: 12 }).map((_, i) => {
-        const a = (i * Math.PI * 2) / 12
-        const x1 = 200 + Math.cos(a) * 195
-        const y1 = 220 + Math.sin(a) * 195
-        const x2 = 200 + Math.cos(a) * 215
-        const y2 = 220 + Math.sin(a) * 215
-        return (
-          <line
-            key={i}
-            x1={x1}
-            y1={y1}
-            x2={x2}
-            y2={y2}
-            stroke="#F5F2E9"
-            strokeWidth="1.4"
-            opacity="0.5"
-          />
-        )
-      })}
-    </svg>
-  )
-}
