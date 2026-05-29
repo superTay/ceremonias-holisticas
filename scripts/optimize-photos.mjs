@@ -29,9 +29,29 @@ const JOBS = [
   { src: 'Image_20260514_233159_974.jpeg', out: 'card-alquimia.webp',      w: 1200, h: 900 },
   // Prensa (bloque "En los medios"). fit 'inside' = no recortar el recorte de periódico.
   { src: 'Image_20260515_000820_731.jpeg', out: 'prensa-the-playa-times.webp', w: 1100, h: 1400, q: 82, fit: 'inside' },
+  { src: 'Image_20260515_000820_755.jpeg', out: 'prensa-novedades.webp',        w: 1100, h: 1500, q: 82, fit: 'inside' },
 ]
 
+// Álbum/Galería (Fase 3). Cada foto → dos WebP: full (lightbox) y thumb (rejilla).
+// fit 'inside' preserva el aspect (no recorta composiciones editoriales) → orientación mixta.
+// Selección curada en docs/06 / plan de Fase 3. alt en content.js (gallery.items).
+const ALBUM = [
+  { src: 'Image_20260514_233040_598.jpeg', slug: 'album-01-orilla' },
+  { src: 'Image_20260514_233040_628.jpeg', slug: 'album-02-retrato-cuarzo' },
+  { src: 'Image_20260514_233159_979.jpeg', slug: 'album-03-recogimiento' },
+  { src: 'Image_20260514_233103_654.jpeg', slug: 'album-04-espuma-cristales' },
+  { src: 'Image_20260514_233103_692.jpeg', slug: 'album-05-huipil-cuarzos' },
+  { src: 'Image_20260514_233159_985.jpeg', slug: 'album-06-corazon-cuarzo' },
+  { src: 'Image_20260514_233232_372.jpeg', slug: 'album-07-espiral-arena', q: 66 }, // arena = textura de alta frecuencia → q menor
+  { src: 'Image_20260521_222117_763.jpeg', slug: 'album-08-roca-mediterraneo' },
+  { src: 'Image_20260521_222117_494.jpeg', slug: 'album-09-agua-cuarzo' },
+  { src: 'Image_20260515_000820_794.jpeg', slug: 'album-10-boda-lazo' },
+]
+const FULL = { w: 1200, h: 1200, q: 78 } // lado largo ~1200 px (lightbox)
+const THUMB = { w: 480, h: 480, q: 74 }  // lado largo ~480 px (rejilla)
+
 let totalKb = 0
+
 for (const job of JOBS) {
   const inPath = path.join(SRC, job.src)
   const outPath = path.join(OUT, job.out)
@@ -43,6 +63,26 @@ for (const job of JOBS) {
   const { size } = await stat(outPath)
   const kb = size / 1024
   totalKb += kb
-  console.log(`${job.out.padEnd(26)} ${kb.toFixed(0).padStart(4)} KB  ${job.w}x${job.h}  ← ${job.src}`)
+  console.log(`${job.out.padEnd(30)} ${kb.toFixed(0).padStart(4)} KB  ${job.w}x${job.h}  ← ${job.src}`)
 }
-console.log(`\nTotal: ${(totalKb / 1024).toFixed(2)} MB en ${JOBS.length} imágenes`)
+
+console.log('\n— Álbum/Galería (full + thumb, dimensiones reales) —')
+for (const item of ALBUM) {
+  const inPath = path.join(SRC, item.src)
+  for (const [suffix, opt] of [['', FULL], ['-thumb', THUMB]]) {
+    const out = `${item.slug}${suffix}.webp`
+    const outPath = path.join(OUT, out)
+    const info = await sharp(inPath)
+      .rotate()
+      .resize(opt.w, opt.h, { fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: item.q ?? opt.q, effort: 5 })
+      .toFile(outPath)
+    const { size } = await stat(outPath)
+    const kb = size / 1024
+    totalKb += kb
+    // info.width/height = dimensiones reales de salida → volcar en content.js (gallery.items) para evitar layout shift.
+    console.log(`${out.padEnd(30)} ${kb.toFixed(0).padStart(4)} KB  ${info.width}x${info.height}  ← ${item.src}`)
+  }
+}
+
+console.log(`\nTotal: ${(totalKb / 1024).toFixed(2)} MB en ${JOBS.length + ALBUM.length * 2} imágenes`)

@@ -37,10 +37,24 @@ El MVP se construye de forma **incremental, en fases revisables** sobre el layou
   *Novedades* (`..._755`) → entra en prensa; (3) para Bodas/Compromiso/Despedida se usan **imágenes
   con licencia** como puente y Blanca irá aportando fotos reales propias con el tiempo.
 
+### ✅ Fase 3 — Álbum/Galería (+ completar Prensa) (HECHA · 2026-05-29)
+
+- **Galería:** `src/components/Gallery.jsx` (nuevo) — rejilla masonry responsive (`columns` 1/2/3) con
+  thumbs lazy + `width/height` (cero layout shift) y **lightbox accesible** (Esc/←/→, focus trap,
+  scroll lock, `role="dialog"`, foco devuelto al thumb). Insertada en `App.jsx` tras `Press`.
+- **Selección curada de 10** (3 retratos/figura · 6 detalles · 1 boda); mapeo completo en `docs/06`.
+- **Pipeline:** bloque `ALBUM` en `scripts/optimize-photos.mjs` → full (~1200 px, lightbox) + thumb
+  (~480 px, rejilla) por foto, `fit:'inside'`, todas < 150 KB. Datos en `export const gallery` de
+  `content.js`. Enlace **"Galería" (`#galeria`)** añadido a `nav.links`.
+- **Prensa ampliada:** *Novedades* (`_755`) → `prensa-novedades.webp` en vivo. Sin cita textual de
+  Blanca en la página → **fuente citada sin cita inventada**: item con `summary` (no `quote`);
+  `Press.jsx` ahora soporta items sin `quote` (párrafo sobrio). The Playa Times intacto.
+- **Verificado:** build de producción **verde** (1893 módulos). El repaso visual se hace en local
+  con `npm run dev` (el navegador de preview del sandbox no alcanza el dev server).
+
 ### ⏳ Fases pendientes (orden recomendado)
 
-- **Fase 3 — Álbum/Galería (+ completar Prensa)** ← **SIGUIENTE** (prompt abajo). El bloque "En los medios" YA existe (The Playa Times). Falta la **galería que "cuente la historia de Blanca"** (retratos + detalles; ~18 candidatas listadas en `docs/06`) y, cuando Blanca confirme, añadir *Novedades*.
-- **Fase 4 — i18n ES/EN con `react-i18next`.** Migrar `content.js` → bundles de recursos `es`/`en`, **transcrear** (no traducir literal) a un inglés premium, selector de idioma en `Navbar`, `<html lang>` y OG por idioma.
+- **Fase 4 — i18n ES/EN con `react-i18next`.** ← **SIGUIENTE** Migrar `content.js` → bundles de recursos `es`/`en`, **transcrear** (no traducir literal) a un inglés premium, selector de idioma en `Navbar`, `<html lang>` y OG por idioma.
 - **Fase 5 — Pulido final.** Conectar WhatsApp/contacto de producción definitivos, metadatos/OG por idioma, SEO básico, rendimiento (Lighthouse), revisión de CTAs.
 - **Post-MVP (fase 2 de negocio):** chatbot de reservas · blog + automatización de contenido para SEO local · páginas dedicadas (Bodas, **Eventos de Villa de lujo**) · dossier B2B para aliados · **alemán (DE)**.
 

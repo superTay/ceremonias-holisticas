@@ -4,6 +4,7 @@ import Catalog from './components/Catalog'
 import About from './components/About'
 import Testimonials from './components/Testimonials'
 import Press from './components/Press'
+import Gallery from './components/Gallery'
 import FAQ from './components/FAQ'
 import WhatsAppClose from './components/WhatsAppClose'
 import Footer from './components/Footer'
@@ -17,6 +18,7 @@ export default function App() {
         <Catalog />
         <About />
         <Press />
+        <Gallery />
         <Testimonials />
         <FAQ />
         <WhatsAppClose />

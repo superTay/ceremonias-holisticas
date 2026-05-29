@@ -14,6 +14,7 @@ export const nav = {
     { label: 'Inicio', href: '#inicio' },
     { label: 'Ceremonias', href: '#ceremonias' },
     { label: 'Sobre Blanca', href: '#sobre' },
+    { label: 'Galería', href: '#galeria' },
     { label: 'Testimonios', href: '#testimonios' },
     { label: 'Contacto', href: '#contacto' },
   ],
@@ -256,6 +257,93 @@ export const press = {
       image: '/prensa-the-playa-times.webp',
       imageAlt:
         'Recorte del periódico The Playa Times con la entrevista «Pour Votre Grand Jour · TPT Rencontre Blanca Coutiño» y un retrato de Blanca',
+    },
+    {
+      outlet: 'Novedades Quintana Roo',
+      context: 'Riviera Maya · Reportaje',
+      summary:
+        'Reportaje sobre cómo diseñar una propuesta de matrimonio inolvidable en la Riviera Maya, donde Blanca figura entre las voces expertas consultadas.',
+      image: '/prensa-novedades.webp',
+      imageAlt:
+        'Recorte del periódico Novedades Quintana Roo con el reportaje «5 recomendaciones para pedir matrimonio»',
+    },
+  ],
+}
+
+export const gallery = {
+  eyebrow: 'ÁLBUM',
+  headline: 'El mundo de Blanca, en imágenes.',
+  sub: 'Retratos, detalles de ceremonia y momentos reales. Una década de rituales entre la Riviera Maya y el Mediterráneo — la misma presencia que sostendrá tu umbral.',
+  items: [
+    {
+      src: '/album-01-orilla.webp',
+      thumb: '/album-01-orilla-thumb.webp',
+      w: 1200,
+      h: 800,
+      alt: 'Blanca Coutiño camina descalza por la orilla al atardecer, vestido de lino con bordado maya, frente a un mar sereno',
+    },
+    {
+      src: '/album-02-retrato-cuarzo.webp',
+      thumb: '/album-02-retrato-cuarzo-thumb.webp',
+      w: 800,
+      h: 1200,
+      alt: 'Retrato de Blanca contemplando un cuarzo en su mano, huipil bordado a mano, junto al mar',
+    },
+    {
+      src: '/album-03-recogimiento.webp',
+      thumb: '/album-03-recogimiento-thumb.webp',
+      w: 1200,
+      h: 800,
+      alt: 'Blanca de rodillas en la orilla con las manos sobre el vientre y los ojos cerrados, en un instante de recogimiento',
+    },
+    {
+      src: '/album-04-espuma-cristales.webp',
+      thumb: '/album-04-espuma-cristales-thumb.webp',
+      w: 1200,
+      h: 800,
+      alt: 'Manos ahuecadas sosteniendo cristales de los chakras mientras la espuma del mar las acaricia',
+    },
+    {
+      src: '/album-05-huipil-cuarzos.webp',
+      thumb: '/album-05-huipil-cuarzos-thumb.webp',
+      w: 800,
+      h: 1200,
+      alt: 'Manos sosteniendo cuarzos sobre el bordado geométrico de un huipil maya',
+    },
+    {
+      src: '/album-06-corazon-cuarzo.webp',
+      thumb: '/album-06-corazon-cuarzo-thumb.webp',
+      w: 1200,
+      h: 600,
+      alt: 'Manos formando un corazón alrededor de un cuarzo verde a la luz dorada del atardecer',
+    },
+    {
+      src: '/album-07-espiral-arena.webp',
+      thumb: '/album-07-espiral-arena-thumb.webp',
+      w: 1200,
+      h: 800,
+      alt: 'Un dedo traza una espiral en la arena, gesto de intención y apertura del ritual',
+    },
+    {
+      src: '/album-08-roca-mediterraneo.webp',
+      thumb: '/album-08-roca-mediterraneo-thumb.webp',
+      w: 900,
+      h: 1200,
+      alt: 'Cuarzos en bruto sobre una roca costera, con el mar y un acantilado de pinos al fondo',
+    },
+    {
+      src: '/album-09-agua-cuarzo.webp',
+      thumb: '/album-09-agua-cuarzo-thumb.webp',
+      w: 675,
+      h: 1200,
+      alt: 'Una mano bajo el agua cristalina sostiene un cuarzo azul, entre reflejos de luz',
+    },
+    {
+      src: '/album-10-boda-lazo.webp',
+      thumb: '/album-10-boda-lazo-thumb.webp',
+      w: 1200,
+      h: 776,
+      alt: 'Una pareja recién casada sonríe bajo la noche, con corona de flores y el lazo rojo de la ceremonia de unión',
     },
   ],
 }

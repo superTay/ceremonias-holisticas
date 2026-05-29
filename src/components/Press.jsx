@@ -45,13 +45,20 @@ export default function Press() {
                     {item.context}
                   </p>
 
-                  <p className="mt-6 font-heading text-2xl leading-snug text-foreground-primary lg:text-3xl">
-                    “{item.quote}”
-                  </p>
-
-                  {item.author && (
-                    <p className="mt-5 text-sm font-medium text-foreground-secondary">
-                      — {item.author}
+                  {item.quote ? (
+                    <>
+                      <p className="mt-6 font-heading text-2xl leading-snug text-foreground-primary lg:text-3xl">
+                        “{item.quote}”
+                      </p>
+                      {item.author && (
+                        <p className="mt-5 text-sm font-medium text-foreground-secondary">
+                          — {item.author}
+                        </p>
+                      )}
+                    </>
+                  ) : (
+                    <p className="mt-6 text-lg leading-relaxed text-foreground-secondary">
+                      {item.summary}
                     </p>
                   )}
                 </div>

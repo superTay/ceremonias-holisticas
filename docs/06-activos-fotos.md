@@ -117,3 +117,33 @@ Pipeline: `sharp` vía `scripts/optimize-photos.mjs` (reproducible; recorte exac
 **Boda/evento (caras permitidas):** `000820_794` (novios, lazo rojo), `000820_784` (decoración).
 > Total ~20 candidatas seguras. Seleccionar 9–15 para la galería, equilibrando retratos / detalles
 > / evento, y evitar near-duplicados (ver clusters anotados en el pase de visión).
+
+### Mapeo de galería — Fase 3 (ejecutado 2026-05-29)
+Selección **curada de 10** (decisión de Christian). Pipeline: bloque `ALBUM` en
+`scripts/optimize-photos.mjs` → dos WebP por foto (`fit:'inside'`, sin recorte): **full** (lado largo
+~1200 px, q78, lightbox) + **thumb** (~480 px, q74, rejilla). Todas < 150 KB. Datos (src/thumb/w/h/alt)
+en `export const gallery` de `content.js`; render en `src/components/Gallery.jsx` (masonry + lightbox
+accesible). 3 retratos/figura · 6 detalles · 1 evento.
+
+| # | Original | Archivo (full) | full px | Tipo |
+|---|---|---|---|---|
+| 1 | `233040_598` | `album-01-orilla.webp` | 1200×800 | Figura (camina por la orilla) |
+| 2 | `233040_628` | `album-02-retrato-cuarzo.webp` | 800×1200 | Retrato (mira un cuarzo) |
+| 3 | `233159_979` | `album-03-recogimiento.webp` | 1200×800 | Figura (de rodillas, recogimiento) |
+| 4 | `233103_654` | `album-04-espuma-cristales.webp` | 1200×800 | Detalle (manos+cristales en la espuma) |
+| 5 | `233103_692` | `album-05-huipil-cuarzos.webp` | 800×1200 | Detalle (cuarzos sobre huipil) |
+| 6 | `233159_985` | `album-06-corazon-cuarzo.webp` | 1200×600 | Detalle (manos en corazón, hora dorada) |
+| 7 | `233232_372` | `album-07-espiral-arena.webp` | 1200×800 | Detalle (espiral en la arena; q66, textura) |
+| 8 | `222117_763` | `album-08-roca-mediterraneo.webp` | 900×1200 | Mediterráneo (cuarzos sobre roca, pinos) |
+| 9 | `222117_494` | `album-09-agua-cuarzo.webp` | 675×1200 | Detalle (cuarzo bajo el agua) |
+| 10 | `000820_794` | `album-10-boda-lazo.webp` | 1200×776 | Evento (boda, lazo rojo · caras permitidas) |
+
+> Descartadas por near-dup/solape: `_676`/`_699`/`_361` (otra toma de cristales en mano), `_999`
+> (= `_979`), `_994` (= card de Taller). Cluster de roca 21-may: solo `_763` (mejor luz/composición)
+> y `_494` (mano bajo el agua); el resto es de móvil, más saturado.
+
+### Prensa — Novedades (Fase 3, ejecutado 2026-05-29)
+`000820_755` → `prensa-novedades.webp` (1100×1500, `fit:'inside'`, q82). **En vivo** en `Press.jsx`
+como segundo recorte. No hay cita textual de Blanca en la página → se muestra como **fuente citada
+sin cita inventada**: el item usa `summary` (no `quote`) y `Press.jsx` lo renderiza como párrafo
+sobrio sin comillas. Si Blanca/Christian aportan la frase exacta, pasar de `summary` a `quote`.
