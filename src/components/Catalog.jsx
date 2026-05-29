@@ -1,16 +1,18 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, ArrowUpRight } from 'lucide-react'
-import { catalog } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function Catalog() {
-  const [active, setActive] = useState('Todas')
+  const { catalog } = useContent()
+  // Filtro por índice (no por etiqueta): así sobrevive al cambio de idioma sin quedarse vacío.
+  const [activeIdx, setActiveIdx] = useState(0)
 
   const cards = useMemo(() => {
-    if (active === 'Todas') return catalog.cards
-    return catalog.cards.filter((c) => c.category === active)
-  }, [active])
+    if (activeIdx === 0) return catalog.cards
+    return catalog.cards.filter((c) => c.category === catalog.filters[activeIdx])
+  }, [activeIdx, catalog])
 
   return (
     <section
@@ -34,12 +36,12 @@ export default function Catalog() {
         {/* Filters */}
         <Reveal delay={0.1} className="mt-12">
           <div className="flex flex-wrap gap-2">
-            {catalog.filters.map((f) => {
-              const isActive = active === f
+            {catalog.filters.map((f, idx) => {
+              const isActive = activeIdx === idx
               return (
                 <button
                   key={f}
-                  onClick={() => setActive(f)}
+                  onClick={() => setActiveIdx(idx)}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     isActive
                       ? 'bg-accent-cacao text-foreground-on-deep shadow-md'
@@ -125,7 +127,7 @@ export default function Catalog() {
                       href="#contacto"
                       className="inline-flex items-center gap-1 text-xs font-medium text-accent-primary transition-all duration-300 group-hover:gap-2"
                     >
-                      Consultar Disponibilidad
+                      {catalog.cardCta}
                       <ArrowUpRight size={14} />
                     </a>
                   </div>

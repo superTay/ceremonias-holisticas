@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import { faq } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function FAQ() {
+  const { faq } = useContent()
   const [open, setOpen] = useState(0)
 
   return (

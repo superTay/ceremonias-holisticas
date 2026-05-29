@@ -1,8 +1,10 @@
 import { ArrowRight } from 'lucide-react'
-import { about } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function About() {
+  const { about } = useContent()
+
   return (
     <section
       id="sobre"

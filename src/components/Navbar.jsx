@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { announcement, nav } from '../data/content'
+import { useTranslation } from 'react-i18next'
+import { useContent } from '../i18n/useContent'
 
 export default function Navbar() {
+  const { announcement, nav } = useContent()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -33,7 +35,7 @@ export default function Navbar() {
           <a
             href="#inicio"
             className="group flex items-center gap-3"
-            aria-label="Inicio · Ceremonias Holísticas"
+            aria-label={nav.brandAria}
           >
             <BrandMark />
             <span className="font-heading text-lg italic tracking-tight text-foreground-primary">
@@ -55,7 +57,8 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-5 lg:flex">
+            <LangToggle label={nav.langLabel} />
             <a href="#contacto" className="btn-primary">
               {nav.cta}
             </a>
@@ -64,7 +67,7 @@ export default function Navbar() {
           {/* Mobile toggle */}
           <button
             className="lg:hidden"
-            aria-label="Abrir menú"
+            aria-label={open ? nav.closeMenu : nav.openMenu}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
@@ -95,11 +98,84 @@ export default function Navbar() {
                   {nav.cta}
                 </a>
               </li>
+              <li className="px-3 pt-3">
+                <LangToggle label={nav.langLabel} />
+              </li>
             </ul>
           </div>
         )}
       </nav>
     </header>
+  )
+}
+
+function LangToggle({ label }) {
+  const { i18n } = useTranslation()
+  const current = i18n.resolvedLanguage || i18n.language
+  const langs = [
+    ['es', 'ES'],
+    ['en', 'EN'],
+  ]
+  return (
+    <div
+      role="group"
+      aria-label={label}
+      className="flex items-center gap-3 text-sm font-medium"
+    >
+      {langs.map(([code, short]) => {
+        const active = current === code
+        return (
+          <button
+            key={code}
+            type="button"
+            onClick={() => i18n.changeLanguage(code)}
+            aria-pressed={active}
+            className={`flex items-center gap-1.5 transition-colors ${
+              active
+                ? 'text-accent-cacao'
+                : 'text-foreground-secondary hover:text-foreground-primary'
+            }`}
+          >
+            <Flag code={code} active={active} />
+            {short}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function Flag({ code, active }) {
+  return (
+    <span
+      aria-hidden
+      className={`inline-block h-4 w-4 flex-none overflow-hidden rounded-full ring-1 ring-black/10 transition-opacity ${
+        active ? 'opacity-100' : 'opacity-50'
+      }`}
+    >
+      {code === 'es' ? <FlagES /> : <FlagGB />}
+    </span>
+  )
+}
+
+function FlagES() {
+  return (
+    <svg viewBox="0 0 60 60" className="h-full w-full">
+      <rect width="60" height="60" fill="#AA151B" />
+      <rect y="15" width="60" height="30" fill="#F1BF00" />
+    </svg>
+  )
+}
+
+function FlagGB() {
+  return (
+    <svg viewBox="0 0 60 60" className="h-full w-full">
+      <rect width="60" height="60" fill="#012169" />
+      <path d="M0 0 L60 60 M60 0 L0 60" stroke="#fff" strokeWidth="12" />
+      <path d="M0 0 L60 60 M60 0 L0 60" stroke="#C8102E" strokeWidth="6" />
+      <path d="M30 0 V60 M0 30 H60" stroke="#fff" strokeWidth="20" />
+      <path d="M30 0 V60 M0 30 H60" stroke="#C8102E" strokeWidth="12" />
+    </svg>
   )
 }
 

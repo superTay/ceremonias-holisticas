@@ -1,8 +1,10 @@
 import { ArrowRight, Calendar, Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { hero, categories } from '../data/content'
+import { useContent } from '../i18n/useContent'
 
 export default function Hero() {
+  const { hero, categories } = useContent()
+
   return (
     <section
       id="inicio"
@@ -40,11 +42,13 @@ export default function Hero() {
             }}
             className="heading-display mt-6 text-[clamp(2.4rem,5.4vw,4.4rem)]"
           >
-            {hero.headline.split('umbral').map((part, i, arr) => (
+            {hero.headline.split(hero.headlineHighlight).map((part, i, arr) => (
               <span key={i}>
                 {part}
                 {i < arr.length - 1 && (
-                  <span className="italic text-accent-cacao">umbral</span>
+                  <span className="italic text-accent-cacao">
+                    {hero.headlineHighlight}
+                  </span>
                 )}
               </span>
             ))}
@@ -162,12 +166,12 @@ export default function Hero() {
       </div>
 
       {/* Categories strip */}
-      <CategoriesStrip />
+      <CategoriesStrip categories={categories} />
     </section>
   )
 }
 
-function CategoriesStrip() {
+function CategoriesStrip({ categories }) {
   return (
     <div className="border-y border-border-subtle bg-surface-secondary/40 py-5">
       <div className="overflow-hidden">

@@ -1,8 +1,10 @@
 import { Phone, Check, MessageCircle } from 'lucide-react'
-import { whatsapp } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function WhatsAppClose() {
+  const { whatsapp } = useContent()
+
   return (
     <section
       id="contacto"
@@ -130,11 +132,11 @@ export default function WhatsAppClose() {
               {/* Input */}
               <div className="flex items-center gap-2 border-t border-white/10 bg-[#1F2C33] p-3">
                 <div className="flex-1 rounded-full bg-[#2A3942] px-4 py-2 text-sm text-white/40">
-                  Mensaje
+                  {whatsapp.chat.inputPlaceholder}
                 </div>
                 <button
                   className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500"
-                  aria-label="Enviar"
+                  aria-label={whatsapp.chat.sendLabel}
                 >
                   <MessageCircle size={16} className="text-white" />
                 </button>

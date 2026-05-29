@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
-import { gallery } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function Gallery() {
+  const { gallery } = useContent()
   const [openIndex, setOpenIndex] = useState(null)
   const isOpen = openIndex !== null
   const triggerRefs = useRef([])
@@ -39,7 +40,7 @@ export default function Gallery() {
               ref={(el) => (triggerRefs.current[i] = el)}
               type="button"
               onClick={() => setOpenIndex(i)}
-              aria-label={`Ampliar foto: ${item.alt}`}
+              aria-label={`${gallery.zoomLabel}: ${item.alt}`}
               className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-token-lg border border-border-subtle bg-surface-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-cacao focus-visible:ring-offset-2"
             >
               <img
@@ -63,6 +64,7 @@ export default function Gallery() {
             item={gallery.items[openIndex]}
             index={openIndex}
             total={total}
+            labels={gallery}
             onClose={close}
             onNext={next}
             onPrev={prev}
@@ -74,7 +76,7 @@ export default function Gallery() {
   )
 }
 
-function Lightbox({ item, index, total, onClose, onNext, onPrev, returnFocusTo }) {
+function Lightbox({ item, index, total, labels, onClose, onNext, onPrev, returnFocusTo }) {
   const dialogRef = useRef(null)
 
   // Bloquear scroll del body mientras está abierto; devolver foco al thumb al cerrar.
@@ -130,7 +132,7 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev, returnFocusTo }
       ref={dialogRef}
       role="dialog"
       aria-modal="true"
-      aria-label="Galería de imágenes ampliada"
+      aria-label={labels.dialogLabel}
       tabIndex={-1}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -143,7 +145,7 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev, returnFocusTo }
       <button
         type="button"
         onClick={onClose}
-        aria-label="Cerrar galería"
+        aria-label={labels.closeLabel}
         className="absolute right-4 top-4 rounded-full p-2 text-foreground-on-deep/80 transition-colors hover:bg-white/10 hover:text-foreground-on-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:right-6 sm:top-6"
       >
         <X size={28} />
@@ -156,7 +158,7 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev, returnFocusTo }
           e.stopPropagation()
           onPrev()
         }}
-        aria-label="Foto anterior"
+        aria-label={labels.prevLabel}
         className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full p-2 text-foreground-on-deep/80 transition-colors hover:bg-white/10 hover:text-foreground-on-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:left-6"
       >
         <ChevronLeft size={40} />
@@ -193,7 +195,7 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev, returnFocusTo }
           e.stopPropagation()
           onNext()
         }}
-        aria-label="Foto siguiente"
+        aria-label={labels.nextLabel}
         className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-2 text-foreground-on-deep/80 transition-colors hover:bg-white/10 hover:text-foreground-on-deep focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:right-6"
       >
         <ChevronRight size={40} />

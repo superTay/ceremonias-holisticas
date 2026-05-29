@@ -1,8 +1,10 @@
 import { Star, Quote } from 'lucide-react'
-import { testimonials } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function Testimonials() {
+  const { testimonials } = useContent()
+
   return (
     <section
       id="testimonios"

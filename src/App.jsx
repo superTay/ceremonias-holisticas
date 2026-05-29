@@ -8,8 +8,11 @@ import Gallery from './components/Gallery'
 import FAQ from './components/FAQ'
 import WhatsAppClose from './components/WhatsAppClose'
 import Footer from './components/Footer'
+import { useDocumentMeta } from './i18n/useDocumentMeta'
 
 export default function App() {
+  useDocumentMeta()
+
   return (
     <div className="relative">
       <Navbar />

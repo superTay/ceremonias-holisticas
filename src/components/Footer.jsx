@@ -1,9 +1,11 @@
 import { Mail, Phone, MapPin, Shield, Globe } from 'lucide-react'
-import { footer } from '../data/content'
+import { useContent } from '../i18n/useContent'
 
 const contactIcons = [Mail, Phone, MapPin]
 
 export default function Footer() {
+  const { footer } = useContent()
+
   return (
     <footer className="bg-surface-primary pt-20 pb-10">
       <div className="container-page">

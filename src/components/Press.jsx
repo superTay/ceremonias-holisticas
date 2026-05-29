@@ -1,8 +1,10 @@
 import { Newspaper } from 'lucide-react'
-import { press } from '../data/content'
+import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
 export default function Press() {
+  const { press } = useContent()
+
   return (
     <section
       id="prensa"
