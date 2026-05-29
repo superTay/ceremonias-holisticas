@@ -67,7 +67,8 @@ Pipeline: `sharp` vía `scripts/optimize-photos.mjs` (reproducible; recorte exac
 - **Dos sesiones:** 14 may (huipil + cristales, mar **turquesa caribeño = México**) y 21 may
   (cristales sobre roca, costa con pinos = **parece Mallorca**). Decisión: usar las actuales ahora
   con `alt` evocador-neutro (sin afirmar "Mallorca" donde la imagen lo contradiga).
-- **Sin caras de terceros** salvo dos fotos de boda (ver Privacidad).
+- **Caras de terceros:** hay dos fotos de boda con invitados/novios identificables. **Decisión de
+  Christian/Blanca (2026-05-29): se permite usar caras de terceros** → ya no requieren reserva.
 
 ### Home (9 imágenes — sustituyen las IA)
 | Original (`Image_*.jpeg`) | Archivo nuevo | Uso | Recorte | Nota |
@@ -82,21 +83,24 @@ Pipeline: `sharp` vía `scripts/optimize-photos.mjs` (reproducible; recorte exac
 | `20260514_233232_378` | `card-coaching.webp` | Card Coaching | 1200×900 | de espaldas al mar (umbral) |
 | `20260514_233159_974` | `card-alquimia.webp` | Card Taller (NUEVA) | 1200×900 | producto "Brisa Áurica" |
 
-> Bodas/Compromiso/Despedida son **detalles simbólicos**, no documentación real de ceremonia
-> (faltan fotos de evento seguras). **Pendiente con Blanca:** que aporte fotos reales propias de
-> esas ceremonias o, si no las hay, buscar imágenes con licencia. La documentación real debería
-> venir de una sesión nueva en Mallorca.
+> Bodas/Compromiso/Despedida son **detalles simbólicos**, no documentación real de ceremonia.
+> **Decisión (2026-05-29):** por ahora se usan **imágenes con licencia** (stock premium, on-brand)
+> como puente; luego Blanca irá aportando fotos reales propias a medida que celebre ceremonias y
+> se van añadiendo/sustituyendo. (La home actual ya funciona con detalles simbólicos.)
 
-### Prensa — bloque "En los medios" (PUBLICADO)
+### Prensa — bloque "En los medios"
 - `20260515_000820_731` → `prensa-the-playa-times.webp` (1100×1400, fit inside). **En vivo** en la
   sección `Press.jsx` (#prensa). *The Playa Times* (thePlayaTimes.com), entrevista FR "Pour Votre
   Grand Jour · TPT Rencontre Blanca Coutiño"; menciona su marca **Coucou Mexikoo** y "depuis 2013".
 - `20260515_000820_755` — *Novedades* (Quintana Roo), "5 recomendaciones para pedir matrimonio".
-  Reservada: **confirmar que Blanca aparece nombrada** antes de publicarla.
+  **Confirmado por Christian que Blanca aparece nombrada** → optimizar y **añadir a `press.items`** en Fase 3.
 
-### Privacidad / reserva (no publicar sin consentimiento)
-- `20260515_000820_794` — boda nocturna con **novios identificables** → **offline** hasta consentimiento (y baja calidad → no apta para web).
-- `20260515_000820_784` — sin caras identificables, pero baja resolución (borrosa) → **descartada de la home** (era card-bodas); candidata solo para álbum a tamaño pequeño.
+### Fotos de boda/evento (caras de terceros) — PERMITIDAS
+> Permiso concedido por Christian/Blanca (2026-05-29). Ya **no** hay reserva por privacidad.
+- `20260515_000820_794` — boda nocturna, novios identificables, emotiva (lazo rojo). Calidad media
+  (oscura/grano) → mejor para **álbum** a tamaño contenido que como flagship.
+- `20260515_000820_784` — decoración de boda al atardecer (velas/flores), invitados desenfocados.
+  Baja resolución → candidata a **álbum** a tamaño pequeño.
 
 ### Duplicados exactos borrados/ignorados (MD5)
 `233103_685 (1)`=`_685` · `233103_699 (1)`=`_699` · `233232_348`=`233159_979` · `233232_366`=`233159_999` · `233232_382`=`233159_989`.
@@ -105,6 +109,11 @@ Pipeline: `sharp` vía `scripts/optimize-photos.mjs` (reproducible; recorte exac
 - `20260514_233040_618` — fondo de resort/tobogán, débil (no premium).
 
 ### Álbum / Galería (Fase 3 — candidatas fuertes restantes)
-`233040_598`, `233040_628`, `233103_654`, `233103_676`, `233103_692`, `233103_699`, `233159_979`,
-`233159_985`, `233159_994`, `233159_999`, `233232_335`, `233232_361`, `233232_372`, `222117_494`/`_800` (una),
-`222117_580`, `222117_682`, `222117_763`, `222117_833`, `222117_902`.
+**Retratos/detalles (México, huipil + cristales):** `233040_598`, `233040_628`, `233103_654`,
+`233103_676`, `233103_692`, `233103_699`, `233159_979`, `233159_985`, `233159_994`, `233159_999`,
+`233232_335`, `233232_361`, `233232_372`.
+**Cristales sobre roca (parece Mallorca):** `222117_494`/`_800` (una), `222117_580`, `222117_682`,
+`222117_763`, `222117_833`, `222117_902`.
+**Boda/evento (caras permitidas):** `000820_794` (novios, lazo rojo), `000820_784` (decoración).
+> Total ~20 candidatas seguras. Seleccionar 9–15 para la galería, equilibrando retratos / detalles
+> / evento, y evitar near-duplicados (ver clusters anotados en el pase de visión).

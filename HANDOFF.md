@@ -22,17 +22,31 @@ El MVP se construye de forma **incremental, en fases revisables** sobre el layou
 - **Verificado:** build de producción **verde** (1891 módulos). ⚠️ El repaso visual en navegador queda pendiente de correr en local (`npm run dev`) — ver Notas.
 - **TBD para Blanca** (no bloquean): naming final, precio/formato Taller y Oráculo, cifras reales de testimonios, datos de contacto de producción.
 
+### ✅ Fase 2 — Fotos reales + WebP (HECHA · commit `daed4cc`)
+
+- **Pase de visión** de las 39 JPEG → 5 duplicados exactos (MD5) → **34 únicas**, clasificadas (Blanca / eventos / prensa).
+- **Pipeline reproducible:** `scripts/optimize-photos.mjs` (sharp). Recorte exacto al layout (hero/retrato 4:5, cards 4:3). **~169 MB de originales → ~0,7 MB servidos**; todas < 200 KB.
+- **Sustituidas las 8 imágenes IA** por fotos reales + **imagen nueva para la 7ª card** (Alquimia, antes gradiente). `alt` reescritos en voz de marca y **neutros de ubicación**; quitados los `?v=`.
+- **Card de Bodas** con detalle ritual nítido (manos sobre huipil); la toma de boda borrosa se descartó de la home.
+- **Bloque "En los medios" adelantado de Fase 3:** `Press.jsx` con el recorte de *The Playa Times* (entre Sobre Blanca y Testimonios).
+- **Política git aplicada:** `public/fotos/` gitignorado; 39 originales respaldados fuera del repo en `../blanca-fotos-originales-backup/`. Solo se versionan las WebP. Mapeo completo en `docs/06`.
+- **Decisiones cerradas:** pipeline = `sharp`; hero = foto del mar sereno; mazo del Oráculo = **propio** (confirmado por Blanca, ya sin caveat de IP).
+- **Verificado:** build de producción **verde** (1892 módulos). El repaso visual se hace en local con `npm run dev` (en este sandbox el dev server no es alcanzable desde el navegador de preview).
+- ✅ **Decisiones de Christian/Blanca (2026-05-29), ya cerradas:** (1) **se permiten caras de
+  terceros** → `..._794`/`..._784` usables (álbum); (2) **confirmado** que aparece nombrada en
+  *Novedades* (`..._755`) → entra en prensa; (3) para Bodas/Compromiso/Despedida se usan **imágenes
+  con licencia** como puente y Blanca irá aportando fotos reales propias con el tiempo.
+
 ### ⏳ Fases pendientes (orden recomendado)
 
-- **Fase 2 — Fotos: pase de visión + WebP** ← **SIGUIENTE** (prompt abajo). Clasificar/deduplicar/renombrar/optimizar las 39 fotos y sustituir las 8 imágenes IA de `public/`.
-- **Fase 3 — Álbum/Galería + bloque Prensa.** Nueva sección que "cuente la historia de Blanca" (eventos, retratos) + bloque "En los medios" con recortes de Playa del Carmen. Depende de la Fase 2.
+- **Fase 3 — Álbum/Galería (+ completar Prensa)** ← **SIGUIENTE** (prompt abajo). El bloque "En los medios" YA existe (The Playa Times). Falta la **galería que "cuente la historia de Blanca"** (retratos + detalles; ~18 candidatas listadas en `docs/06`) y, cuando Blanca confirme, añadir *Novedades*.
 - **Fase 4 — i18n ES/EN con `react-i18next`.** Migrar `content.js` → bundles de recursos `es`/`en`, **transcrear** (no traducir literal) a un inglés premium, selector de idioma en `Navbar`, `<html lang>` y OG por idioma.
 - **Fase 5 — Pulido final.** Conectar WhatsApp/contacto de producción definitivos, metadatos/OG por idioma, SEO básico, rendimiento (Lighthouse), revisión de CTAs.
 - **Post-MVP (fase 2 de negocio):** chatbot de reservas · blog + automatización de contenido para SEO local · páginas dedicadas (Bodas, **Eventos de Villa de lujo**) · dossier B2B para aliados · **alemán (DE)**.
 
 ---
 
-## PROMPT PARA PEGAR — FASE 2: FOTOS (pase de visión + WebP)
+## PROMPT PARA PEGAR — FASE 3: ÁLBUM/GALERÍA (+ completar prensa)
 
 ```
 Eres el dev/agente que retoma el proyecto web "Ceremonias Holísticas · Blanca Coutiño"
@@ -42,69 +56,57 @@ Repo: /Users/christianmarzaldellarovere/Desktop/Claude Code/blanca  (rama main)
 
 PASO 0 — Contexto (léelo ANTES de tocar nada):
 1. Lee CLAUDE.md (raíz) — ground truth de marca.
-2. Lee docs/06-activos-fotos.md (inventario y plan de curación de fotos: ES TU GUION).
-   También docs/02-posicionamiento-voz.md (voz para los textos `alt`) y docs/04-ceremonias.md
-   (a qué ceremonia corresponde cada card del catálogo).
-3. Lee HANDOFF.md (sección "Estado del proyecto"): la Fase 1 (contenido/voz) YA está hecha;
-   el copy de las 7 ceremonias ya vive en src/data/content.js. NO reescribas copy.
-NO leas portfolio-ceremonias-holisticas.md ni handoff-sesion-portfolio.md (son del portfolio
-de empleo del dueño, no de la marca).
+2. Lee docs/06-activos-fotos.md — inventario, MAPEO de fotos ya ejecutado (Fase 2) y la lista de
+   ~18 CANDIDATAS A ÁLBUM. También docs/02-posicionamiento-voz.md (voz para alt/copy) y
+   docs/03-publico-mercado.md (estrategia: la web "cuenta su historia" y construye autoridad).
+3. Lee HANDOFF.md (sección "Estado del proyecto"): Fases 1 y 2 HECHAS. NO reescribas el copy de
+   las ceremonias ni re-optimices la home.
+NO leas portfolio-ceremonias-holisticas.md ni handoff-sesion-portfolio.md (portfolio de empleo).
 
-OBJETIVO DE ESTA FASE: sustituir las imágenes IA por FOTOS REALES optimizadas. Es un cambio
-visual fuerte, así que trabaja en pasos revisables y enseña el plan antes de convertir/borrar.
+SKILLS RECOMENDADAS (ya instaladas en el proyecto; invócalas al diseñar):
+- `frontend-design` — para que la galería sea distintiva y premium, no "AI genérica". PRINCIPAL.
+- `ui-ux-pro-max` — patrones de rejilla/lightbox, spacing, hover, alineación con la paleta tierra/cacao.
+- `react-best-practices` — galería con muchas imágenes: lazy-load, evitar layout shift (width/height),
+  no romper el LCP del hero. Úsala en la revisión de rendimiento.
 
-ESTADO DE LAS FOTOS:
-- public/fotos/ tiene 39 JPEG (~169 MB) con nombres genéricos tipo Image_AAAAMMDD_HHMMSS_xxx.jpeg,
-  pesados y sin curar. Hay duplicados conocidos (p. ej. "..._685 (1).jpeg" y "..._699 (1).jpeg").
-- public/ tiene 8 imágenes IA en uso que hay que reemplazar:
-  blanca-hero.webp, blanca-portrait.webp, card-bodas.webp, card-baby-blessing.webp,
-  card-picnic.webp, card-parejas.webp, card-coaching.webp, card-despedidas.webp.
-  (La 7ª ceremonia, "Alquimia de las 3 Aguas", NO tiene imagen: hoy usa un fallback de
-  gradiente en Catalog.jsx. Si hay una foto que encaje, dale imagen.)
+OBJETIVO DE ESTA FASE: añadir una sección de ÁLBUM/GALERÍA que "cuente la historia de Blanca"
+(retratos + detalles de ceremonia + algún evento) y completar el bloque de PRENSA. El bloque
+"En los medios" (src/components/Press.jsx) YA existe con el recorte de The Playa Times; aquí se amplía.
+
+ESTADO:
+- Las fotos reales ya están curadas y optimizadas (Fase 2). Pipeline: scripts/optimize-photos.mjs
+  (sharp). Los originales están gitignorados en public/fotos/ y respaldados en
+  ../blanca-fotos-originales-backup/.
+- docs/06 lista las candidatas fuertes para el álbum (retratos de Blanca + detalles cristales/manos).
+- La home usa hero, retrato y 7 cards; NO tocar salvo que se pida.
 
 TAREAS:
-1) Pase de visión: ABRE/inspecciona cada JPEG. Clasifícalas en blanca / eventos / prensa
-   (recortes de prensa de Playa del Carmen), deduplica, descarta las de baja calidad y
-   anota cuáles son las más potentes.
-2) Optimización: redimensiona y convierte a WebP. Recomendado instalar `sharp` como
-   devDependency (npm i -D sharp) para conversión por lotes fiable; alternativa sin
-   dependencias: `sips` (nativo de macOS, soporta WebP). Tamaños orientativos:
-   hero ~1400–1600 px de alto, cards ~1000–1200 px de ancho, álbum ~800 px, miniaturas
-   ~400 px. Objetivo < 200 KB por imagen cuando se pueda. Mantén un script reproducible.
-3) Sustitución en la home: reemplaza las 8 imágenes IA por las reales. Lo más simple es
-   conservar los MISMOS nombres de archivo (drop-in); si cambias nombres, actualiza las
-   rutas `image` y reescribe los `imageAlt` (en voz de marca) en src/data/content.js.
-   Quita los `?v=3` o súbelos para cache-busting.
-4) Mapeo: registra original → nombre nuevo → uso (home / álbum / prensa) en docs/06 (o un
-   archivo de mapeo). Deja claro qué foto va a qué sitio.
+1) Galería/Álbum: nueva sección (p. ej. Gallery.jsx) con una rejilla elegante (maya boho chic,
+   premium) de las candidatas de álbum. Añade jobs al script para optimizarlas a WebP (álbum
+   ~1000–1200 px lado largo, thumbs ~400 px; lazy-load; objetivo < 150 KB). alt en voz de marca.
+   Valora un lightbox accesible (teclado + focus trap) o, como mínimo, rejilla con buen object-fit.
+2) Prensa: *Novedades* (..._755) está CONFIRMADA (Blanca aparece nombrada) → optimízala y añádela a
+   `press.items` en content.js. Marco sobrio, mismo estilo que The Playa Times.
+3) Inserta la galería en App.jsx donde mejor narre (p. ej. tras Press o tras About). Si procede,
+   añade enlace en Navbar/Footer (#galeria / #prensa).
+4) (Opcional, requiere a Christian) Cards de Bodas/Compromiso/Despedida: hoy usan detalles simbólicos.
+   Se aprobó usar **imágenes con licencia** como puente. Si Christian aporta/aprueba stock premium
+   on-brand, sustituye esas 3 imágenes; si no, déjalas como están. (Blanca irá dando fotos reales.)
 
-POLÍTICA DE GIT (decidir y aplicar; ver docs/06):
-- Versionar SOLO las WebP optimizadas. Los 39 originales (~169 MB) NO deben acabar en el
-  repo público: añade public/fotos/ a .gitignore (o mueve los originales fuera del repo) y
-  guárdalos aparte como backup del cliente.
-
-LÍNEAS ROJAS Y PERMISOS (innegociables):
-- Tono visual: maya boho chic, elegante y premium; estética = trust signal. Nada "de feria".
-- PERMISOS DE TERCEROS: las fotos de bodas/eventos con caras de clientes NO se publican sin
-  consentimiento. Marca cuáles tienen terceros identificables y NO las pongas online hasta
-  que Blanca confirme permisos. Para la home, prioriza retratos de Blanca y tomas "seguras".
-- Identifica cuáles son recortes de PRENSA (Playa del Carmen) y sus medios/fechas, para el
-  futuro bloque "En los medios" (Fase 3).
-- `alt` descriptivos en voz de marca (ES por ahora; el inglés llega en la fase de i18n).
-
-DECISIONES A CONFIRMAR CON CHRISTIAN/BLANCA (no inventes; pregunta si bloquean):
-- Pipeline de optimización: ¿`sharp` (instalar dep) o `sips` (nativo)?
-- Qué fotos son prensa y permisos de imagen de terceros.
-- ¿Hay sesión de fotos profesional nueva en Mallorca prevista? (las actuales son de México).
+LÍNEAS ROJAS Y PERMISOS:
+- Estética = trust signal; nada "de feria". Prioriza calidad: retratos de Blanca y detalles nítidos.
+- **Caras de terceros PERMITIDAS** (decisión de Christian/Blanca 2026-05-29): `..._794`/`..._784`
+  (boda) son usables en el álbum. Aun así, cuida la calidad (794 es oscura/grano → tamaño contenido).
+- alt descriptivos en voz de marca (ES; el inglés llega en Fase 4 de i18n).
 
 VERIFICACIÓN:
-- npx vite build debe seguir verde. Repaso visual con `npm run dev` EN LOCAL (ojo: en algunos
-  sandboxes el dev server no es alcanzable desde el navegador de preview; verifícalo en la
-  máquina de Christian). Comprueba que las 7 cards, el hero y el retrato cargan, que no hay
-  imágenes rotas y que los pesos son razonables.
+- npx vite build verde. npm run dev en local para el repaso visual (en este sandbox el dev server
+  no es alcanzable desde el navegador de preview; verifícalo en la máquina de Christian).
+- Pesos razonables; sin imágenes rotas; rejilla responsive.
+- ⚠️ En este entorno esbuild se rompía a veces; si el build falla con ERR_MODULE_NOT_FOUND de
+  esbuild, un `npm install` lo arregla (Vercel hace install limpio y no se ve afectado).
 
-Antes de convertir o borrar nada, enseña a Christian el plan de curación (qué foto va a qué
-sitio, qué se descarta, qué necesita permiso). Trabaja en pasos revisables.
+Trabaja en pasos revisables y enseña el plan (qué fotos, qué layout) antes de construir.
 ```
 
 ---
@@ -116,20 +118,25 @@ sitio, qué se descarta, qué necesita permiso). Trabaja en pasos revisables.
 - Cifras reales para testimonios (nº de ceremonias/bodas).
 - **WhatsApp/teléfono/email** de producción (hoy placeholder coherente; el prototipo antiguo
   tenía `wa.me/34678312884` desalineado con el número mostrado).
-- Permisos de imagen de terceros y cuáles de las 39 fotos son recortes de prensa.
+- **Fotos (Fase 2/3):** consentimiento de la boda con caras de terceros (`..._794`, OFFLINE);
+  confirmar que Blanca aparece nombrada en *Novedades* (`..._755`) antes de publicarla; y
+  **fotos reales propias de Bodas/Compromiso/Despedida** (hoy detalles simbólicos) o imágenes con licencia.
+- ✅ *Resueltas en Fase 2:* mazo del Oráculo = propio; prensa identificada (*The Playa Times* en vivo).
 
 ---
 
 ## Notas para Christian (no forman parte del prompt)
 
-- **Verificación visual / entorno:** en esta sesión el dev server de Vite arrancó pero quedó en
-  un namespace de red del sandbox que ni el navegador de preview ni la shell alcanzaron, así que
-  el repaso de píxeles quedó pendiente — **córrelo en local con `npm run dev`**. Además, `vite build`
-  va lentísimo aquí (esbuild tardó ~8 min); en tu máquina será normal. El build SÍ pasó verde.
+- **Verificación visual / entorno:** el repaso de píxeles se hace **en local con `npm run dev`**
+  (en el sandbox el dev server queda en un namespace de red inalcanzable por el navegador de preview).
+  El build de producción pasa verde.
+- ⚠️ **esbuild flaky en este entorno:** durante la Fase 2, `node_modules/esbuild` se quedaba a
+  medias de forma recurrente y `vite build` fallaba con `ERR_MODULE_NOT_FOUND`. Solución: `npm install`.
+  **Vercel no se ve afectado** (hace install limpio en cada deploy).
+- **Git/fotos (aplicado):** `public/fotos/` está gitignorado; los 39 originales se respaldan fuera
+  del repo en `../blanca-fotos-originales-backup/`. Solo se versionan las WebP. La conversión es
+  reproducible con `node scripts/optimize-photos.mjs` (requiere `sharp`, ya en devDependencies).
 - **Dónde está todo:** la base de conocimiento es `CLAUDE.md` + `/docs/00..07`. Cuando Blanca te
   pase más info, métela en el doc temático que toque y actualiza el índice (`docs/00-indice.md`).
-- **Worktree obsoleto:** `.claude/worktrees/jolly-proskuriakova-fb6f8a` ya no hace falta; límpialo cuando quieras.
-- **Git/fotos:** decide la política de versionado de imágenes antes de commitear (ver `docs/06` —
-  recomendado: versionar solo las WebP optimizadas, guardar los originales aparte).
 - **Idiomas:** ES + EN en el MVP (con `react-i18next`, Fase 4). Si pesa el mercado alemán, DE queda como fase posterior.
 - **Skills útiles para el copy/CRO:** `/marketing-psychology` · `/page-cro` · `/copywriting`.
