@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { about } from '../data/content'
 import Reveal from './Reveal'
 
@@ -18,11 +18,10 @@ export default function About() {
         {/* Portrait column */}
         <Reveal className="lg:col-span-5">
           <div className="relative">
-            {/* Portrait — Blanca in her atelier */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-[#2D2926] shadow-2xl">
               <img
                 src="/blanca-portrait.webp"
-                alt="Blanca Coutiño en el interior de su atelier-finca de Mallorca, con su mesa-altar de cuenco de cacao, copal, libros y flores secas"
+                alt="Retrato de Blanca Coutiño de pie frente al mar, vestido de lino con bordado maya, sosteniendo cristales en sus manos ahuecadas"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
@@ -96,12 +95,11 @@ export default function About() {
           {/* CTAs */}
           <Reveal delay={0.5}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#sobre" className="btn-primary">
+              <a href="#contacto" className="btn-primary">
                 {about.primaryCta}
                 <ArrowRight size={16} />
               </a>
-              <a href="#" className="btn-ghost">
-                <Download size={16} />
+              <a href="#ceremonias" className="btn-ghost">
                 {about.secondaryCta}
               </a>
             </div>

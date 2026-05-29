@@ -55,7 +55,7 @@ export default function WhatsAppClose() {
           <Reveal delay={0.4}>
             <div className="mt-10 flex flex-wrap items-center gap-5">
               <a
-                href="https://wa.me/34678312884"
+                href={whatsapp.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-token-lg bg-[#25D366] px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#20BD5A] hover:shadow-xl"

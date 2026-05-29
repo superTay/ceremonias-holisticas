@@ -1,8 +1,12 @@
-// Contenido extraído desde blanca.pen — fuente única de verdad.
-// Editar este archivo para actualizar copy del sitio.
+// Contenido del sitio — fuente única de verdad.
+// Editar este archivo para actualizar el copy. Voz de marca: docs/02 (científica, no
+// mística · holística, no esotérica · elegante, nunca de feria). Las 7 ceremonias y su
+// naming viven en docs/04; trayectoria y credenciales en docs/01.
+// TBD pendiente de Blanca: naming final, precio del Taller y formato del Oráculo,
+// cifras exactas de testimonios, y datos de contacto de producción (ver §contacto).
 
 export const announcement =
-  'Consulta gratuita de diseño de ritual · Disponible esta semana'
+  'Consulta de diseño sin compromiso · Diseñemos tu ceremonia a medida'
 
 export const nav = {
   brand: 'Ceremonias Holísticas',
@@ -18,104 +22,152 @@ export const nav = {
 
 export const hero = {
   eyebrow: 'CEREMONIAS HOLÍSTICAS · MALLORCA & DESTINO',
-  headline: 'Ceremonias diseñadas para los momentos que no se repiten. En las calas y fincas de Mallorca.',
-  sub: 'Bodas, blessings y rituales íntimos en Santa Ponça. Diez años de tradición ceremonial maya y mediterránea, diseñados 100% a medida por Blanca Coutiño.',
+  headline:
+    'Ceremonias para los momentos que no se repiten. Diseñadas como un umbral, frente al mar de Mallorca.',
+  sub: 'Bodas, blessings y rituales íntimos en las calas y fincas de Mallorca. Más de 22 años entre la hotelería de lujo y las tradiciones ancestrales, diseñados 100% a medida por Blanca Coutiño.',
   primaryCta: 'Reservar mi llamada de diseño',
   secondaryCta: 'Ver Ceremonias',
   badges: [
     'Ceremonias frente al Mediterráneo',
-    '+200 ceremonias facilitadas',
+    '+22 años de trayectoria',
   ],
   nextCeremony: {
     label: 'PRÓXIMA CEREMONIA',
-    date: 'Sáb 16 May · 3 plazas',
-    desc: 'Pícnic Ceremonial en Cala Vinyes',
+    date: 'Agenda de primavera · 2026',
+    desc: 'El Festín de las Alas · Cala Vinyes',
   },
   proof: '«Nuestra boda no fue un evento, fue un umbral.» — Lucía & Marc, Es Trenc',
 }
 
 export const categories = [
   'Bodas Holísticas',
+  'Compromiso',
   'Baby Blessing',
-  'Parejas Románticas',
-  'Despedidas Holísticas',
-  'Pícnic Ceremonial',
-  'Coaching 1 a 1',
+  'Despedida de Soltera',
+  'Pícnic & Oráculo',
+  'Coaching Ritual',
+  'Taller Alquímico',
 ]
 
 export const catalog = {
   caption: 'CATÁLOGO DE CEREMONIAS',
-  headline: 'Seis ceremonias. Un único principio: nada genérico.',
+  headline: 'Siete ceremonias. Un único principio: nada genérico.',
   sub: 'Filtra por el momento que estás viviendo. Cada propuesta es un punto de partida — todo se diseña contigo.',
   filters: [
     'Todas',
     'Bodas Holísticas',
+    'Compromiso',
     'Baby Blessing',
-    'Coaching 1 a 1',
-    'Despedidas Holísticas',
-    'Parejas Románticas',
-    'Pícnic Ceremonial',
+    'Despedida de Soltera',
+    'Pícnic & Oráculo',
+    'Coaching Ritual',
+    'Taller Alquímico',
   ],
   cards: [
     {
-      tag: 'BODAS',
-      title: 'Bodas Holísticas',
-      body: 'Ceremonia maya-contemporánea para sellar vuestro vínculo desde la raíz, frente al mar o en finca mediterránea.',
-      bullets: ['4 elementos · agua, fuego, tierra, aire', 'Hasta 80 invitados', 'Diseño 100% a medida'],
+      tag: 'BODAS & VOTOS',
+      category: 'Bodas Holísticas',
+      title: 'Unión de Almas Mayas',
+      body: 'Una boda o renovación de votos vivida como viaje energético, no como protocolo. Selláis vuestro vínculo desde la raíz —copal blanco, los cuatro elementos y un amarre de manos tejido a mano— frente al mar o en finca mediterránea.',
+      bullets: [
+        'Purificación con copal y apertura de los cuatro rumbos',
+        'Amarre de manos con textiles tejidos a mano',
+        'Hasta 80 invitados · diseño 100% a medida',
+      ],
       price: 'desde 2.400€',
       hue: 'from-[#8B6F4E] to-[#5C3A21]',
       image: '/card-bodas.webp',
-      imageAlt: 'Novios uniendo sus manos con un rebozo en handfasting maya frente al mar mallorquín',
+      imageAlt: 'Manos en gesto ritual sobre el bordado de un huipil maya, frente al mar al atardecer, en un instante de ceremonia de unión',
     },
     {
       tag: 'BABY BLESSING',
-      title: 'Baby Blessing',
-      body: 'Ritual de bienvenida para honrar la llegada del nuevo ser, sostener a la madre y enraizar a la familia.',
-      bullets: ['Círculo íntimo de mujeres', 'Ofrenda de copal y flores', '2 horas de ceremonia'],
+      category: 'Baby Blessing',
+      title: 'Tramuntana Baby Soul Ritual',
+      body: 'Una bienvenida consciente para el nuevo ser, alternativa serena al bautizo tradicional. Un círculo de amor con los cuatro elementos para honrar al bebé, sostener a la madre y enraizar a la familia.',
+      bullets: [
+        'Círculo íntimo con los cuatro elementos',
+        'Ofrenda de copal, agua de rosas y flores',
+        'Cerca de 2 horas de ceremonia',
+      ],
       price: 'desde 480€',
       hue: 'from-[#A98A6F] to-[#7D6B3D]',
       image: '/card-baby-blessing.webp',
-      imageAlt: 'Madre embarazada con corona de flores recibiendo la bendición de un círculo de mujeres en una finca mallorquina',
+      imageAlt: 'Blanca Coutiño con las manos en forma de corazón sobre el vientre, vestido de lino con bordado maya, frente al mar al atardecer',
     },
     {
-      tag: 'PÍCNIC',
-      title: 'Pícnic Ceremonial',
-      body: 'Una pausa frente al Mediterráneo: ritual breve, comida consciente y conversación sostenida en cala íntima.',
-      bullets: ['Hasta 12 personas', 'Cala Vinyes o Es Trenc', 'Incluye banquete vegetal'],
+      tag: 'PÍCNIC & ORÁCULO',
+      category: 'Pícnic & Oráculo',
+      title: 'El Festín de las Alas',
+      body: 'Alta gastronomía mediterránea y un círculo angelical frente a una cala íntima. El Oráculo Angelical acompaña como guía y autoconocimiento —nunca predicción—: un espejo suave para ganar claridad y decidir desde la calma.',
+      bullets: [
+        'Círculo de Ángeles y lectura de Oráculo (guía, no predicción)',
+        'Cristal personalizado para cada invitada',
+        'Hasta 12 personas · banquete consciente incluido',
+      ],
       price: 'desde 95€/pers',
       hue: 'from-[#C9A57A] to-[#B8865B]',
-      image: '/card-picnic.webp?v=3',
-      imageAlt: 'Banquete vegetal mediterráneo con cacao, copal y flores frente a una cala turquesa de Mallorca al atardecer',
+      image: '/card-picnic.webp',
+      imageAlt: 'Manos de Blanca extendiendo las cartas del Oráculo Angelical sobre la arena, en un círculo de guía y autoconocimiento',
     },
     {
-      tag: 'PAREJAS',
-      title: 'Parejas Románticas',
-      body: 'Renovad votos, abrid un nuevo capítulo o sanad un episodio. Una ceremonia íntima sólo para vosotros dos.',
-      bullets: ['Sesión privada de 3 h', 'Cacao ceremonial incluido', 'Ubicación a elegir'],
+      tag: 'COMPROMISO',
+      category: 'Compromiso',
+      title: 'El Lazo del Destino',
+      body: 'Una ceremonia íntima solo para dos: una propuesta de matrimonio o un recompromiso consciente. Romanticismo mediterráneo y la sabiduría maya del In Lak\'ech, en un rincón ultraprivado de la isla.',
+      bullets: [
+        'Solo para vosotros dos · spot ultraprivado',
+        'Intercambio de brazaletes · hilo del destino',
+        'Acantilado, cala secreta o finca a elegir',
+      ],
       price: 'desde 380€',
       hue: 'from-[#7D6B3D] to-[#4A3F24]',
-      image: '/card-parejas.webp?v=3',
-      imageAlt: 'Matrimonio compartiendo un cuenco de cacao en una terraza de finca mallorquina rodeada de velas al atardecer',
+      image: '/card-parejas.webp',
+      imageAlt: 'Un cuarzo amatista en alto entre los dedos sobre un fondo turquesa de mar, como símbolo de un vínculo que se sella',
     },
     {
-      tag: 'DESPEDIDAS',
-      title: 'Despedidas Holísticas',
-      body: 'Despedida de soltera con alma. Lejos del confeti, cerca del corazón. Para tribus que quieren más.',
-      bullets: ['Grupos de 6 a 14 mujeres', 'Ritual + actividad creativa', 'Diseño según la novia'],
+      tag: 'DESPEDIDA',
+      category: 'Despedida de Soltera',
+      title: 'El Círculo de Ixchel',
+      body: 'Una despedida de soltera con alma, inspirada en la diosa maya Ixchel. Lejos del confeti, cerca del corazón: un contenedor de amor y empoderamiento femenino para la novia y su tribu.',
+      bullets: [
+        'Grupos de 6 a 14 mujeres',
+        'Tejido del Destino · corona de flores · cacao sagrado',
+        'Diseño según la novia',
+      ],
       price: 'desde 75€/pers',
       hue: 'from-[#9A7A5C] to-[#5C3A21]',
       image: '/card-despedidas.webp',
-      imageAlt: 'Círculo de mujeres en una playa mallorquina al atardecer colocando una corona de flores a la novia',
+      imageAlt: 'Manos ahuecadas sosteniendo cristales de los chakras a contraluz dorada, evocando la energía femenina y el cierre de ciclo',
     },
     {
       tag: 'COACHING',
-      title: 'Coaching 1 a 1',
-      body: 'Acompañamiento ritual de 6 sesiones para cruzar un umbral personal: duelo, decisión, transformación.',
-      bullets: ['Online o presencial', '6 sesiones de 75 min', 'Bitácora personal incluida'],
+      category: 'Coaching Ritual',
+      title: 'El Retorno a la Luz',
+      body: 'Un proceso privado de tres encuentros para cruzar un umbral vital: un duelo, un divorcio, un cambio de rumbo. Numerología terapéutica y rituales de tierra y fuego como acompañamiento que complementa tu bienestar, nunca como tratamiento médico.',
+      bullets: [
+        '3 sesiones: cierre, transición y renacimiento',
+        'Numerología terapéutica + rituales mayas',
+        'Online o presencial · bitácora personal',
+      ],
       price: 'desde 690€',
       hue: 'from-[#B8865B] to-[#7D6B3D]',
-      image: '/card-coaching.webp?v=3',
-      imageAlt: 'Sesión 1 a 1 con bitácora abierta, cacao y copal en un patio-jardín mediterráneo de Mallorca',
+      image: '/card-coaching.webp',
+      imageAlt: 'Blanca Coutiño de espaldas mirando el mar, vestido de lino con bordado maya, en un momento de introspección y transición',
+    },
+    {
+      tag: 'TALLER',
+      category: 'Taller Alquímico',
+      title: 'Alquimia de las 3 Aguas',
+      body: 'Un taller sensorial donde cada persona alquimiza su propia bruma áurica intencionada. Eliges una de tres frecuencias —Amor, Abundancia o Equilibrio— con botánica de la isla, aguas infusionadas y cristales. Ideal para grupos y como complemento de otras ceremonias.',
+      bullets: [
+        'Tres frecuencias: Afrodita, Oro Maya o Tramuntana',
+        'Cada asistente crea y se lleva su bruma',
+        'Grupos desde 5 personas · ideal para eventos',
+      ],
+      price: 'a consultar',
+      hue: 'from-[#C9A57A] to-[#7D6B3D]',
+      image: '/card-alquimia.webp',
+      imageAlt: 'Frasco de bruma áurica «Brisa Áurica» sobre lino blanco junto a cuarzos rosa, verde y amatista, listo para el ritual de las lociones',
     },
   ],
   ctaTitle: '¿No encuentras tu ceremonia?',
@@ -126,32 +178,33 @@ export const catalog = {
 export const about = {
   eyebrow: 'SOBRE BLANCA',
   headline:
-    'Diez años en Riviera Maya. Hoy, en Mallorca. La misma obsesión: que el momento te marque.',
+    'Más de dos décadas entre México, Francia y España. Hoy, en Mallorca. La misma obsesión: que el momento te marque.',
   paragraphs: [
-    'Soy Blanca Coutiño. Llegué a Mallorca con más de diez años diseñando ceremonias en Riviera Maya — primero como wedding planner en Playa del Carmen, después como facilitadora holística para mujeres, parejas y familias.',
-    'Mi práctica une la sabiduría maya, los rituales mediterráneos y la psicología organizacional. Cada ritual lo diseño contigo: tu intención, tu cuerpo y tu historia son el mapa.',
+    'Soy Blanca Coutiño. Llegué a Mallorca con más de 22 años de trayectoria y más de una década diseñando ceremonias y bodas en la Riviera Maya — primero como wedding planner en Playa del Carmen, después como facilitadora holística para mujeres, parejas y familias.',
+    'Mi trabajo une dos mundos que rara vez conviven: la precisión de la hotelería de lujo internacional y la profundidad de las tradiciones ancestrales certificadas. Soy cosmetóloga y terapeuta corporal, Master Reiki y terapeuta en Flores de Bach; formada entre la gestión hotelera en Francia y la herbolaria aprendida con los pueblos de la selva lacandona.',
+    'Fui pionera en bodas legales LGBT en la Riviera Maya, acompañando a parejas de todo el mundo. Cada ritual lo diseño contigo: tu intención, tu cuerpo y tu historia son el mapa.',
   ],
   pullQuote: 'No facilito un servicio. Sostengo un umbral.',
   pillars: [
     {
-      title: 'Facilitación Holística',
-      body: 'Certificación profesional internacional',
+      title: 'Precisión de lujo',
+      body: 'Gestión hotelera (Rennes) y terapias corporales: drenaje linfático, kobido, cosmetología.',
     },
     {
-      title: 'Rituales Mediterráneos',
-      body: 'Especializada en ceremonias en playa y finca',
+      title: 'Raíces certificadas',
+      body: 'Master Reiki, Flores de Bach (+12 años) y alquimia aprendida con pueblos de la selva lacandona.',
     },
     {
-      title: 'Psicología Organizacional',
-      body: 'Grado con énfasis en bienestar',
+      title: 'Un sistema propio',
+      body: 'Tradición maya, azteca y céltica integrada con ayurveda y los cuatro elementos.',
     },
   ],
-  primaryCta: 'Conocer Mi Historia',
-  secondaryCta: 'Descargar CV facilitador',
+  primaryCta: 'Diseñemos tu ceremonia',
+  secondaryCta: 'Ver ceremonias',
   badges: [
     'De Riviera Maya a Mallorca',
-    'Psicología Organizacional',
-    '+10 años de práctica',
+    '+22 años de trayectoria',
+    'Pionera bodas LGBT · Riviera Maya',
   ],
 }
 
@@ -160,9 +213,9 @@ export const testimonials = {
   headline: 'Lo que se abre después del ritual.',
   sub: 'Historias reales de quienes diseñaron su ceremonia con Blanca.',
   metrics: [
-    { value: '+200', label: 'ceremonias facilitadas' },
-    { value: '+10 años', label: 'entre Riviera Maya y Mallorca' },
-    { value: '+45', label: 'bodas holísticas diseñadas' },
+    { value: '+22', label: 'años de trayectoria' },
+    { value: '3', label: 'países: México, Francia y España' },
+    { value: '+10', label: 'años diseñando ceremonias en Riviera Maya' },
   ],
   cards: [
     {
@@ -189,6 +242,24 @@ export const testimonials = {
   cta: 'Quiero mi ceremonia',
 }
 
+export const press = {
+  eyebrow: 'EN LOS MEDIOS',
+  headline: 'Su trabajo, contado por la prensa.',
+  sub: 'Más de una década diseñando ceremonias, bodas y eventos en la Riviera Maya — recogida por la prensa local como referente del sector.',
+  items: [
+    {
+      outlet: 'The Playa Times',
+      context: 'Riviera Maya · Entrevista',
+      quote:
+        'Como muchas parejas en este destino, sentimos el deseo de compartir la riqueza de nuestras culturas, que conviven en simbiosis cada día.',
+      author: 'Blanca Coutiño',
+      image: '/prensa-the-playa-times.webp',
+      imageAlt:
+        'Recorte del periódico The Playa Times con la entrevista «Pour Votre Grand Jour · TPT Rencontre Blanca Coutiño» y un retrato de Blanca',
+    },
+  ],
+}
+
 export const faq = {
   eyebrow: 'PREGUNTAS FRECUENTES',
   headline: 'Resolvemos tus dudas antes de que aparezcan.',
@@ -205,6 +276,14 @@ export const faq = {
     {
       q: '¿Las ceremonias son religiosas?',
       a: 'No son religiosas. Son rituales de tradición maya-contemporánea adaptados a tu sistema de creencias. Funcionan tanto si eres espiritual como si eres profundamente racional.',
+    },
+    {
+      q: '¿El Oráculo Angelical predice el futuro?',
+      a: 'No. El Oráculo Angelical es una herramienta de guía y autoconocimiento, no de adivinación. No decide por ti ni anticipa lo que vendrá: es un espejo suave que te ayuda a ver con claridad lo que tu intuición ya sabe.',
+    },
+    {
+      q: '¿Las ceremonias sustituyen una terapia médica o psicológica?',
+      a: 'No. Cada ceremonia es un acompañamiento holístico que complementa tu bienestar; nunca sustituye un tratamiento médico o psicológico. Si atraviesas un proceso clínico, lo honramos y trabajamos a su lado, no en su lugar.',
     },
     {
       q: '¿Puedo regalar una ceremonia a otra persona?',
@@ -234,6 +313,9 @@ export const whatsapp = {
   ],
   cta: 'Hablar con Blanca por WhatsApp',
   secondary: 'o llámanos: +34 665 17 55 56',
+  // TBD: número/email de producción a confirmar con Blanca antes de publicar.
+  // El enlace se mantiene coherente con el número mostrado en `secondary`.
+  url: 'https://wa.me/34665175556',
   chat: {
     headerName: 'Ceremonias Holísticas',
     headerStatus: 'Blanca · en línea',
@@ -251,7 +333,7 @@ export const whatsapp = {
       },
       {
         from: 'her',
-        text: 'Mucho gusto, Lucía ✨ ¿Hay alguna ceremonia que esté llamando a tu corazón? (Pícnic, Parejas, Despedida, Boda, Baby Blessing…)',
+        text: 'Mucho gusto, Lucía ✨ ¿Hay alguna ceremonia que esté llamando a tu corazón? (Boda, Compromiso, Baby Blessing, Despedida, Pícnic & Oráculo…)',
         time: '10:44',
       },
       {
@@ -270,7 +352,7 @@ export const whatsapp = {
 
 export const footer = {
   brand: 'Ceremonias Holísticas',
-  desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Diez años entre Riviera Maya y Mallorca, diseñadas y facilitadas por Blanca Coutiño.',
+  desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Más de 22 años de trayectoria entre Riviera Maya y Mallorca, diseñadas y facilitadas por Blanca Coutiño.',
   contact: [
     'etessecoutinob@yahoo.com',
     '+34 665 17 55 56',
@@ -281,11 +363,12 @@ export const footer = {
       title: 'Ceremonias',
       links: [
         'Bodas Holísticas',
+        'Compromiso',
         'Baby Blessing',
-        'Despedidas Holísticas',
-        'Parejas Románticas',
-        'Coaching 1 a 1',
-        'Pícnic Ceremonial',
+        'Despedida de Soltera',
+        'Pícnic & Oráculo',
+        'Coaching Ritual',
+        'Taller Alquímico',
         'Rituales a medida',
       ],
     },
@@ -294,8 +377,6 @@ export const footer = {
       links: [
         'Sobre Blanca',
         'Testimonios',
-        'Calendario abierto',
-        'Diario · Bitácora',
         'Prensa & Medios',
         'Contacto',
       ],

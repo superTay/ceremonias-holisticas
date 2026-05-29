@@ -50,6 +50,61 @@ En la **sesión de build**, el agente debe:
 - Recomendación: **(a)** — versionar solo lo que sirve la web; guardar originales aparte (backup del cliente).
 
 ## Pendiente / confirmar con Blanca
-- Cuáles de las 39 son **recortes de prensa** y de qué **medios/fechas** (para citarlos).
+- Cuáles de las 39 son **recortes de prensa** y de qué **medios/fechas** (para citarlos). → Identificados 2 (ver mapeo).
 - Permisos/derechos de imagen de las **bodas de clientes** (mostrar caras de terceros requiere consentimiento).
 - Si quiere **sesión de fotos profesional nueva** en Mallorca a futuro (las actuales son de México).
+
+---
+
+## Mapeo de curación — Fase 2 (ejecutado 2026-05-29)
+
+Pase de visión sobre 39 JPEG → **5 pares duplicados exactos (MD5)** → **34 imágenes únicas**.
+Pipeline: `sharp` vía `scripts/optimize-photos.mjs` (reproducible; recorte exacto al aspect del layout).
+`public/fotos/` está **gitignorado**; los 39 originales se respaldan **fuera del repo** en
+`../blanca-fotos-originales-backup/` (backup del cliente). Solo se versionan las WebP de `public/`.
+
+### Hallazgos relevantes
+- **Dos sesiones:** 14 may (huipil + cristales, mar **turquesa caribeño = México**) y 21 may
+  (cristales sobre roca, costa con pinos = **parece Mallorca**). Decisión: usar las actuales ahora
+  con `alt` evocador-neutro (sin afirmar "Mallorca" donde la imagen lo contradiga).
+- **Sin caras de terceros** salvo dos fotos de boda (ver Privacidad).
+
+### Home (9 imágenes — sustituyen las IA)
+| Original (`Image_*.jpeg`) | Archivo nuevo | Uso | Recorte | Nota |
+|---|---|---|---|---|
+| `20260514_233159_933` | `blanca-hero.webp` | Hero | 1080×1350 (4:5) | figura pequeña/baja — encaje editorial |
+| `20260514_233232_310` | `blanca-portrait.webp` | Retrato "Sobre Blanca" | 1000×1250 (4:5) | mejor retrato de rostro |
+| `20260514_233232_335` | `card-bodas.webp` | Card Bodas | 1200×900 (4:3) | manos en gesto ritual sobre huipil (nítida) |
+| `20260514_233232_356` | `card-baby-blessing.webp` | Card Baby Blessing | 1200×900 | manos en corazón |
+| `20260514_233103_703` | `card-picnic.webp` | Card Pícnic & Oráculo | 1200×900 | mazo del Oráculo propio (confirmado por Blanca) |
+| `20260514_233103_685` | `card-parejas.webp` | Card Compromiso | 1200×900 | amatista (detalle simbólico) |
+| `20260514_233159_989` | `card-despedidas.webp` | Card Despedida | 1200×900 | cristales chakras (detalle) |
+| `20260514_233232_378` | `card-coaching.webp` | Card Coaching | 1200×900 | de espaldas al mar (umbral) |
+| `20260514_233159_974` | `card-alquimia.webp` | Card Taller (NUEVA) | 1200×900 | producto "Brisa Áurica" |
+
+> Bodas/Compromiso/Despedida son **detalles simbólicos**, no documentación real de ceremonia
+> (faltan fotos de evento seguras). **Pendiente con Blanca:** que aporte fotos reales propias de
+> esas ceremonias o, si no las hay, buscar imágenes con licencia. La documentación real debería
+> venir de una sesión nueva en Mallorca.
+
+### Prensa — bloque "En los medios" (PUBLICADO)
+- `20260515_000820_731` → `prensa-the-playa-times.webp` (1100×1400, fit inside). **En vivo** en la
+  sección `Press.jsx` (#prensa). *The Playa Times* (thePlayaTimes.com), entrevista FR "Pour Votre
+  Grand Jour · TPT Rencontre Blanca Coutiño"; menciona su marca **Coucou Mexikoo** y "depuis 2013".
+- `20260515_000820_755` — *Novedades* (Quintana Roo), "5 recomendaciones para pedir matrimonio".
+  Reservada: **confirmar que Blanca aparece nombrada** antes de publicarla.
+
+### Privacidad / reserva (no publicar sin consentimiento)
+- `20260515_000820_794` — boda nocturna con **novios identificables** → **offline** hasta consentimiento (y baja calidad → no apta para web).
+- `20260515_000820_784` — sin caras identificables, pero baja resolución (borrosa) → **descartada de la home** (era card-bodas); candidata solo para álbum a tamaño pequeño.
+
+### Duplicados exactos borrados/ignorados (MD5)
+`233103_685 (1)`=`_685` · `233103_699 (1)`=`_699` · `233232_348`=`233159_979` · `233232_366`=`233159_999` · `233232_382`=`233159_989`.
+
+### Descartes para web
+- `20260514_233040_618` — fondo de resort/tobogán, débil (no premium).
+
+### Álbum / Galería (Fase 3 — candidatas fuertes restantes)
+`233040_598`, `233040_628`, `233103_654`, `233103_676`, `233103_692`, `233103_699`, `233159_979`,
+`233159_985`, `233159_994`, `233159_999`, `233232_335`, `233232_361`, `233232_372`, `222117_494`/`_800` (una),
+`222117_580`, `222117_682`, `222117_763`, `222117_833`, `222117_902`.

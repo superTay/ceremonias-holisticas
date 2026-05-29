@@ -109,11 +109,10 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="relative lg:col-span-5"
         >
-          {/* Hero photo — Blanca officiating in a Mallorca cove */}
           <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-[#2D2926] shadow-2xl">
             <img
               src="/blanca-hero.webp"
-              alt="Blanca Coutiño sosteniendo un cuenco de cacao en una cala mallorquina al atardecer"
+              alt="Blanca Coutiño arrodillada en la orilla del mar al atardecer, vestido de lino con bordado maya, en un instante de recogimiento"
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
               fetchpriority="high"

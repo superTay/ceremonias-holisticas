@@ -9,7 +9,7 @@ export default function Catalog() {
 
   const cards = useMemo(() => {
     if (active === 'Todas') return catalog.cards
-    return catalog.cards.filter((c) => c.title === active)
+    return catalog.cards.filter((c) => c.category === active)
   }, [active])
 
   return (

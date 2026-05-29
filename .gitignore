@@ -36,3 +36,7 @@ build
 
 # Vercel
 .vercel
+
+# Fotos originales del cliente (sin optimizar, ~169 MB) — solo se versionan las WebP de public/.
+# Originales respaldados fuera del repo (ver docs/06-activos-fotos.md).
+public/fotos/

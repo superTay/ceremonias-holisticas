@@ -20,9 +20,15 @@
 - Animaciones (scroll reveal, marquee, filtro animado del catálogo, acordeón FAQ).
 - Deploy en Vercel. Conversión por deep-link a WhatsApp.
 
+## Estado de ejecución (actualizado 2026-05-29)
+
+- **Fase 1 (Contenido + voz): ✅ HECHA.** 7 ceremonias con naming ⭐, Coaching = 3 sesiones, +22 años, líneas rojas barridas, contacto centralizado en `content.js` (`whatsapp.url`). Build de producción verde; repaso visual pendiente en local.
+- **Fase 2 (Fotos): siguiente.** Ver `HANDOFF.md` (prompt de la fase) y `docs/06`.
+- **Fase 3 (Álbum/Prensa), Fase 4 (i18n `react-i18next`), Fase 5 (pulido): pendientes.**
+
 ## Tareas del MVP (orden sugerido)
 
-### 1. Contenido — actualizar `src/data/content.js`
+### 1. Contenido — actualizar `src/data/content.js` — ✅ HECHO (2026-05-29)
 - Pasar el catálogo de **6 a 7 ceremonias** (añadir **Compromiso** y **Taller Alquímico**; unir **Pícnic + Oráculo**). Datos en `docs/04-ceremonias.md`.
 - Aplicar el **naming** elegido (o las recomendaciones marcadas con ⭐ hasta que Blanca decida).
 - Reescribir todo el copy en **voz de marca** (`docs/02`): hero, sub, about, testimonios, FAQ, WhatsApp.
@@ -53,10 +59,10 @@
 - Revisar metadatos / OG por idioma.
 
 ## Decisiones técnicas a resolver
-- **Número/canal de WhatsApp definitivo:** el código del prototipo usa `wa.me/34678312884`; el material del cliente menciona también `+34 665 17 55 56` y el email `etessecoutinob@yahoo.com`. **Confirmar cuáles son los de producción** antes de publicar.
-- **i18n:** elegir enfoque (sin librería vs `react-i18next`) según el roadmap de blog.
-- **Imágenes:** pipeline de optimización (script o manual) y política de versionado (ver `docs/06`).
-- **Coaching:** reconciliar "6 sesiones" (prototipo) vs "3 sesiones" (material nuevo) — `docs/04`.
+- **Número/canal de WhatsApp definitivo:** ⏳ TBD. El prototipo usaba `wa.me/34678312884` desalineado con el número mostrado; ya unificado a un placeholder coherente `+34 665 17 55 56` → `wa.me/34665175556` en `content.js` (`whatsapp.url`). **Confirmar el de producción** (y el email) con Blanca antes de publicar.
+- **i18n:** ✅ decidido = **`react-i18next`**, diferido a la Fase 4. Hasta entonces `content.js` se mantiene como fuente ES única.
+- **Imágenes:** ⏳ Fase 2. Pipeline a elegir (`sharp` recomendado vs `sips` nativo) y política de versionado (solo WebP optimizadas; ver `docs/06`).
+- **Coaching:** ✅ resuelto = **3 sesiones** (cierre/transición/renacimiento), ya reflejado en `content.js`.
 
 ## Roadmap posterior al MVP (fase 2)
 - **Páginas dedicadas por servicio** (sobre todo Bodas y **Eventos de Villa de lujo**, el segmento premium).
