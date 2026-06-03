@@ -16,7 +16,7 @@ export const contact = {
 // Google Calendar de Blanca y envía las confirmaciones por email de forma nativa.
 // TBD Blanca: crear la cuenta de Cal.com y sustituir `calLink` por el link real (ver HANDOFF).
 export const booking = {
-  calLink: 'blanca-coutino/llamada-diseno', // PLACEHOLDER — link público real de Cal.com
+  calLink: 'rick', // DEMO temporal (calendario público de Cal.com) — sustituir por el link real de Blanca
   brandColor: '#5C3A21', // accent-cacao — el calendario hereda la marca
 }
 
