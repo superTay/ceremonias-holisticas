@@ -59,7 +59,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-5 lg:flex">
             <LangToggle label={nav.langLabel} />
-            <a href="#contacto" className="btn-primary">
+            <a href="#reservar" className="btn-primary">
               {nav.cta}
             </a>
           </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <a
-                  href="#contacto"
+                  href="#reservar"
                   onClick={() => setOpen(false)}
                   className="btn-primary w-full"
                 >

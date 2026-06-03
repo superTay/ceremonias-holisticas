@@ -77,7 +77,7 @@ export default function Hero() {
             }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <a href="#contacto" className="btn-primary">
+            <a href="#reservar" className="btn-primary">
               {hero.primaryCta}
               <ArrowRight size={16} />
             </a>

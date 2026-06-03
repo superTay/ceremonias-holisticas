@@ -11,6 +11,15 @@ export const contact = {
   location: 'Santa Ponça · Mallorca · ES',
 }
 
+// Reservas (Cal.com) — datos no textuales, idénticos en todos los idiomas.
+// El visitante reserva una "llamada de diseño" gratuita; Cal.com sincroniza con el
+// Google Calendar de Blanca y envía las confirmaciones por email de forma nativa.
+// TBD Blanca: crear la cuenta de Cal.com y sustituir `calLink` por el link real (ver HANDOFF).
+export const booking = {
+  calLink: 'blanca-coutino/llamada-diseno', // PLACEHOLDER — link público real de Cal.com
+  brandColor: '#5C3A21', // accent-cacao — el calendario hereda la marca
+}
+
 // Precio por id de ceremonia. `amount` en formato europeo (válido en ES y EN).
 // `per: true` → precio por persona. `onRequest: true` → "a consultar / on request".
 export const prices = {

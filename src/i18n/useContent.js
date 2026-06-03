@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import i18n from './index.js'
-import { contact, prices } from '../data/shared.js'
+import { contact, prices, booking as bookingConfig } from '../data/shared.js'
 
 // Devuelve el objeto de contenido del idioma activo (mismo shape que el antiguo content.js),
 // fusionando los datos no textuales single-source de shared.js (contacto y precios).
@@ -34,6 +34,15 @@ export function useContent() {
         ...c.whatsapp,
         url: contact.url,
         secondary: `${c.whatsapp.secondaryPrefix} ${contact.phone}`,
+      },
+      booking: {
+        ...c.booking,
+        calLink: bookingConfig.calLink,
+        brandColor: bookingConfig.brandColor,
+        // WhatsApp pre-rellenado para el panel de confirmación tras reservar.
+        whatsappUrl: `${contact.url}?text=${encodeURIComponent(
+          c.booking.success.whatsappText
+        )}`,
       },
       footer: {
         ...c.footer,

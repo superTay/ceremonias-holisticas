@@ -28,6 +28,7 @@ export default {
       { label: 'About Blanca', href: '#sobre' },
       { label: 'Gallery', href: '#galeria' },
       { label: 'Testimonials', href: '#testimonios' },
+      { label: 'Book', href: '#reservar' },
       { label: 'Contact', href: '#contacto' },
     ],
     cta: 'Check Availability',
@@ -465,6 +466,22 @@ export default {
           time: '10:46  · typing…',
         },
       ],
+    },
+  },
+
+  booking: {
+    eyebrow: 'BOOK · DESIGN CALL',
+    headline: 'Choose your moment. We design your ceremony together.',
+    sub: 'A 20-minute call, free and with no obligation, to hear your intention and guide you. Pick the slot that suits you best; you’ll get your confirmation right away.',
+    altPrefix: 'Or if you’d rather talk first,',
+    altCta: 'message Blanca on WhatsApp',
+    loading: 'Loading the calendar…',
+    success: {
+      title: 'Your call is booked ✨',
+      body: 'You’ll receive a confirmation email with all the details. If you like, share your intention with Blanca on WhatsApp so she can prepare for your conversation.',
+      whatsappCta: 'Message Blanca on WhatsApp',
+      whatsappText:
+        'Hi Blanca, I’ve just booked a design call with you. I’d love to tell you about…',
     },
   },
 

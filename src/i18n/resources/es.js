@@ -25,6 +25,7 @@ export default {
       { label: 'Sobre Blanca', href: '#sobre' },
       { label: 'Galería', href: '#galeria' },
       { label: 'Testimonios', href: '#testimonios' },
+      { label: 'Reservar', href: '#reservar' },
       { label: 'Contacto', href: '#contacto' },
     ],
     cta: 'Consultar Disponibilidad',
@@ -462,6 +463,22 @@ export default {
           time: '10:46  · escribiendo…',
         },
       ],
+    },
+  },
+
+  booking: {
+    eyebrow: 'RESERVA · LLAMADA DE DISEÑO',
+    headline: 'Elige tu momento. Diseñamos tu ceremonia juntas.',
+    sub: 'Una llamada de 20 minutos, sin coste ni compromiso, para escuchar tu intención y orientarte. Reserva el hueco que mejor te encaje; recibirás la confirmación al instante.',
+    altPrefix: 'O si prefieres una conversación primero,',
+    altCta: 'escríbele a Blanca por WhatsApp',
+    loading: 'Cargando el calendario…',
+    success: {
+      title: 'Tu llamada está reservada ✨',
+      body: 'Recibirás un email de confirmación con todos los detalles. Si quieres, adelántale tu intención a Blanca por WhatsApp para que prepare vuestra conversación.',
+      whatsappCta: 'Escribir a Blanca por WhatsApp',
+      whatsappText:
+        'Hola Blanca, acabo de reservar una llamada de diseño contigo. Me gustaría contarte sobre…',
     },
   },
 

@@ -6,6 +6,7 @@ import Testimonials from './components/Testimonials'
 import Press from './components/Press'
 import Gallery from './components/Gallery'
 import FAQ from './components/FAQ'
+import Booking from './components/Booking'
 import WhatsAppClose from './components/WhatsAppClose'
 import Footer from './components/Footer'
 import { useDocumentMeta } from './i18n/useDocumentMeta'
@@ -24,6 +25,7 @@ export default function App() {
         <Gallery />
         <Testimonials />
         <FAQ />
+        <Booking />
         <WhatsAppClose />
       </main>
       <Footer />
