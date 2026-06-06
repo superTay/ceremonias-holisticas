@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
@@ -97,13 +98,13 @@ export default function About() {
           {/* CTAs */}
           <Reveal delay={0.5}>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#contacto" className="btn-primary">
+              <Link to="/contact" className="btn-primary">
                 {about.primaryCta}
                 <ArrowRight size={16} />
-              </a>
-              <a href="#ceremonias" className="btn-ghost">
+              </Link>
+              <Link to="/ceremonies" className="btn-ghost">
                 {about.secondaryCta}
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>

@@ -3,27 +3,30 @@ export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
-      // Tokens extraídos directamente del archivo blanca.pen → variables
+      // Paleta OOL Experiences (alineada al logo: crema, salvia/oliva, terracota/arcilla,
+      // turquesa, contorno carbón). Se conservan los nombres semánticos para no romper
+      // referencias existentes; los hex viajan hacia la nueva identidad.
       colors: {
         surface: {
-          primary: '#F5F2E9',
-          secondary: '#E8E4D8',
-          deep: '#2D2926',
+          primary: '#F1ECDB',   // crema fondo del logo
+          secondary: '#E5DDC6', // crema más profundo
+          deep: '#1F1B17',      // carbón del contorno
         },
         foreground: {
-          primary: '#2D2926',
-          secondary: '#5E5954',
-          muted: '#8C8782',
-          'on-deep': '#F5F2E9',
+          primary: '#23201C',
+          secondary: '#5C5448',
+          muted: '#8A8273',
+          'on-deep': '#F1ECDB',
         },
         accent: {
-          primary: '#7D6B3D',
-          secondary: '#4A3F24',
-          cacao: '#5C3A21',
-          clay: '#B8865B',
+          primary: '#7A8B5F',    // verde salvia/oliva (eyebrows, acentos botánicos)
+          secondary: '#4F5A3A',  // salvia profundo
+          cacao: '#B8623F',      // terracota del logo · color de acción (CTAs)
+          clay: '#D49574',       // arcilla clara (decorativo cálido)
+          turquoise: '#2E8C8C',  // turquesa del glifo central · acentos puntuales
         },
         border: {
-          subtle: '#DCD8CB',
+          subtle: '#D8CFB8',
         },
       },
       fontFamily: {

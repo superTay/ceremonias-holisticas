@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Check, ArrowUpRight } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
@@ -98,6 +99,11 @@ export default function Catalog() {
                   <h3 className="font-heading text-2xl text-foreground-primary">
                     {card.title}
                   </h3>
+                  {card.claim && (
+                    <p className="mt-3 font-heading italic text-base text-foreground-primary">
+                      {card.claim}
+                    </p>
+                  )}
                   <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
                     {card.body}
                   </p>
@@ -123,19 +129,28 @@ export default function Catalog() {
                     <span className="text-[13px] font-medium text-foreground-primary">
                       {card.price}
                     </span>
-                    <a
-                      href="#contacto"
+                    <Link
+                      to="/contact"
                       className="inline-flex items-center gap-1 text-xs font-medium text-accent-primary transition-all duration-300 group-hover:gap-2"
                     >
                       {catalog.cardCta}
                       <ArrowUpRight size={14} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.article>
             ))}
           </AnimatePresence>
         </div>
+
+        {/* Disclaimer anti-presión */}
+        {catalog.disclaimer && (
+          <Reveal delay={0.15}>
+            <p className="mt-10 text-center text-sm italic text-foreground-muted">
+              {catalog.disclaimer}
+            </p>
+          </Reveal>
+        )}
 
         {/* CTA banner */}
         <Reveal delay={0.2} className="mt-16">
@@ -148,9 +163,9 @@ export default function Catalog() {
                 {catalog.ctaSub}
               </p>
             </div>
-            <a href="#contacto" className="btn-primary flex-none">
+            <Link to="/contact" className="btn-primary flex-none">
               {catalog.ctaBtn}
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

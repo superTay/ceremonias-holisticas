@@ -4,29 +4,35 @@
 
 export default {
   meta: {
-    title: 'Ceremonias Holísticas · Blanca Coutiño',
+    title: 'OOL Experiences · Ceremonias Holísticas en Mallorca',
     description:
-      'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Diseñadas y facilitadas por Blanca Coutiño en Mallorca.',
-    ogTitle: 'Ceremonias Holísticas · Blanca Coutiño',
+      'OOL Experiences: ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Fundadas por Blanca Coutiño en Mallorca.',
+    ogTitle: 'OOL Experiences · Ceremonias Holísticas en Mallorca',
     ogDescription:
       'Ceremonias diseñadas para los momentos que no se repiten. En las calas y fincas de Mallorca.',
     ogLocale: 'es_ES',
+    // Label por ruta para componer el <title> (ver useDocumentMeta).
+    // La ruta '/' no añade label: queda solo el title de marca.
+    pages: {
+      ceremonies: 'Ceremonias',
+      about: 'Sobre Blanca',
+      gallery: 'Galería',
+      contact: 'Contacto',
+    },
   },
 
   announcement:
     'Consulta de diseño sin compromiso · Diseñemos tu ceremonia a medida',
 
   nav: {
-    brand: 'Ceremonias Holísticas',
-    brandAria: 'Inicio · Ceremonias Holísticas',
+    brand: 'OOL Experiences',
+    brandAria: 'Inicio · OOL Experiences',
     links: [
-      { label: 'Inicio', href: '#inicio' },
-      { label: 'Ceremonias', href: '#ceremonias' },
-      { label: 'Sobre Blanca', href: '#sobre' },
-      { label: 'Galería', href: '#galeria' },
-      { label: 'Testimonios', href: '#testimonios' },
-      { label: 'Reservar', href: '#reservar' },
-      { label: 'Contacto', href: '#contacto' },
+      { label: 'Inicio', to: '/' },
+      { label: 'Ceremonias', to: '/ceremonies' },
+      { label: 'Sobre Blanca', to: '/about' },
+      { label: 'Galería', to: '/gallery' },
+      { label: 'Contacto', to: '/contact' },
     ],
     cta: 'Consultar Disponibilidad',
     openMenu: 'Abrir menú',
@@ -35,13 +41,13 @@ export default {
   },
 
   hero: {
-    eyebrow: 'CEREMONIAS HOLÍSTICAS · MALLORCA & DESTINO',
+    eyebrow: 'OOL · CEREMONIAS DE CORAZÓN',
     headline:
-      'Ceremonias para los momentos que no se repiten. Diseñadas como un umbral, frente al mar de Mallorca.',
-    headlineHighlight: 'umbral',
-    sub: 'Bodas, blessings y rituales íntimos en las calas y fincas de Mallorca. Más de 22 años entre la hotelería de lujo y las tradiciones ancestrales, diseñados 100% a medida por Blanca Coutiño.',
-    primaryCta: 'Reservar mi llamada de diseño',
-    secondaryCta: 'Ver Ceremonias',
+      'Ceremonias que honran tus raíces, tu historia y tu energía',
+    headlineHighlight: 'raíces',
+    sub: 'Rituales a medida en Mallorca, donde la sabiduría ancestral se cuida con la precisión de un hotel de lujo. Un momento para volver a ti.',
+    primaryCta: 'Diseñemos tu ceremonia',
+    secondaryCta: 'Ver experiencias',
     badges: ['Ceremonias frente al Mediterráneo', '+22 años de trayectoria'],
     nextCeremony: {
       label: 'PRÓXIMA CEREMONIA',
@@ -50,6 +56,56 @@ export default {
     },
     proof:
       '«Nuestra boda no fue un evento, fue un umbral.» — Lucía & Marc, Es Trenc',
+  },
+
+  // Bloque "Qué es OOL" (Home). Si falta el copy en otro idioma, el componente
+  // no renderiza la sección (defensivo).
+  whatIsOol: {
+    eyebrow: 'QUÉ ES OOL',
+    headline: 'Ool es la palabra maya para corazón',
+    paragraphs: [
+      '*Ool* es la palabra maya para corazón. También para alma, para centro. De ahí parte todo lo que hacemos: ceremonias pensadas para que vuelvas a tu centro.',
+      'No celebramos eventos. Acompañamos momentos: una boda, la llegada de un bebé, un cierre que duele, un comienzo que pide ser honrado. Cada experiencia se diseña a tu medida, desde tu intención y tu historia.',
+      'Fusionamos las tradiciones ancestrales (maya, azteca, céltica) con el ayurveda y el cuidado de la hotelería de lujo. Lo que tiene base, lo anclamos en ella. Lo que es belleza, lo cuidamos hasta el último detalle.',
+    ],
+    whyMaya: {
+      title: 'Por qué lo maya',
+      body: 'La herencia maya es nuestra raíz, no nuestro disfraz. El copal, los cuatro elementos, los cuarzos y el cacao no están para impresionar. Están porque tienen sentido dentro del ritual: marcan un antes y un después, te devuelven al cuerpo y a lo importante.',
+    },
+    takeaways: {
+      title: 'Qué te llevas',
+      items: [
+        'Un espacio cuidado para reconectar contigo y con quienes te acompañan.',
+        'Un ritual a tu medida, sin guiones prestados.',
+        'La calma de que cada detalle está pensado y sostenido.',
+      ],
+    },
+  },
+
+  // Bloque "El símbolo OOL" (Home). Storytelling del logo.
+  symbol: {
+    eyebrow: 'EL SÍMBOLO',
+    headline: 'El corazón de Ool',
+    intro:
+      'El logotipo nace del glifo maya *Ool*: corazón, alma, centro. Es una interpretación contemporánea, no una pieza de museo, y por eso lo entiende cualquiera sin necesidad de explicación.',
+    parts: [
+      {
+        part: 'El laberinto',
+        body: 'del centro es tu viaje hacia dentro.',
+      },
+      {
+        part: 'Las espirales',
+        body: 'son los ciclos que atraviesas: lo que se va, lo que vuelve.',
+      },
+      {
+        part: 'La greca',
+        body: 'inspirada en Chichén Itzá y Uxmal, habla de agua, lluvia y abundancia.',
+      },
+      {
+        part: 'La turquesa',
+        body: 'que para los mayas valía más que el oro, es tu esencia preciosa.',
+      },
+    ],
   },
 
   categories: [
@@ -80,13 +136,16 @@ export default {
     priceFrom: 'desde',
     priceOnRequest: 'a consultar',
     pricePer: '/pers',
-    cardCta: 'Consultar Disponibilidad',
+    cardCta: 'Ver esta experiencia',
+    disclaimer:
+      'Sin compromiso. Primero hablamos y vemos si encaja contigo.',
     cards: [
       {
         id: 'bodas',
         tag: 'BODAS & VOTOS',
         category: 'Bodas Holísticas',
         title: 'Unión de Almas Mayas',
+        claim: 'Una boda diseñada como un viaje, no como un protocolo.',
         body: 'Una boda o renovación de votos vivida como viaje energético, no como protocolo. Selláis vuestro vínculo desde la raíz —copal blanco, los cuatro elementos y un amarre de manos tejido a mano— frente al mar o en finca mediterránea.',
         bullets: [
           'Purificación con copal y apertura de los cuatro rumbos',
@@ -103,6 +162,7 @@ export default {
         tag: 'BABY BLESSING',
         category: 'Baby Blessing',
         title: 'Tramuntana Baby Soul Ritual',
+        claim: 'Un círculo de amor para dar la bienvenida a una nueva vida.',
         body: 'Una bienvenida consciente para el nuevo ser, alternativa serena al bautizo tradicional. Un círculo de amor con los cuatro elementos para honrar al bebé, sostener a la madre y enraizar a la familia.',
         bullets: [
           'Círculo íntimo con los cuatro elementos',
@@ -119,6 +179,8 @@ export default {
         tag: 'PÍCNIC & ORÁCULO',
         category: 'Pícnic & Oráculo',
         title: 'El Festín de las Alas',
+        claim:
+          'Alta gastronomía mediterránea y una lectura de oráculo para guiarte.',
         body: 'Alta gastronomía mediterránea y un círculo angelical frente a una cala íntima. El Oráculo Angelical acompaña como guía y autoconocimiento —nunca predicción—: un espejo suave para ganar claridad y decidir desde la calma.',
         bullets: [
           'Círculo de Ángeles y lectura de Oráculo (guía, no predicción)',
@@ -135,6 +197,7 @@ export default {
         tag: 'COMPROMISO',
         category: 'Compromiso',
         title: 'El Lazo del Destino',
+        claim: 'Para dos. Una pedida en un rincón secreto de Mallorca.',
         body: "Una ceremonia íntima solo para dos: una propuesta de matrimonio o un recompromiso consciente. Romanticismo mediterráneo y la sabiduría maya del In Lak'ech, en un rincón ultraprivado de la isla.",
         bullets: [
           'Solo para vosotros dos · spot ultraprivado',
@@ -151,6 +214,8 @@ export default {
         tag: 'DESPEDIDA',
         category: 'Despedida de Soltera',
         title: 'El Círculo de Ixchel',
+        claim:
+          'Una despedida con alma: hermandad, cacao y buenos deseos.',
         body: 'Una despedida de soltera con alma, inspirada en la diosa maya Ixchel. Lejos del confeti, cerca del corazón: un contenedor de amor y empoderamiento femenino para la novia y su tribu.',
         bullets: [
           'Grupos de 6 a 14 mujeres',
@@ -167,6 +232,8 @@ export default {
         tag: 'COACHING',
         category: 'Coaching Ritual',
         title: 'El Retorno a la Luz',
+        claim:
+          'Tres encuentros para cerrar un ciclo y abrir el siguiente.',
         body: 'Un proceso privado de tres encuentros para cruzar un umbral vital: un duelo, un divorcio, un cambio de rumbo. Numerología terapéutica y rituales de tierra y fuego como acompañamiento que complementa tu bienestar, nunca como tratamiento médico.',
         bullets: [
           '3 sesiones: cierre, transición y renacimiento',
@@ -183,6 +250,8 @@ export default {
         tag: 'TALLER',
         category: 'Taller Alquímico',
         title: 'Alquimia de las 3 Aguas',
+        claim:
+          'Creas tu propia bruma: amor, abundancia o equilibrio.',
         body: 'Un taller sensorial donde cada persona alquimiza su propia bruma áurica intencionada. Eliges una de tres frecuencias —Amor, Abundancia o Equilibrio— con botánica de la isla, aguas infusionadas y cristales. Ideal para grupos y como complemento de otras ceremonias.',
         bullets: [
           'Tres frecuencias: Afrodita, Oro Maya o Tramuntana',
@@ -197,19 +266,19 @@ export default {
     ],
     ctaTitle: '¿No encuentras tu ceremonia?',
     ctaSub: 'Diseñamos rituales a medida desde la raíz. Cuéntanos tu intención.',
-    ctaBtn: 'Hablar con Blanca',
+    ctaBtn: 'Diseñemos tu ceremonia',
   },
 
   about: {
-    eyebrow: 'SOBRE BLANCA',
-    headline:
-      'Más de dos décadas entre México, Francia y España. Hoy, en Mallorca. La misma obsesión: que el momento te marque.',
+    eyebrow: 'QUIÉN ESTÁ DETRÁS DE OOL',
+    headline: 'Quién está detrás de OOL',
     paragraphs: [
-      'Soy Blanca Coutiño. Llegué a Mallorca con más de 22 años de trayectoria y más de una década diseñando ceremonias y bodas en la Riviera Maya — primero como wedding planner en Playa del Carmen, después como facilitadora holística para mujeres, parejas y familias.',
-      'Mi trabajo une dos mundos que rara vez conviven: la precisión de la hotelería de lujo internacional y la profundidad de las tradiciones ancestrales certificadas. Soy cosmetóloga y terapeuta corporal, Master Reiki y terapeuta en Flores de Bach; formada entre la gestión hotelera en Francia y la herbolaria aprendida con los pueblos de la selva lacandona.',
-      'Fui pionera en bodas legales LGBT en la Riviera Maya, acompañando a parejas de todo el mundo. Cada ritual lo diseño contigo: tu intención, tu cuerpo y tu historia son el mapa.',
+      'Detrás de OOL está Blanca Coutiño: facilitadora, terapeuta y organizadora de eventos con veintidós años de oficio entre México, Francia y España.',
+      'Su recorrido tiene dos columnas que rara vez van juntas. Por un lado, la precisión: gestión hotelera de lujo, cosmetología, terapia corporal clínica. Por otro, la profundidad: Reiki, Flores de Bach, ayurveda y años de aprendizaje de alquimia y herbolaria con comunidades del sur de México.',
+      'Tras más de una década diseñando ceremonias y bodas en la Riviera Maya —fue pionera en bodas legales LGBT en la región—, hoy trae su práctica a Mallorca.',
+      'Esa doble formación es lo que distingue a OOL: la sensibilidad de lo ancestral, con el rigor de quien sabe sostener un evento de principio a fin.',
     ],
-    pullQuote: 'No facilito un servicio. Sostengo un umbral.',
+    pullQuote: 'No facilitamos un servicio. Sostenemos un umbral.',
     pillars: [
       {
         title: 'Precisión de lujo',
@@ -483,28 +552,36 @@ export default {
   },
 
   footer: {
-    brand: 'Ceremonias Holísticas',
-    desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Más de 22 años de trayectoria entre Riviera Maya y Mallorca, diseñadas y facilitadas por Blanca Coutiño.',
+    brand: 'OOL Experiences',
+    desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Más de 22 años de trayectoria entre Riviera Maya y Mallorca, fundadas por Blanca Coutiño.',
     columns: [
       {
         title: 'Ceremonias',
+        // Todos los enlaces a /ceremonies (filtros internos llegan en otra fase).
         links: [
-          'Bodas Holísticas',
-          'Compromiso',
-          'Baby Blessing',
-          'Despedida de Soltera',
-          'Pícnic & Oráculo',
-          'Coaching Ritual',
-          'Taller Alquímico',
-          'Rituales a medida',
+          { label: 'Bodas Holísticas', to: '/ceremonies' },
+          { label: 'Compromiso', to: '/ceremonies' },
+          { label: 'Baby Blessing', to: '/ceremonies' },
+          { label: 'Despedida de Soltera', to: '/ceremonies' },
+          { label: 'Pícnic & Oráculo', to: '/ceremonies' },
+          { label: 'Coaching Ritual', to: '/ceremonies' },
+          { label: 'Taller Alquímico', to: '/ceremonies' },
+          { label: 'Rituales a medida', to: '/ceremonies' },
         ],
       },
       {
         title: 'Estudio',
-        links: ['Sobre Blanca', 'Testimonios', 'Prensa & Medios', 'Contacto'],
+        links: [
+          { label: 'Sobre Blanca', to: '/about' },
+          { label: 'Testimonios', to: '/about' },
+          { label: 'Prensa & Medios', to: '/about' },
+          { label: 'Galería', to: '/gallery' },
+          { label: 'Contacto', to: '/contact' },
+        ],
       },
       {
         title: 'Legal & Fiscal',
+        // Strings = enlaces inertes hasta que existan las páginas legales.
         links: [
           'Aviso de Privacidad',
           'Términos & Condiciones',
@@ -515,6 +592,6 @@ export default {
     ],
     gdpr: 'Datos protegidos · RGPD',
     lang: 'Español (ES)',
-    copy: '© 2026 Ceremonias Holísticas · Blanca Coutiño. Hecho con copal y código en Santa Ponça, Mallorca.',
+    copy: '© 2026 OOL Experiences. Hecho con copal y código en Santa Ponça, Mallorca.',
   },
 }

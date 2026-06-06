@@ -98,7 +98,9 @@ export default function Booking() {
             <p className="mt-8 text-center text-sm text-foreground-muted">
               {booking.altPrefix}{' '}
               <a
-                href="#contacto"
+                href={booking.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="link-underline font-medium text-accent-cacao"
               >
                 {booking.altCta}

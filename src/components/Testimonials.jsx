@@ -1,4 +1,5 @@
 import { Star, Quote } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
@@ -107,9 +108,9 @@ export default function Testimonials() {
         {/* CTA */}
         <Reveal delay={0.3}>
           <div className="mt-16 flex justify-center">
-            <a href="#contacto" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               {testimonials.cta}
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

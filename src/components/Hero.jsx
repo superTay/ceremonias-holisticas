@@ -1,5 +1,6 @@
-import { ArrowRight, Calendar, Quote } from 'lucide-react'
+import { ArrowRight, Quote } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
 
 export default function Hero() {
@@ -77,16 +78,16 @@ export default function Hero() {
             }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
-            <a href="#reservar" className="btn-primary">
+            <Link to="/contact" className="btn-primary">
               {hero.primaryCta}
               <ArrowRight size={16} />
-            </a>
-            <a
-              href="#ceremonias"
+            </Link>
+            <Link
+              to="/ceremonies"
               className="link-underline text-sm font-medium text-foreground-primary"
             >
               {hero.secondaryCta} →
-            </a>
+            </Link>
           </motion.div>
 
           {/* Trust badges */}
@@ -115,39 +116,12 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-[#2D2926] shadow-2xl">
             <img
-              src="/blanca-hero.webp"
-              alt="Blanca Coutiño arrodillada en la orilla del mar al atardecer, vestido de lino con bordado maya, en un instante de recogimiento"
+              src="/hero-entrada.webp"
+              alt="Blanca Coutiño sostiene en el cuenco de las manos una ofrenda dorada del mar, vestido de lino con bordado, frente a las olas turquesa del Caribe"
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
               fetchpriority="high"
             />
-            {/* Soft gradient at the bottom so the date card stays legible */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"
-            />
-
-            {/* Next ceremony chip */}
-            <div className="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-surface-primary/95 px-3 py-1.5 backdrop-blur">
-              <span className="h-1.5 w-1.5 animate-breathe rounded-full bg-accent-cacao" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-accent-cacao">
-                {hero.nextCeremony.label}
-              </span>
-            </div>
-
-            <div className="absolute bottom-5 left-5 right-5 rounded-token-lg bg-surface-primary/95 p-5 backdrop-blur">
-              <div className="flex items-start gap-3">
-                <Calendar size={18} className="mt-0.5 text-accent-cacao" />
-                <div>
-                  <p className="font-heading text-xl text-foreground-primary">
-                    {hero.nextCeremony.date}
-                  </p>
-                  <p className="mt-1 text-sm text-foreground-secondary">
-                    {hero.nextCeremony.desc}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Floating proof quote */}

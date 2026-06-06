@@ -20,8 +20,8 @@
   }
 
   ::selection {
-    background: #5C3A21;
-    color: #F5F2E9;
+    background: #B8623F;
+    color: #F1ECDB;
   }
 
   /* Subtle grain overlay for warmth — applied at body level via ::before */

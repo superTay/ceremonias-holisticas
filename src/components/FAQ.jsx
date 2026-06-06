@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
@@ -77,12 +78,12 @@ export default function FAQ() {
             <p className="mt-10 text-sm text-foreground-secondary">
               {faq.footerText}{' '}
               <span className="text-foreground-muted">·</span>{' '}
-              <a
-                href="#contacto"
+              <Link
+                to="/contact"
                 className="link-underline font-medium text-accent-cacao"
               >
                 {faq.footerLink} →
-              </a>
+              </Link>
             </p>
           </Reveal>
         </div>

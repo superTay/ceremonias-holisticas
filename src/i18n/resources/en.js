@@ -7,29 +7,35 @@
 
 export default {
   meta: {
-    title: 'Holistic Ceremonies · Blanca Coutiño',
+    title: 'OOL Experiences · Holistic Ceremonies in Mallorca',
     description:
-      'Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. Designed and led by Blanca Coutiño in Mallorca.',
-    ogTitle: 'Holistic Ceremonies · Blanca Coutiño',
+      'OOL Experiences: Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. Founded by Blanca Coutiño in Mallorca.',
+    ogTitle: 'OOL Experiences · Holistic Ceremonies in Mallorca',
     ogDescription:
       'Ceremonies designed for the moments that never come twice. In the coves and fincas of Mallorca.',
     ogLocale: 'en_GB',
+    // Per-route label for the document <title> (see useDocumentMeta).
+    // Route '/' adds no label: only the brand title is shown.
+    pages: {
+      ceremonies: 'Ceremonies',
+      about: 'About Blanca',
+      gallery: 'Gallery',
+      contact: 'Contact',
+    },
   },
 
   announcement:
     'No-obligation design consultation · Let’s design your bespoke ceremony',
 
   nav: {
-    brand: 'Holistic Ceremonies',
-    brandAria: 'Home · Holistic Ceremonies',
+    brand: 'OOL Experiences',
+    brandAria: 'Home · OOL Experiences',
     links: [
-      { label: 'Home', href: '#inicio' },
-      { label: 'Ceremonies', href: '#ceremonias' },
-      { label: 'About Blanca', href: '#sobre' },
-      { label: 'Gallery', href: '#galeria' },
-      { label: 'Testimonials', href: '#testimonios' },
-      { label: 'Book', href: '#reservar' },
-      { label: 'Contact', href: '#contacto' },
+      { label: 'Home', to: '/' },
+      { label: 'Ceremonies', to: '/ceremonies' },
+      { label: 'About Blanca', to: '/about' },
+      { label: 'Gallery', to: '/gallery' },
+      { label: 'Contact', to: '/contact' },
     ],
     cta: 'Check Availability',
     openMenu: 'Open menu',
@@ -486,25 +492,31 @@ export default {
   },
 
   footer: {
-    brand: 'Holistic Ceremonies',
-    desc: 'Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. More than 22 years of practice between the Riviera Maya and Mallorca, designed and led by Blanca Coutiño.',
+    brand: 'OOL Experiences',
+    desc: 'Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. More than 22 years of practice between the Riviera Maya and Mallorca, founded by Blanca Coutiño.',
     columns: [
       {
         title: 'Ceremonies',
         links: [
-          'Holistic Weddings',
-          'Engagement',
-          'Baby Blessing',
-          'Bridal Farewell',
-          'Picnic & Oracle',
-          'Ritual Coaching',
-          'Alchemy Workshop',
-          'Bespoke rituals',
+          { label: 'Holistic Weddings', to: '/ceremonies' },
+          { label: 'Engagement', to: '/ceremonies' },
+          { label: 'Baby Blessing', to: '/ceremonies' },
+          { label: 'Bridal Farewell', to: '/ceremonies' },
+          { label: 'Picnic & Oracle', to: '/ceremonies' },
+          { label: 'Ritual Coaching', to: '/ceremonies' },
+          { label: 'Alchemy Workshop', to: '/ceremonies' },
+          { label: 'Bespoke rituals', to: '/ceremonies' },
         ],
       },
       {
         title: 'Studio',
-        links: ['About Blanca', 'Testimonials', 'Press & Media', 'Contact'],
+        links: [
+          { label: 'About Blanca', to: '/about' },
+          { label: 'Testimonials', to: '/about' },
+          { label: 'Press & Media', to: '/about' },
+          { label: 'Gallery', to: '/gallery' },
+          { label: 'Contact', to: '/contact' },
+        ],
       },
       {
         title: 'Legal & Tax',
@@ -518,6 +530,6 @@ export default {
     ],
     gdpr: 'Data protected · GDPR',
     lang: 'English (EN)',
-    copy: '© 2026 Holistic Ceremonies · Blanca Coutiño. Made with copal and code in Santa Ponça, Mallorca.',
+    copy: '© 2026 OOL Experiences. Made with copal and code in Santa Ponça, Mallorca.',
   },
 }

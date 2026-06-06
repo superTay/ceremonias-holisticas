@@ -1,5 +1,7 @@
 import { Mail, Phone, MapPin, Shield, Globe } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
+import Logo from './Logo'
 
 const contactIcons = [Mail, Phone, MapPin]
 
@@ -12,32 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3">
-              <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
-                <circle
-                  cx="20"
-                  cy="20"
-                  r="18"
-                  stroke="#5C3A21"
-                  strokeWidth="1.4"
-                />
-                <circle
-                  cx="20"
-                  cy="20"
-                  r="9"
-                  stroke="#5C3A21"
-                  strokeWidth="1.4"
-                />
-                <path
-                  d="M20 2 L20 38 M2 20 L38 20"
-                  stroke="#5C3A21"
-                  strokeWidth="1.4"
-                />
-              </svg>
-              <span className="font-heading text-xl italic text-foreground-primary">
-                {footer.brand}
-              </span>
-            </div>
+            <Logo variant="full" tone="dark" />
 
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground-secondary">
               {footer.desc}
@@ -69,16 +46,29 @@ export default function Footer() {
                   {col.title}
                 </h4>
                 <ul className="mt-4 space-y-2.5">
-                  {col.links.map((l) => (
-                    <li key={l}>
-                      <a
-                        href="#"
-                        className="text-sm text-foreground-secondary transition-colors hover:text-accent-cacao"
-                      >
-                        {l}
-                      </a>
-                    </li>
-                  ))}
+                  {col.links.map((l) => {
+                    // Soporta dos formas:
+                    //   - string                → enlace inerte (legal pendiente)
+                    //   - { label, to }         → ruta interna
+                    const isObject = typeof l === 'object' && l !== null
+                    const label = isObject ? l.label : l
+                    const to = isObject ? l.to : null
+                    const className =
+                      'text-sm text-foreground-secondary transition-colors hover:text-accent-cacao'
+                    return (
+                      <li key={label}>
+                        {to ? (
+                          <Link to={to} className={className}>
+                            {label}
+                          </Link>
+                        ) : (
+                          <span className={`${className} cursor-default`}>
+                            {label}
+                          </span>
+                        )}
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             ))}
