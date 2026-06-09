@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Logo variant="full" tone="dark" />
+            <Logo variant="full" tone="dark" markSrc="/logo-mark.webp" />
 
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-foreground-secondary">
               {footer.desc}

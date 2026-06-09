@@ -7,17 +7,38 @@
 export const contact = {
   url: 'https://wa.me/34665175556',
   phone: '+34 665 17 55 56',
-  email: 'etessecoutinob@yahoo.com',
+  email: 'oolexpriences@gmail.com',
   location: 'Santa Ponça · Mallorca · ES',
 }
 
-// Reservas (Cal.com) — datos no textuales, idénticos en todos los idiomas.
-// El visitante reserva una "llamada de diseño" gratuita; Cal.com sincroniza con el
-// Google Calendar de Blanca y envía las confirmaciones por email de forma nativa.
-// TBD Blanca: crear la cuenta de Cal.com y sustituir `calLink` por el link real (ver HANDOFF).
+// Reservas (Cal.eu) — datos no textuales, idénticos en todos los idiomas.
+// La cuenta de Blanca vive en la región europea (cal.eu, NO cal.com): el embed
+// debe forzar la instancia europea con `calOrigin` + `embedJsUrl`, o devuelve 404.
+// Cal.eu sincroniza con su Google Calendar y envía las confirmaciones por email.
+//
+// Modelo de reserva (decisión de Blanca):
+//   · Llamada de diseño (`llamada-diseno`): gratis e instantánea.
+//   · Ceremonias reservables: «Requires confirmation» + 48 h de antelación +
+//     depósito del 25 % por Bizum (instrucciones en la descripción del evento Cal).
+//     La reserva queda PENDIENTE hasta que Blanca aprueba (1 clic, no una llamada).
 export const booking = {
-  calLink: 'rick', // DEMO temporal (calendario público de Cal.com) — sustituir por el link real de Blanca
-  brandColor: '#5C3A21', // accent-cacao — el calendario hereda la marca
+  calOrigin: 'https://app.cal.eu',
+  embedJsUrl: 'https://app.cal.eu/embed/embed.js',
+  designCallLink: 'blanca-coutino/llamada-diseno', // llamada gratuita, instantánea
+  brandColor: '#B8623F', // accent-cacao OOL (terracota del logo) — el calendario hereda la marca
+  depositPct: 25,
+  bizumPhone: '', // TBD Blanca — número Bizum para el depósito (hoy vive en la descripción del evento Cal)
+}
+
+// Slugs de los eventos reservables en Cal.eu, por id de ceremonia.
+// OJO: los ids del código (baby/picnic/retorno/alquimia) NO coinciden con los
+// slugs de Cal.eu — este mapa es el puente. Solo las ceremonias reservables
+// aparecen aquí; las de alta organización (bodas/lazo/ixchel) van a WhatsApp.
+export const bookingLinks = {
+  baby: 'blanca-coutino/baby-blessing',
+  picnic: 'blanca-coutino/picnic-oraculo',
+  retorno: 'blanca-coutino/coaching',
+  alquimia: 'blanca-coutino/taller-alquimico',
 }
 
 // Precio por id de ceremonia. `amount` en formato europeo (válido en ES y EN).

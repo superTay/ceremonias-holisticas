@@ -16,7 +16,8 @@ export default function Booking() {
   useEffect(() => {
     let active = true
     ;(async () => {
-      const cal = await getCalApi({ namespace: NS })
+      // embedJsUrl fuerza la región europea (cal.eu); sin esto el embed va a cal.com y da 404.
+      const cal = await getCalApi({ namespace: NS, embedJsUrl: booking.embedJsUrl })
       if (!active) return
       cal('ui', {
         theme: 'light',
@@ -85,6 +86,7 @@ export default function Booking() {
                 <Cal
                   namespace={NS}
                   calLink={booking.calLink}
+                  calOrigin={booking.calOrigin}
                   config={{ layout: 'month_view', locale: lang }}
                   style={{ width: '100%', height: '100%', overflow: 'scroll' }}
                 />

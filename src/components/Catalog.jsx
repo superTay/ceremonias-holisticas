@@ -1,14 +1,53 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Check, ArrowUpRight } from 'lucide-react'
+import { getCalApi } from '@calcom/embed-react'
+import { useTranslation } from 'react-i18next'
+import { Check, CalendarCheck, MessageCircle } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
+// Namespace propio del catálogo (independiente del embed inline de la llamada de
+// diseño en Booking, que usa 'reserva'). Aquí solo abrimos popups de ceremonias.
+const NS = 'ceremonias'
+
 export default function Catalog() {
-  const { catalog } = useContent()
+  const { catalog, booking } = useContent()
+  const { i18n } = useTranslation('content')
+  const lang = i18n.resolvedLanguage || i18n.language
   // Filtro por índice (no por etiqueta): así sobrevive al cambio de idioma sin quedarse vacío.
   const [activeIdx, setActiveIdx] = useState(0)
+
+  // Inicializa el embed de Cal.eu una vez. Forzamos la región europea con
+  // embedJsUrl (en getCalApi) y calOrigin (en cada botón data-cal-origin),
+  // o el popup devolvería 404 contra cal.com. El brandColor hereda la marca.
+  useEffect(() => {
+    let active = true
+    ;(async () => {
+      const cal = await getCalApi({
+        namespace: NS,
+        embedJsUrl: booking.embedJsUrl,
+      })
+      if (!active) return
+      cal('ui', {
+        theme: 'light',
+        styles: { branding: { brandColor: booking.brandColor } },
+        hideEventTypeDetails: false,
+        layout: 'month_view',
+      })
+    })()
+    return () => {
+      active = false
+    }
+    // embedJsUrl/brandColor son estables (shared.js); inicializamos una sola vez.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  // Config serializada para los botones data-cal-config (locale = idioma activo).
+  const calConfig = useMemo(
+    () => JSON.stringify({ layout: 'month_view', locale: lang }),
+    [lang]
+  )
 
   const cards = useMemo(() => {
     if (activeIdx === 0) return catalog.cards
@@ -125,18 +164,39 @@ export default function Catalog() {
 
                   <div className="my-5 h-px w-full bg-border-subtle" />
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-3">
                     <span className="text-[13px] font-medium text-foreground-primary">
                       {card.price}
                     </span>
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-accent-primary transition-all duration-300 group-hover:gap-2"
-                    >
-                      {catalog.cardCta}
-                      <ArrowUpRight size={14} />
-                    </Link>
+                    {card.bookable ? (
+                      // Reservable: popup de Cal.eu (data-cal-*). Botón sólido = acción primaria.
+                      <button
+                        type="button"
+                        data-cal-namespace={NS}
+                        data-cal-link={card.calLink}
+                        data-cal-origin={booking.calOrigin}
+                        data-cal-config={calConfig}
+                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg bg-accent-cacao px-4 py-2 text-xs font-semibold text-foreground-on-deep transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-clay"
+                      >
+                        <CalendarCheck size={14} />
+                        {catalog.bookCta}
+                      </button>
+                    ) : (
+                      // A medida (bodas/lazo/ixchel): WhatsApp pre-rellenado. Botón outline = "hablemos antes".
+                      <a
+                        href={card.whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg border border-accent-cacao px-4 py-2 text-xs font-semibold text-accent-cacao transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-cacao hover:text-foreground-on-deep"
+                      >
+                        <MessageCircle size={14} />
+                        {catalog.bespokeCta}
+                      </a>
+                    )}
                   </div>
+                  <p className="mt-3 text-[11px] leading-snug text-foreground-muted">
+                    {card.bookable ? catalog.depositNote : catalog.bespokeNote}
+                  </p>
                 </div>
               </motion.article>
             ))}

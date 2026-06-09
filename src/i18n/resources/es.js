@@ -137,6 +137,14 @@ export default {
     priceOnRequest: 'a consultar',
     pricePer: '/pers',
     cardCta: 'Ver esta experiencia',
+    // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
+    bookCta: 'Reservar fecha',
+    bespokeCta: 'Hablemos primero',
+    depositNote: 'Reservas con el 25 %. El resto, el día de tu ceremonia.',
+    bespokeNote: 'Se diseña a medida, contigo. Empecemos por una conversación.',
+    // {title} se sustituye por el nombre de la ceremonia en useContent.
+    whatsappTemplate:
+      'Hola Blanca, me encantaría hablar sobre «{title}». Estoy pensando en…',
     disclaimer:
       'Sin compromiso. Primero hablamos y vemos si encaja contigo.',
     cards: [
@@ -538,7 +546,7 @@ export default {
   booking: {
     eyebrow: 'RESERVA · LLAMADA DE DISEÑO',
     headline: 'Elige tu momento. Diseñamos tu ceremonia juntas.',
-    sub: 'Una llamada de 20 minutos, sin coste ni compromiso, para escuchar tu intención y orientarte. Reserva el hueco que mejor te encaje; recibirás la confirmación al instante.',
+    sub: 'Una llamada de 30 minutos, sin coste ni compromiso, para escuchar tu intención y orientarte. Reserva el hueco que mejor te encaje; recibirás la confirmación al instante.',
     altPrefix: 'O si prefieres una conversación primero,',
     altCta: 'escríbele a Blanca por WhatsApp',
     loading: 'Cargando el calendario…',

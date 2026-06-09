@@ -168,13 +168,15 @@ function HomeCTA() {
           <p className="mt-6 text-lg leading-relaxed text-foreground-on-deep/80">
             {whatsapp.sub}
           </p>
-          <Link
-            to="/contact"
+          <a
+            href={whatsapp.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao px-7 py-3.5 text-sm font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-clay hover:-translate-y-0.5"
           >
             {whatsapp.cta}
             <ArrowRight size={16} />
-          </Link>
+          </a>
         </Reveal>
       </div>
     </section>
