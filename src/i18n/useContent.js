@@ -1,7 +1,12 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import i18n from './index.js'
-import { contact, prices, booking as bookingConfig } from '../data/shared.js'
+import {
+  contact,
+  prices,
+  booking as bookingConfig,
+  bookingLinks,
+} from '../data/shared.js'
 
 // Devuelve el objeto de contenido del idioma activo (mismo shape que el antiguo content.js),
 // fusionando los datos no textuales single-source de shared.js (contacto y precios).
@@ -25,10 +30,26 @@ export function useContent() {
       ...c,
       catalog: {
         ...c.catalog,
-        cards: c.catalog.cards.map((card) => ({
-          ...card,
-          price: formatPrice(card.id),
-        })),
+        // Cada card se enriquece según su vía de reserva:
+        //   · Reservable (baby/picnic/retorno/alquimia) → `calLink` para abrir el
+        //     popup de Cal.eu con botón «Reservar fecha».
+        //   · A medida (bodas/lazo/ixchel) → `whatsappUrl` pre-rellenado con el
+        //     nombre de la ceremonia, botón «Hablemos primero».
+        cards: c.catalog.cards.map((card) => {
+          const calLink = bookingLinks[card.id]
+          const bookable = Boolean(calLink)
+          return {
+            ...card,
+            price: formatPrice(card.id),
+            bookable,
+            calLink: calLink || null,
+            whatsappUrl: bookable
+              ? null
+              : `${contact.url}?text=${encodeURIComponent(
+                  c.catalog.whatsappTemplate.replace('{title}', card.title)
+                )}`,
+          }
+        }),
       },
       whatsapp: {
         ...c.whatsapp,
@@ -37,8 +58,13 @@ export function useContent() {
       },
       booking: {
         ...c.booking,
-        calLink: bookingConfig.calLink,
+        // Llamada de diseño gratuita (instantánea). El embed fuerza la región
+        // europea con calOrigin + embedJsUrl, o Cal.eu devolvería 404.
+        calLink: bookingConfig.designCallLink,
+        calOrigin: bookingConfig.calOrigin,
+        embedJsUrl: bookingConfig.embedJsUrl,
         brandColor: bookingConfig.brandColor,
+        depositPct: bookingConfig.depositPct,
         // WhatsApp pre-rellenado para el panel de confirmación tras reservar.
         whatsappUrl: `${contact.url}?text=${encodeURIComponent(
           c.booking.success.whatsappText

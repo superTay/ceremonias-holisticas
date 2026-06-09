@@ -90,6 +90,14 @@ export default {
     priceOnRequest: 'on request',
     pricePer: '/person',
     cardCta: 'Check Availability',
+    // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
+    bookCta: 'Book a date',
+    bespokeCta: "Let's talk first",
+    depositNote: 'Reserve with 25%. The rest, on your ceremony day.',
+    bespokeNote: 'Tailored end to end, with you. Let’s start with a conversation.',
+    // {title} se sustituye por el nombre de la ceremonia en useContent.
+    whatsappTemplate:
+      'Hi Blanca, I’d love to talk about «{title}». I’m thinking about…',
     cards: [
       {
         id: 'bodas',
@@ -478,7 +486,7 @@ export default {
   booking: {
     eyebrow: 'BOOK · DESIGN CALL',
     headline: 'Choose your moment. We design your ceremony together.',
-    sub: 'A 20-minute call, free and with no obligation, to hear your intention and guide you. Pick the slot that suits you best; you’ll get your confirmation right away.',
+    sub: 'A 30-minute call, free and with no obligation, to hear your intention and guide you. Pick the slot that suits you best; you’ll get your confirmation right away.',
     altPrefix: 'Or if you’d rather talk first,',
     altCta: 'message Blanca on WhatsApp',
     loading: 'Loading the calendar…',
