@@ -382,13 +382,6 @@ export default {
     dialogLabel: 'Galería de imágenes ampliada',
     items: [
       {
-        src: '/album-01-orilla.webp',
-        thumb: '/album-01-orilla-thumb.webp',
-        w: 1200,
-        h: 800,
-        alt: 'Blanca Coutiño camina descalza por la orilla al atardecer, vestido de lino con bordado maya, frente a un mar sereno',
-      },
-      {
         src: '/album-02-retrato-cuarzo.webp',
         thumb: '/album-02-retrato-cuarzo-thumb.webp',
         w: 800,
@@ -429,13 +422,6 @@ export default {
         w: 1200,
         h: 800,
         alt: 'Un dedo traza una espiral en la arena, gesto de intención y apertura del ritual',
-      },
-      {
-        src: '/album-08-roca-mediterraneo.webp',
-        thumb: '/album-08-roca-mediterraneo-thumb.webp',
-        w: 900,
-        h: 1200,
-        alt: 'Cuarzos en bruto sobre una roca costera, con el mar y un acantilado de pinos al fondo',
       },
       {
         src: '/album-09-agua-cuarzo.webp',
