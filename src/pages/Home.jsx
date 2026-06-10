@@ -33,7 +33,7 @@ function FeaturedCeremonies() {
   return (
     <section className="relative bg-surface-secondary/40 py-24 lg:py-28">
       <div className="container-page">
-        <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+        <Reveal blur={6} className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <span className="eyebrow">{catalog.caption}</span>
             <h2 className="heading-display mt-5 text-[clamp(1.8rem,3.4vw,2.8rem)]">
@@ -53,6 +53,7 @@ function FeaturedCeremonies() {
             <Reveal
               key={card.title}
               delay={i * 0.08}
+              blur={4}
               className="group relative overflow-hidden rounded-token-xl border border-border-subtle bg-surface-primary transition-all duration-500 hover:-translate-y-1 hover:border-accent-clay/60 hover:shadow-2xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -109,7 +110,7 @@ function SocialProofStrip() {
     <section className="bg-surface-primary py-24 lg:py-28">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
         {quote && (
-          <Reveal className="lg:col-span-7">
+          <Reveal blur={6} className="lg:col-span-7">
             <Quote size={28} className="text-accent-clay" />
             <p className="mt-5 font-heading text-2xl italic leading-snug text-foreground-primary">
               “{quote.quote}”
