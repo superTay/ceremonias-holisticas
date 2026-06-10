@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
@@ -110,16 +110,20 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile drawer */}
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: EASE }}
-              className="overflow-hidden border-t border-border-subtle bg-surface-primary lg:hidden"
-            >
+        {/* Mobile drawer — siempre montado, animado por prop (AnimatePresence
+            no completaba la animación con esta combinación de versiones).
+            visibility oculta los links del tab-order cuando está cerrado. */}
+        <motion.div
+          initial={false}
+          animate={
+            open
+              ? { height: 'auto', opacity: 1, visibility: 'visible' }
+              : { height: 0, opacity: 0, visibility: 'hidden' }
+          }
+          transition={{ duration: 0.3, ease: EASE }}
+          aria-hidden={!open}
+          className="overflow-hidden border-t border-border-subtle bg-surface-primary lg:hidden"
+        >
               <ul className="container-page flex flex-col gap-1 py-4">
                 {nav.links.map((link) => (
                   <li key={link.to}>
@@ -152,9 +156,7 @@ export default function Navbar() {
                   <LangToggle label={nav.langLabel} />
                 </li>
               </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        </motion.div>
       </nav>
     </header>
   )
