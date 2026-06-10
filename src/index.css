@@ -75,3 +75,20 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Reduced motion: scroll instantáneo y sin loops ambient. Las animaciones
+   de framer-motion las neutraliza MotionConfig reducedMotion="user". */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-breathe {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
