@@ -46,7 +46,7 @@ export default function Logo({
             OOL Experiences
           </span>
           {variant === 'full' && showTagline && (
-            <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.24em] text-accent-cacao">
+            <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.24em] text-accent-cacao-text">
               Ceremonias de Corazón
             </span>
           )}

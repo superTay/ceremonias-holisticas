@@ -69,7 +69,11 @@ function FeaturedCeremonies() {
                     className={`absolute inset-0 bg-gradient-to-br ${card.hue}`}
                   />
                 )}
-                <div className="absolute left-4 top-4 rounded-full bg-accent-cacao px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-surface-deep/25 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <div className="absolute left-4 top-4 rounded-full bg-accent-cacao-action px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
                   {card.tag}
                 </div>
               </div>
@@ -87,10 +91,13 @@ function FeaturedCeremonies() {
                 </p>
                 <Link
                   to="/ceremonies"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent-cacao"
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent-cacao-text"
                 >
                   {catalog.cardCta}
-                  <ArrowUpRight size={14} />
+                  <ArrowUpRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </Link>
               </div>
             </Reveal>
@@ -123,7 +130,7 @@ function SocialProofStrip() {
             </p>
             <Link
               to="/about"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-cacao link-underline"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-cacao-text link-underline"
             >
               {testimonials.eyebrow} →
             </Link>
@@ -173,7 +180,7 @@ function HomeCTA() {
             href={whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao px-7 py-3.5 text-sm font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-clay hover:-translate-y-0.5"
+            className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao-action px-7 py-3.5 text-[15px] font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
           >
             {whatsapp.cta}
             <ArrowRight size={16} />

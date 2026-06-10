@@ -72,7 +72,7 @@ export default function Testimonials() {
 
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-gradient-to-br from-accent-clay/40 to-accent-cacao/40">
-                    <span className="font-heading text-base text-accent-cacao">
+                    <span className="font-heading text-base text-accent-cacao-text">
                       {t.name.charAt(0)}
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export default function Testimonials() {
             {testimonials.outlets.map((o, i) => (
               <span
                 key={i}
-                className="font-heading text-xl italic transition-colors duration-300 hover:text-accent-cacao"
+                className="font-heading text-xl italic transition-colors duration-300 hover:text-accent-cacao-text"
               >
                 {o}
               </span>

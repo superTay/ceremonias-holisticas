@@ -33,7 +33,7 @@ export default function FAQ() {
                 <li key={i}>
                   <button
                     onClick={() => setOpen(isOpen ? -1 : i)}
-                    className="flex w-full items-center justify-between gap-4 py-6 text-left transition-colors hover:text-accent-cacao"
+                    className="flex w-full items-center justify-between gap-4 py-6 text-left transition-colors hover:text-accent-cacao-text"
                     aria-expanded={isOpen}
                   >
                     <span className="font-heading text-lg leading-snug text-foreground-primary lg:text-xl">
@@ -80,7 +80,7 @@ export default function FAQ() {
               <span className="text-foreground-muted">·</span>{' '}
               <Link
                 to="/contact"
-                className="link-underline font-medium text-accent-cacao"
+                className="link-underline font-medium text-accent-cacao-text"
               >
                 {faq.footerLink} →
               </Link>
