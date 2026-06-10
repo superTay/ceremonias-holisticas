@@ -54,7 +54,7 @@ export default function Footer() {
                     const label = isObject ? l.label : l
                     const to = isObject ? l.to : null
                     const className =
-                      'text-sm text-foreground-secondary transition-colors hover:text-accent-cacao'
+                      'text-sm text-foreground-secondary transition-colors hover:text-accent-cacao-text'
                     return (
                       <li key={label}>
                         {to ? (

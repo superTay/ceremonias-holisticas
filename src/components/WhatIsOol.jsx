@@ -1,3 +1,10 @@
+import { useRef } from 'react'
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'framer-motion'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
@@ -7,22 +14,39 @@ import Reveal from './Reveal'
 // (el copy ES los usa para resaltar el término maya).
 export default function WhatIsOol() {
   const { whatIsOol } = useContent()
+  const sectionRef = useRef(null)
+  const reduced = useReducedMotion()
+
+  // Parallax suave: la imagen deriva ±7% mientras la sección cruza el
+  // viewport. El scale 1.16 da margen para que nunca asomen los bordes.
+  // Es la única sección de la Home con parallax además del hero — a
+  // propósito: dos seguidas ya serían feria. Transform sobre la <img>
+  // interna, no sobre el contenedor sticky (no hay conflicto).
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  })
+  const imgY = useTransform(scrollYProgress, [0, 1], ['-7%', '7%'])
+
   if (!whatIsOol) return null
 
   return (
-    <section className="relative bg-surface-primary py-24 lg:py-32">
+    <section ref={sectionRef} className="relative bg-surface-primary py-24 lg:py-32">
       <div className="container-page grid grid-cols-1 items-start gap-14 lg:grid-cols-12 lg:gap-16">
-        <Reveal className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+        <Reveal blur={6} className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
           <span className="eyebrow">{whatIsOol.eyebrow}</span>
           <h2 className="heading-display mt-5 text-[clamp(1.8rem,3.6vw,2.9rem)]">
             {whatIsOol.headline}
           </h2>
-          <img
-            src="/album-06-corazon-cuarzo.webp"
-            alt="Dos manos forman un corazón alrededor de un cuarzo verde, sobre un vestido de lino claro"
-            className="mt-8 w-full rounded-token-xl object-cover"
-            loading="lazy"
-          />
+          <div className="mt-8 overflow-hidden rounded-token-xl">
+            <motion.img
+              src="/album-06-corazon-cuarzo.webp"
+              alt="Dos manos forman un corazón alrededor de un cuarzo verde, sobre un vestido de lino claro"
+              className="w-full object-cover"
+              style={reduced ? undefined : { y: imgY, scale: 1.16 }}
+              loading="lazy"
+            />
+          </div>
         </Reveal>
 
         <div className="lg:col-span-7">
@@ -35,7 +59,7 @@ export default function WhatIsOol() {
           </Reveal>
 
           {whatIsOol.whyMaya && (
-            <Reveal delay={0.15} className="mt-12 border-l-2 border-accent-primary pl-6">
+            <Reveal delay={0.15} className="mt-12 rounded-token-xl bg-surface-secondary/50 p-7">
               <h3 className="font-heading text-xl text-foreground-primary">
                 {whatIsOol.whyMaya.title}
               </h3>

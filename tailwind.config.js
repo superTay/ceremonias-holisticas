@@ -15,13 +15,15 @@ export default {
         foreground: {
           primary: '#23201C',
           secondary: '#5C5448',
-          muted: '#8A8273',
+          muted: '#6E6757',      // oscurecido para AA (4.75:1 sobre crema; antes #8A8273 = 3.22)
           'on-deep': '#F1ECDB',
         },
         accent: {
-          primary: '#7A8B5F',    // verde salvia/oliva (eyebrows, acentos botánicos)
-          secondary: '#4F5A3A',  // salvia profundo
-          cacao: '#B8623F',      // terracota del logo · color de acción (CTAs)
+          primary: '#7A8B5F',    // verde salvia/oliva (acentos botánicos grandes/decorativos)
+          secondary: '#4F5A3A',  // salvia profundo · eyebrows y texto salvia pequeño (AA 6.2:1)
+          cacao: '#B8623F',      // terracota del logo · highlights grandes y decoración (3.66:1 = solo texto ≥24px)
+          'cacao-text': '#964927',   // terracota para TEXTO pequeño sobre crema (AA 5.4:1)
+          'cacao-action': '#A65432', // terracota para FONDOS de acción con texto crema (AA 4.5:1)
           clay: '#D49574',       // arcilla clara (decorativo cálido)
           turquoise: '#2E8C8C',  // turquesa del glifo central · acentos puntuales
         },

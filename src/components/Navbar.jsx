@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
+import { EASE } from '../lib/motion'
 import Logo from './Logo'
 
 export default function Navbar() {
@@ -49,7 +51,9 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop links */}
+          {/* Desktop links — el subrayado del link activo desliza entre rutas
+              (layoutId compartido). Los inactivos conservan el subrayado de
+              hover de la casa. py-2 amplía el objetivo táctil/clic. */}
           <ul className="hidden items-center gap-7 lg:flex">
             {nav.links.map((link) => (
               <li key={link.to}>
@@ -57,14 +61,26 @@ export default function Navbar() {
                   to={link.to}
                   end={link.to === '/'}
                   className={({ isActive }) =>
-                    `link-underline text-sm font-medium transition-colors ${
+                    `relative inline-block py-2 text-sm font-medium transition-colors ${
                       isActive
                         ? 'text-foreground-primary'
-                        : 'text-foreground-secondary hover:text-foreground-primary'
+                        : 'link-underline text-foreground-secondary hover:text-foreground-primary'
                     }`
                   }
                 >
-                  {link.label}
+                  {({ isActive }) => (
+                    <>
+                      {link.label}
+                      {isActive && (
+                        <motion.span
+                          layoutId="nav-underline"
+                          aria-hidden
+                          className="absolute inset-x-0 bottom-0.5 h-px bg-accent-cacao-text"
+                          transition={{ duration: 0.35, ease: EASE }}
+                        />
+                      )}
+                    </>
+                  )}
                 </NavLink>
               </li>
             ))}
@@ -82,53 +98,65 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile toggle */}
+          {/* Mobile toggle — padding negativo-compensado: icono de 24px con
+              objetivo táctil de 44px sin mover el layout */}
           <button
-            className="lg:hidden"
+            className="-m-2.5 p-2.5 lg:hidden"
             aria-label={open ? nav.closeMenu : nav.openMenu}
+            aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile drawer */}
-        {open && (
-          <div className="border-t border-border-subtle bg-surface-primary lg:hidden">
-            <ul className="container-page flex flex-col gap-1 py-4">
-              {nav.links.map((link) => (
-                <li key={link.to}>
-                  <NavLink
-                    to={link.to}
-                    end={link.to === '/'}
-                    className={({ isActive }) =>
-                      `block rounded-token-md px-3 py-3 text-sm font-medium hover:bg-surface-secondary ${
-                        isActive
-                          ? 'bg-surface-secondary text-foreground-primary'
-                          : 'text-foreground-secondary'
-                      }`
-                    }
+        {/* Mobile drawer — siempre montado, animado por prop (AnimatePresence
+            no completaba la animación con esta combinación de versiones).
+            visibility oculta los links del tab-order cuando está cerrado. */}
+        <motion.div
+          initial={false}
+          animate={
+            open
+              ? { height: 'auto', opacity: 1, visibility: 'visible' }
+              : { height: 0, opacity: 0, visibility: 'hidden' }
+          }
+          transition={{ duration: 0.3, ease: EASE }}
+          aria-hidden={!open}
+          className="overflow-hidden border-t border-border-subtle bg-surface-primary lg:hidden"
+        >
+              <ul className="container-page flex flex-col gap-1 py-4">
+                {nav.links.map((link) => (
+                  <li key={link.to}>
+                    <NavLink
+                      to={link.to}
+                      end={link.to === '/'}
+                      className={({ isActive }) =>
+                        `block rounded-token-md px-3 py-3 text-sm font-medium hover:bg-surface-secondary ${
+                          isActive
+                            ? 'bg-surface-secondary text-foreground-primary'
+                            : 'text-foreground-secondary'
+                        }`
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  </li>
+                ))}
+                <li className="pt-2">
+                  <a
+                    href={whatsapp.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary w-full"
                   >
-                    {link.label}
-                  </NavLink>
+                    {nav.cta}
+                  </a>
                 </li>
-              ))}
-              <li className="pt-2">
-                <a
-                  href={whatsapp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full"
-                >
-                  {nav.cta}
-                </a>
-              </li>
-              <li className="px-3 pt-3">
-                <LangToggle label={nav.langLabel} />
-              </li>
-            </ul>
-          </div>
-        )}
+                <li className="px-3 pt-3">
+                  <LangToggle label={nav.langLabel} />
+                </li>
+              </ul>
+        </motion.div>
       </nav>
     </header>
   )
@@ -155,9 +183,9 @@ function LangToggle({ label }) {
             type="button"
             onClick={() => i18n.changeLanguage(code)}
             aria-pressed={active}
-            className={`flex items-center gap-1.5 transition-colors ${
+            className={`flex items-center gap-1.5 px-1.5 py-2 transition-colors ${
               active
-                ? 'text-accent-cacao'
+                ? 'text-accent-cacao-text'
                 : 'text-foreground-secondary hover:text-foreground-primary'
             }`}
           >

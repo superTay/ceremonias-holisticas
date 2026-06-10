@@ -20,7 +20,7 @@
   }
 
   ::selection {
-    background: #B8623F;
+    background: #A65432; /* accent-cacao-action */
     color: #F1ECDB;
   }
 
@@ -43,7 +43,8 @@
   }
 
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-primary;
+    /* accent-secondary y no primary: a 11px exige AA 4.5:1 (6.2 vs 3.1) */
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-secondary;
   }
 
   .heading-display {
@@ -51,15 +52,20 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-token-lg bg-accent-cacao px-7 py-3.5 text-sm font-medium tracking-wide text-foreground-on-deep transition-all duration-300 ease-out hover:bg-accent-secondary hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 rounded-token-lg bg-accent-cacao-action px-7 py-3.5 text-[15px] font-medium tracking-wide text-foreground-on-deep transition-all duration-300 ease-out hover:bg-accent-secondary hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] active:shadow-md active:duration-100;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-token-lg border border-border-subtle bg-transparent px-7 py-3.5 text-sm font-medium tracking-wide text-foreground-primary transition-all duration-300 ease-out hover:border-accent-primary hover:bg-surface-secondary;
+    @apply inline-flex items-center justify-center gap-2 rounded-token-lg border border-border-subtle bg-transparent px-7 py-3.5 text-[15px] font-medium tracking-wide text-foreground-primary transition-all duration-300 ease-out hover:border-accent-primary hover:bg-surface-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] active:duration-100;
   }
 
   .link-underline {
     @apply relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:scale-x-100;
+  }
+
+  /* El marquee de categorías se pausa al pasar el cursor (cortesía de lectura) */
+  .marquee-track:hover .animate-marquee {
+    animation-play-state: paused;
   }
 }
 
@@ -74,4 +80,21 @@
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Reduced motion: scroll instantáneo y sin loops ambient. Las animaciones
+   de framer-motion las neutraliza MotionConfig reducedMotion="user". */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-breathe {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

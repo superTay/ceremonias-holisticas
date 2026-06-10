@@ -33,7 +33,7 @@ function FeaturedCeremonies() {
   return (
     <section className="relative bg-surface-secondary/40 py-24 lg:py-28">
       <div className="container-page">
-        <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+        <Reveal blur={6} className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div className="max-w-2xl">
             <span className="eyebrow">{catalog.caption}</span>
             <h2 className="heading-display mt-5 text-[clamp(1.8rem,3.4vw,2.8rem)]">
@@ -53,6 +53,7 @@ function FeaturedCeremonies() {
             <Reveal
               key={card.title}
               delay={i * 0.08}
+              blur={4}
               className="group relative overflow-hidden rounded-token-xl border border-border-subtle bg-surface-primary transition-all duration-500 hover:-translate-y-1 hover:border-accent-clay/60 hover:shadow-2xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -68,7 +69,11 @@ function FeaturedCeremonies() {
                     className={`absolute inset-0 bg-gradient-to-br ${card.hue}`}
                   />
                 )}
-                <div className="absolute left-4 top-4 rounded-full bg-accent-cacao px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
+                <div
+                  aria-hidden
+                  className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-surface-deep/25 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                <div className="absolute left-4 top-4 rounded-full bg-accent-cacao-action px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
                   {card.tag}
                 </div>
               </div>
@@ -86,10 +91,13 @@ function FeaturedCeremonies() {
                 </p>
                 <Link
                   to="/ceremonies"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent-cacao"
+                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent-cacao-text"
                 >
                   {catalog.cardCta}
-                  <ArrowUpRight size={14} />
+                  <ArrowUpRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </Link>
               </div>
             </Reveal>
@@ -109,7 +117,7 @@ function SocialProofStrip() {
     <section className="bg-surface-primary py-24 lg:py-28">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
         {quote && (
-          <Reveal className="lg:col-span-7">
+          <Reveal blur={6} className="lg:col-span-7">
             <Quote size={28} className="text-accent-clay" />
             <p className="mt-5 font-heading text-2xl italic leading-snug text-foreground-primary">
               “{quote.quote}”
@@ -122,7 +130,7 @@ function SocialProofStrip() {
             </p>
             <Link
               to="/about"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-cacao link-underline"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent-cacao-text link-underline"
             >
               {testimonials.eyebrow} →
             </Link>
@@ -172,7 +180,7 @@ function HomeCTA() {
             href={whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao px-7 py-3.5 text-sm font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-clay hover:-translate-y-0.5"
+            className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao-action px-7 py-3.5 text-[15px] font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
           >
             {whatsapp.cta}
             <ArrowRight size={16} />

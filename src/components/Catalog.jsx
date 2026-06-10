@@ -84,7 +84,7 @@ export default function Catalog() {
                   onClick={() => setActiveIdx(idx)}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? 'bg-accent-cacao text-foreground-on-deep shadow-md'
+                      ? 'bg-accent-cacao-action text-foreground-on-deep shadow-md'
                       : 'border border-border-subtle bg-surface-primary text-foreground-secondary hover:border-accent-primary hover:text-foreground-primary'
                   }`}
                 >
@@ -128,7 +128,7 @@ export default function Catalog() {
                   ) : (
                     <CardOrnament />
                   )}
-                  <div className="absolute left-4 top-4 rounded-full bg-accent-cacao px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
+                  <div className="absolute left-4 top-4 rounded-full bg-accent-cacao-action px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-foreground-on-deep">
                     {card.tag}
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function Catalog() {
                         data-cal-link={card.calLink}
                         data-cal-origin={booking.calOrigin}
                         data-cal-config={calConfig}
-                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg bg-accent-cacao px-4 py-2 text-xs font-semibold text-foreground-on-deep transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-clay"
+                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg bg-accent-cacao-action px-4 py-2 text-xs font-semibold text-foreground-on-deep transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-secondary"
                       >
                         <CalendarCheck size={14} />
                         {catalog.bookCta}
@@ -187,7 +187,7 @@ export default function Catalog() {
                         href={card.whatsappUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg border border-accent-cacao px-4 py-2 text-xs font-semibold text-accent-cacao transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-cacao hover:text-foreground-on-deep"
+                        className="inline-flex flex-none items-center gap-1.5 rounded-token-lg border border-accent-cacao px-4 py-2 text-xs font-semibold text-accent-cacao-text transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-cacao-action hover:text-foreground-on-deep"
                       >
                         <MessageCircle size={14} />
                         {catalog.bespokeCta}

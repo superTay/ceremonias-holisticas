@@ -42,7 +42,7 @@ export default function Booking() {
       <div className="container-page">
         <div className="mx-auto max-w-prose text-center">
           <Reveal>
-            <span className="inline-block rounded-full bg-accent-cacao/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-cacao">
+            <span className="inline-block rounded-full bg-accent-cacao/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-cacao-text">
               {booking.eyebrow}
             </span>
           </Reveal>
@@ -103,7 +103,7 @@ export default function Booking() {
                 href={booking.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-underline font-medium text-accent-cacao"
+                className="link-underline font-medium text-accent-cacao-text"
               >
                 {booking.altCta}
               </a>
