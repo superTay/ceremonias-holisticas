@@ -9,7 +9,7 @@ export default {
   meta: {
     title: 'OOL Experiences · Holistic Ceremonies in Mallorca',
     description:
-      'OOL Experiences: Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. Founded by Blanca Coutiño in Mallorca.',
+      'OOL Experiences: Maya-contemporary holistic ceremonies to accompany, celebrate and honour the milestones that matter. Founded by Blanca Coutiño in Mallorca.',
     ogTitle: 'OOL Experiences · Holistic Ceremonies in Mallorca',
     ogDescription:
       'Ceremonies designed for the moments that never come twice. In the coves and fincas of Mallorca.',
@@ -92,6 +92,8 @@ export default {
     cardCta: 'Check Availability',
     // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
     bookCta: 'Book a date',
+    bookConsentNote:
+      'Booking loads the Cal.eu calendar (third-party cookies). Tap to accept them and open the booking.',
     bespokeCta: "Let's talk first",
     depositNote: 'Reserve with 25%. The rest, on your ceremony day.',
     bespokeNote: 'Tailored end to end, with you. Let’s start with a conversation.',
@@ -230,7 +232,7 @@ export default {
     pillars: [
       {
         title: 'Luxury precision',
-        body: 'Hotel management (Rennes) and body therapies: lymphatic drainage, kobido, cosmetology.',
+        body: 'Hotel management (Rennes) and wellness body-care techniques: kobido, cosmetology and massage.',
       },
       {
         title: 'Certified roots',
@@ -253,7 +255,7 @@ export default {
   testimonials: {
     eyebrow: 'TESTIMONIALS',
     headline: 'What opens after the ritual.',
-    sub: 'Real stories from those who designed their ceremony with Blanca.',
+    sub: 'Real stories from those who designed their ceremony with Blanca. Some names have been shortened for privacy.',
     metrics: [
       { value: '+22', label: 'years of practice' },
       { value: '3', label: 'countries: Mexico, France and Spain' },
@@ -487,7 +489,7 @@ export default {
 
   footer: {
     brand: 'OOL Experiences',
-    desc: 'Maya-contemporary holistic ceremonies to heal, celebrate and honour the milestones that matter. More than 22 years of practice between the Riviera Maya and Mallorca, founded by Blanca Coutiño.',
+    desc: 'Maya-contemporary holistic ceremonies to accompany, celebrate and honour the milestones that matter. More than 22 years of practice between the Riviera Maya and Mallorca, founded by Blanca Coutiño.',
     columns: [
       {
         title: 'Ceremonies',
@@ -513,17 +515,257 @@ export default {
         ],
       },
       {
-        title: 'Legal & Tax',
+        title: 'Legal',
         links: [
-          'Privacy Notice',
-          'Terms & Conditions',
-          'Cookie Policy',
-          'Cancellation Policy',
+          { label: 'Legal Notice', to: '/legal/aviso-legal' },
+          { label: 'Privacy Policy', to: '/legal/privacidad' },
+          { label: 'Cookie Policy', to: '/legal/cookies' },
+          { label: 'Terms & Cancellation', to: '/legal/terminos' },
         ],
       },
     ],
-    gdpr: 'Data protected · GDPR',
+    privacy: 'Legal Notice & Privacy',
+    cookies: 'Cookie settings',
     lang: 'English (EN)',
     copy: '© 2026 OOL Experiences. Made with copal and code in Santa Ponça, Mallorca.',
+  },
+
+  // Cookie consent banner and panel (AEPD guidance).
+  consent: {
+    banner: {
+      title: 'Your privacy',
+      body: 'We use necessary technical cookies so the site works. We only load the booking calendar (Cal.eu, third-party cookies) if you accept. We use no analytics or advertising cookies.',
+      accept: 'Accept',
+      reject: 'Reject',
+      configure: 'Configure',
+      policyLink: 'Learn more in our Cookie Policy',
+    },
+    settings: {
+      title: 'Cookie preferences',
+      intro: 'Choose which cookies you allow. Necessary ones are always on because the site cannot work without them. You can change your decision anytime from the footer.',
+      necessaryTitle: 'Necessary',
+      necessaryDesc: 'Essential for the site to work: they remember your language and your cookie decision. They do not identify individuals.',
+      thirdPartyTitle: 'Booking (Cal.eu)',
+      thirdPartyDesc: 'These load the Cal.eu booking calendar, an external provider that may set its own cookies. They are only enabled with your permission.',
+      alwaysOn: 'Always on',
+      rejectAll: 'Reject all',
+      save: 'Save preferences',
+      close: 'Close',
+    },
+    gate: {
+      title: 'Booking calendar',
+      body: 'To book, we load the Cal.eu calendar, an external service that may set third-party cookies. Nothing loads until you allow it.',
+      load: 'Load booking calendar',
+      privacyNote: 'By tapping you accept Cal.eu cookies. See the Cookie Policy for details.',
+    },
+  },
+
+  // Legal pages. MODEL texts; [TO COMPLETE] items need data only Blanca can provide
+  // (see CHECKLIST-BLANCA.md). Not legal advice. Spanish law governs; kept in EN for users.
+  legal: {
+    updatedLabel: 'Last updated',
+    reviewNote:
+      'This is an indicative model text. Before final publication it must be completed with the owner’s details and, ideally, reviewed by a legal professional.',
+    aviso: {
+      title: 'Legal Notice',
+      updated: 'June 2026',
+      intro:
+        'In compliance with Article 10 of Spanish Law 34/2002 on Information Society Services and E-Commerce (LSSI-CE), the following identification details of the owner of this website are provided.',
+      sections: [
+        {
+          heading: '1. Owner identification',
+          list: [
+            'Owner: [FULL NAME / COMPANY NAME — TO COMPLETE]',
+            'Tax ID (NIF/CIF): [TO COMPLETE]',
+            'Address: [REGISTERED ADDRESS — TO COMPLETE], Santa Ponça, Mallorca, Balearic Islands, Spain',
+            'Email: oolexpriences@gmail.com',
+            'Phone: +34 665 17 55 56',
+            'Activity: design and facilitation of holistic ceremonies, wellness therapies and event organisation.',
+          ],
+        },
+        {
+          heading: '2. Purpose and terms of use',
+          paragraphs: [
+            'This website is informational and commercial in nature regarding the services of OOL Experiences. Access and browsing imply acceptance of the terms set out in this Legal Notice.',
+            'The user agrees to make appropriate use of the content and not to use it for unlawful purposes or purposes contrary to good faith.',
+          ],
+        },
+        {
+          heading: '3. Intellectual and industrial property',
+          paragraphs: [
+            'The texts, photographs, logos, designs and other elements of the site are owned by the provider or duly licensed, and are protected by intellectual and industrial property law. Their reproduction, distribution or transformation without express authorisation is prohibited.',
+          ],
+        },
+        {
+          heading: '4. Liability',
+          paragraphs: [
+            'The owner is not liable for damages arising from improper use of the site or from temporary unavailability for technical reasons. The wellness services offered are complementary and do not replace any medical or psychological treatment.',
+          ],
+        },
+        {
+          heading: '5. Third-party links and services',
+          paragraphs: [
+            'The site integrates the Cal.eu (Cal.com) booking service and links to WhatsApp (Meta Platforms). The owner does not control these external services, which are governed by their own terms and privacy policies.',
+          ],
+        },
+        {
+          heading: '6. Hosting',
+          paragraphs: [
+            'This site is hosted by Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, USA), a web infrastructure provider.',
+          ],
+        },
+        {
+          heading: '7. Governing law',
+          paragraphs: [
+            'These terms are governed by Spanish law. For any dispute, the parties submit to the courts of the user’s domicile where applicable under consumer regulations.',
+          ],
+        },
+      ],
+    },
+    privacidad: {
+      title: 'Privacy Policy',
+      updated: 'June 2026',
+      intro:
+        'This policy describes how users’ personal data is processed in accordance with Regulation (EU) 2016/679 (GDPR) and Spanish Organic Law 3/2018 (LOPDGDD).',
+      sections: [
+        {
+          heading: '1. Data controller',
+          list: [
+            'Controller: [FULL NAME / COMPANY NAME — TO COMPLETE]',
+            'Tax ID (NIF/CIF): [TO COMPLETE]',
+            'Address: [REGISTERED ADDRESS — TO COMPLETE], Mallorca, Spain',
+            'Email: oolexpriences@gmail.com',
+          ],
+        },
+        {
+          heading: '2. What data we process, why, and on what legal basis',
+          paragraphs: [
+            'Booking of calls and ceremonies (via Cal.eu): name, email, phone and chosen date, in order to manage and confirm your booking. Legal basis: performance of a contract or pre-contractual measures at your request (Art. 6.1.b GDPR).',
+            'Enquiries via WhatsApp or email: the data you provide, in order to handle your request. Legal basis: your consent and the legitimate interest in replying to you (Art. 6.1.a and 6.1.f GDPR).',
+            'Cookies and third-party services: see the Cookie Policy. Legal basis: your consent (Art. 6.1.a GDPR).',
+          ],
+        },
+        {
+          heading: '3. Retention',
+          paragraphs: [
+            'Data is kept for the duration of the relationship and, afterwards, for the periods legally required to address possible liabilities. Enquiries that do not lead to a contract are kept only as long as necessary to handle them.',
+          ],
+        },
+        {
+          heading: '4. Recipients and processors',
+          paragraphs: [
+            'To provide the service we rely on providers acting as data processors:',
+          ],
+          list: [
+            'Cal.com (bookings, European instance app.cal.eu) — appointment management.',
+            'Google Ireland Ltd. (Google Calendar / email) — booking sync and confirmation.',
+            'Vercel Inc. (website hosting).',
+            'Meta Platforms Ireland Ltd. (WhatsApp) — only if you choose to use that channel.',
+          ],
+        },
+        {
+          heading: '5. International transfers',
+          paragraphs: [
+            'Some providers may process data outside the European Economic Area. In such cases, transfers rely on the safeguards provided by the GDPR (European Commission Standard Contractual Clauses or other valid mechanisms). [Confirm with each provider — TO COMPLETE].',
+          ],
+        },
+        {
+          heading: '6. Your rights',
+          paragraphs: [
+            'You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to oolexpriences@gmail.com, stating the right you wish to exercise. If you believe the processing does not comply with the law, you may lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).',
+          ],
+        },
+        {
+          heading: '7. Security and minors',
+          paragraphs: [
+            'We apply reasonable technical and organisational measures to protect your data. The services are aimed at adults; we do not knowingly collect data from minors without the consent of their legal guardians.',
+          ],
+        },
+      ],
+    },
+    cookies: {
+      title: 'Cookie Policy',
+      updated: 'June 2026',
+      intro:
+        'This policy explains which cookies and similar technologies this site uses, in accordance with Article 22.2 of the LSSI-CE and the AEPD Guidance on the use of cookies.',
+      sections: [
+        {
+          heading: '1. What cookies are',
+          paragraphs: [
+            'A cookie is a small file a website stores on your device. We also use browser local storage (localStorage) for an equivalent purpose. Technical or necessary ones are exempt from consent; the rest are only installed if you accept them.',
+          ],
+        },
+        {
+          heading: '2. Cookies we use',
+          table: {
+            head: ['Name / Provider', 'Purpose', 'Duration', 'Type'],
+            rows: [
+              ['blanca-lang (first-party)', 'Remember your chosen language (ES/EN)', 'Persistent', 'Technical (necessary)'],
+              ['blanca-consent (first-party)', 'Store your cookie decision', 'Persistent', 'Technical (necessary)'],
+              ['Cal.eu / Cal.com (third party)', 'Display the calendar and manage the booking', 'Per provider', 'Third party (requires consent)'],
+            ],
+          },
+        },
+        {
+          heading: '3. No analytics or advertising',
+          paragraphs: [
+            'This site uses no analytics cookies (such as Google Analytics) and no advertising or tracking cookies. The only third-party load is the Cal.eu booking calendar, and only if you allow it.',
+          ],
+        },
+        {
+          heading: '4. How to manage or withdraw consent',
+          paragraphs: [
+            'You can change or withdraw your consent at any time from the “Cookie settings” link in the footer. You can also block or delete cookies from your browser settings.',
+          ],
+        },
+      ],
+    },
+    terminos: {
+      title: 'Terms, Conditions and Cancellation Policy',
+      updated: 'June 2026',
+      intro:
+        'These terms govern the booking of ceremonies, therapies and experiences from OOL Experiences. By booking, you accept these terms.',
+      sections: [
+        {
+          heading: '1. Services',
+          paragraphs: [
+            'OOL Experiences designs and facilitates holistic ceremonies, wellness therapies and bespoke events. Each proposal is a starting point shaped with you. The services are of a wellness and accompaniment nature and complement — without replacing — any medical or psychological treatment.',
+          ],
+        },
+        {
+          heading: '2. Bookings, prices and payment',
+          paragraphs: [
+            'Some experiences are booked online via Cal.eu and others are designed after a conversation. To confirm a booking, a deposit of 25% of the price may be required via Bizum; the remaining amount is paid on the ceremony day. [Confirm amounts and method with the owner — TO COMPLETE].',
+            'Prices shown include applicable taxes unless stated otherwise.',
+          ],
+        },
+        {
+          heading: '3. Cancellation and rescheduling policy',
+          paragraphs: [
+            'Cancellation by you: [define periods — e.g. cancellation more than X days in advance: deposit refunded; less than X days: deposit non-refundable. TO COMPLETE with Blanca].',
+            'Rescheduling: subject to calendar availability, we will aim to move the date at no extra cost with reasonable notice.',
+            'Cancellation by the provider or due to force majeure: a new date or a full refund of the deposit will be offered.',
+          ],
+        },
+        {
+          heading: '4. Right of withdrawal',
+          paragraphs: [
+            'For leisure services or events provided on a specific date, Article 103.l of the Spanish Consumer Protection Act (R.D.L. 1/2007) excludes the right of withdrawal. For other services without a fixed date, you have 14 calendar days to withdraw under consumer regulations.',
+          ],
+        },
+        {
+          heading: '5. Liability and health',
+          paragraphs: [
+            'Ceremonies and therapies are wellness experiences. They do not constitute medical, psychological or psychiatric treatment, nor do they promise healing results. If you are in clinical care, we recommend informing us and maintaining your professional treatment.',
+          ],
+        },
+        {
+          heading: '6. Governing law and dispute resolution',
+          paragraphs: [
+            'These terms are governed by Spanish law. As a consumer, you may use the European Commission’s online dispute resolution platform (https://ec.europa.eu/consumers/odr).',
+          ],
+        },
+      ],
+    },
   },
 }

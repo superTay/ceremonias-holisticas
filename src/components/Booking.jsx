@@ -3,6 +3,8 @@ import Cal, { getCalApi } from '@calcom/embed-react'
 import { useTranslation } from 'react-i18next'
 import { MessageCircle, CheckCircle2 } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
+import { useConsent } from '../consent/ConsentContext'
+import CalEmbedGate from './CalEmbedGate'
 import Reveal from './Reveal'
 
 const NS = 'reserva'
@@ -11,9 +13,13 @@ export default function Booking() {
   const { booking } = useContent()
   const { i18n } = useTranslation('content')
   const lang = i18n.resolvedLanguage || i18n.language
+  const { calAllowed } = useConsent()
   const [confirmed, setConfirmed] = useState(false)
 
   useEffect(() => {
+    // Sin consentimiento de terceros no tocamos Cal.eu: getCalApi descargaría
+    // embed.js de app.cal.eu y fijaría cookies antes de la acción del usuario.
+    if (!calAllowed) return
     let active = true
     ;(async () => {
       // embedJsUrl fuerza la región europea (cal.eu); sin esto el embed va a cal.com y da 404.
@@ -33,9 +39,9 @@ export default function Booking() {
     return () => {
       active = false
     }
-    // brandColor es estable (shared.js); registramos el listener una sola vez.
+    // brandColor es estable (shared.js); reinit solo si cambia el consentimiento.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [calAllowed])
 
   return (
     <section id="reservar" className="bg-surface-primary py-24 lg:py-32">
@@ -82,15 +88,17 @@ export default function Booking() {
                 </a>
               </div>
             ) : (
-              <div className="h-[640px] w-full">
-                <Cal
-                  namespace={NS}
-                  calLink={booking.calLink}
-                  calOrigin={booking.calOrigin}
-                  config={{ layout: 'month_view', locale: lang }}
-                  style={{ width: '100%', height: '100%', overflow: 'scroll' }}
-                />
-              </div>
+              <CalEmbedGate className="min-h-[420px]">
+                <div className="h-[640px] w-full">
+                  <Cal
+                    namespace={NS}
+                    calLink={booking.calLink}
+                    calOrigin={booking.calOrigin}
+                    config={{ layout: 'month_view', locale: lang }}
+                    style={{ width: '100%', height: '100%', overflow: 'scroll' }}
+                  />
+                </div>
+              </CalEmbedGate>
             )}
           </div>
         </Reveal>
