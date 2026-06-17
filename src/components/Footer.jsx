@@ -1,12 +1,14 @@
-import { Mail, Phone, MapPin, Shield, Globe } from 'lucide-react'
+import { Mail, Phone, MapPin, Shield, Globe, Cookie } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useContent } from '../i18n/useContent'
+import { useConsent } from '../consent/ConsentContext'
 import Logo from './Logo'
 
 const contactIcons = [Mail, Phone, MapPin]
 
 export default function Footer() {
   const { footer } = useContent()
+  const { openSettings } = useConsent()
 
   return (
     <footer className="bg-surface-primary pt-20 pb-10">
@@ -77,11 +79,22 @@ export default function Footer() {
 
         {/* Bottom strip */}
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center">
-          <div className="flex items-center gap-5 text-xs text-foreground-muted">
-            <span className="inline-flex items-center gap-1.5">
+          <div className="flex flex-wrap items-center gap-5 text-xs text-foreground-muted">
+            <Link
+              to="/legal/privacidad"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent-cacao"
+            >
               <Shield size={12} className="text-accent-clay" />
-              {footer.gdpr}
-            </span>
+              {footer.privacy}
+            </Link>
+            <button
+              type="button"
+              onClick={openSettings}
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-accent-cacao"
+            >
+              <Cookie size={12} className="text-accent-clay" />
+              {footer.cookies}
+            </button>
             <span className="inline-flex items-center gap-1.5">
               <Globe size={12} className="text-accent-clay" />
               {footer.lang}

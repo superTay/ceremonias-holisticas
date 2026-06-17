@@ -6,7 +6,7 @@ export default {
   meta: {
     title: 'OOL Experiences · Ceremonias Holísticas en Mallorca',
     description:
-      'OOL Experiences: ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Fundadas por Blanca Coutiño en Mallorca.',
+      'OOL Experiences: ceremonias holísticas maya-contemporáneas para acompañar, celebrar y honrar los hitos que importan. Fundadas por Blanca Coutiño en Mallorca.',
     ogTitle: 'OOL Experiences · Ceremonias Holísticas en Mallorca',
     ogDescription:
       'Ceremonias diseñadas para los momentos que no se repiten. En las calas y fincas de Mallorca.',
@@ -139,6 +139,8 @@ export default {
     cardCta: 'Ver esta experiencia',
     // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
     bookCta: 'Reservar fecha',
+    bookConsentNote:
+      'Al reservar se carga el calendario de Cal.eu (cookies de terceros). Pulsa para aceptarlas y abrir la reserva.',
     bespokeCta: 'Hablemos primero',
     depositNote: 'Reservas con el 25 %. El resto, el día de tu ceremonia.',
     bespokeNote: 'Se diseña a medida, contigo. Empecemos por una conversación.',
@@ -282,7 +284,7 @@ export default {
     headline: 'Quién está detrás de OOL',
     paragraphs: [
       'Detrás de OOL está Blanca Coutiño: facilitadora, terapeuta y organizadora de eventos con veintidós años de oficio entre México, Francia y España.',
-      'Su recorrido tiene dos columnas que rara vez van juntas. Por un lado, la precisión: gestión hotelera de lujo, cosmetología, terapia corporal clínica. Por otro, la profundidad: Reiki, Flores de Bach, ayurveda y años de aprendizaje de alquimia y herbolaria con comunidades del sur de México.',
+      'Su recorrido tiene dos columnas que rara vez van juntas. Por un lado, la precisión: gestión hotelera de lujo, cosmetología y cuidado corporal profesional. Por otro, la profundidad: Reiki, Flores de Bach, ayurveda y años de aprendizaje de alquimia y herbolaria con comunidades del sur de México.',
       'Tras más de una década diseñando ceremonias y bodas en la Riviera Maya —fue pionera en bodas legales LGBT en la región—, hoy trae su práctica a Mallorca.',
       'Esa doble formación es lo que distingue a OOL: la sensibilidad de lo ancestral, con el rigor de quien sabe sostener un evento de principio a fin.',
     ],
@@ -290,7 +292,7 @@ export default {
     pillars: [
       {
         title: 'Precisión de lujo',
-        body: 'Gestión hotelera (Rennes) y terapias corporales: drenaje linfático, kobido, cosmetología.',
+        body: 'Gestión hotelera (Rennes) y técnicas de cuidado corporal de bienestar: kobido, cosmetología y masaje.',
       },
       {
         title: 'Raíces certificadas',
@@ -313,7 +315,7 @@ export default {
   testimonials: {
     eyebrow: 'TESTIMONIOS',
     headline: 'Lo que se abre después del ritual.',
-    sub: 'Historias reales de quienes diseñaron su ceremonia con Blanca.',
+    sub: 'Historias reales de quienes diseñaron su ceremonia con Blanca. Algunos nombres se han abreviado por privacidad.',
     metrics: [
       { value: '+22', label: 'años de trayectoria' },
       { value: '3', label: 'países: México, Francia y España' },
@@ -547,7 +549,7 @@ export default {
 
   footer: {
     brand: 'OOL Experiences',
-    desc: 'Ceremonias holísticas maya-contemporáneas para sanar, celebrar y honrar los hitos que importan. Más de 22 años de trayectoria entre Riviera Maya y Mallorca, fundadas por Blanca Coutiño.',
+    desc: 'Ceremonias holísticas maya-contemporáneas para acompañar, celebrar y honrar los hitos que importan. Más de 22 años de trayectoria entre Riviera Maya y Mallorca, fundadas por Blanca Coutiño.',
     columns: [
       {
         title: 'Ceremonias',
@@ -574,18 +576,257 @@ export default {
         ],
       },
       {
-        title: 'Legal & Fiscal',
-        // Strings = enlaces inertes hasta que existan las páginas legales.
+        title: 'Legal',
         links: [
-          'Aviso de Privacidad',
-          'Términos & Condiciones',
-          'Política de Cookies',
-          'Política de Cancelación',
+          { label: 'Aviso Legal', to: '/legal/aviso-legal' },
+          { label: 'Política de Privacidad', to: '/legal/privacidad' },
+          { label: 'Política de Cookies', to: '/legal/cookies' },
+          { label: 'Términos & Cancelación', to: '/legal/terminos' },
         ],
       },
     ],
-    gdpr: 'Datos protegidos · RGPD',
+    privacy: 'Aviso Legal y Privacidad',
+    cookies: 'Configurar cookies',
     lang: 'Español (ES)',
     copy: '© 2026 OOL Experiences. Hecho con copal y código en Santa Ponça, Mallorca.',
+  },
+
+  // Banner y panel de consentimiento de cookies (Guía AEPD).
+  consent: {
+    banner: {
+      title: 'Tu privacidad',
+      body: 'Usamos cookies técnicas necesarias para que el sitio funcione. Solo cargamos el calendario de reservas (Cal.eu, cookies de terceros) si tú lo aceptas. No usamos cookies de analítica ni de publicidad.',
+      accept: 'Aceptar',
+      reject: 'Rechazar',
+      configure: 'Configurar',
+      policyLink: 'Más información en la Política de Cookies',
+    },
+    settings: {
+      title: 'Preferencias de cookies',
+      intro: 'Decide qué cookies permites. Las necesarias siempre están activas porque sin ellas el sitio no funciona. Puedes cambiar tu decisión cuando quieras desde el pie de página.',
+      necessaryTitle: 'Necesarias',
+      necessaryDesc: 'Imprescindibles para el funcionamiento del sitio: recuerdan tu idioma y tu decisión sobre cookies. No identifican a personas.',
+      thirdPartyTitle: 'Reservas (Cal.eu)',
+      thirdPartyDesc: 'Cargan el calendario de reservas de Cal.eu, un proveedor externo que puede instalar sus propias cookies. Solo se activan con tu permiso.',
+      alwaysOn: 'Siempre activas',
+      rejectAll: 'Rechazar todo',
+      save: 'Guardar preferencias',
+      close: 'Cerrar',
+    },
+    gate: {
+      title: 'Calendario de reservas',
+      body: 'Para reservar cargamos el calendario de Cal.eu, un servicio externo que puede instalar cookies de terceros. No se carga nada hasta que tú lo autorices.',
+      load: 'Cargar calendario de reservas',
+      privacyNote: 'Al pulsar aceptas las cookies de Cal.eu. Consulta la Política de Cookies para más detalle.',
+    },
+  },
+
+  // Páginas legales. Textos MODELO conformes; los [A COMPLETAR] requieren datos
+  // que solo Blanca puede aportar (ver CHECKLIST-BLANCA.md). No son dictamen jurídico.
+  legal: {
+    updatedLabel: 'Última actualización',
+    reviewNote:
+      'Este es un texto modelo orientativo. Antes de su publicación definitiva debe completarse con los datos del titular y, preferiblemente, ser revisado por un profesional jurídico.',
+    aviso: {
+      title: 'Aviso Legal',
+      updated: 'Junio de 2026',
+      intro:
+        'En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se ponen a disposición de los usuarios los siguientes datos de identificación del titular de este sitio web.',
+      sections: [
+        {
+          heading: '1. Datos identificativos del titular',
+          list: [
+            'Titular: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL — A COMPLETAR]',
+            'NIF / CIF: [A COMPLETAR]',
+            'Domicilio: [DOMICILIO FISCAL — A COMPLETAR], Santa Ponça, Mallorca, Illes Balears, España',
+            'Correo electrónico: oolexpriences@gmail.com',
+            'Teléfono: +34 665 17 55 56',
+            'Actividad: diseño y facilitación de ceremonias holísticas, terapias de bienestar y organización de eventos.',
+          ],
+        },
+        {
+          heading: '2. Objeto y condiciones de uso',
+          paragraphs: [
+            'Este sitio web tiene carácter informativo y comercial sobre los servicios de OOL Experiences. El acceso y la navegación implican la aceptación de las condiciones recogidas en este Aviso Legal.',
+            'El usuario se compromete a hacer un uso adecuado de los contenidos y a no emplearlos para actividades ilícitas o contrarias a la buena fe.',
+          ],
+        },
+        {
+          heading: '3. Propiedad intelectual e industrial',
+          paragraphs: [
+            'Los textos, fotografías, logotipos, diseños y demás elementos del sitio son titularidad del prestador o cuentan con la correspondiente autorización, y están protegidos por la normativa de propiedad intelectual e industrial. Queda prohibida su reproducción, distribución o transformación sin autorización expresa.',
+          ],
+        },
+        {
+          heading: '4. Responsabilidad',
+          paragraphs: [
+            'El titular no se responsabiliza de los daños derivados de un uso inadecuado del sitio ni de la indisponibilidad temporal por causas técnicas. Los servicios de bienestar ofrecidos tienen carácter complementario y no sustituyen ningún tratamiento médico o psicológico.',
+          ],
+        },
+        {
+          heading: '5. Enlaces y servicios de terceros',
+          paragraphs: [
+            'El sitio integra el servicio de reservas Cal.eu (Cal.com) y enlaza a WhatsApp (Meta Platforms). El titular no controla dichos servicios externos, que se rigen por sus propias condiciones y políticas de privacidad.',
+          ],
+        },
+        {
+          heading: '6. Alojamiento',
+          paragraphs: [
+            'Este sitio está alojado en Vercel Inc. (340 S Lemon Ave #4133, Walnut, CA 91789, EE. UU.), proveedor de infraestructura web.',
+          ],
+        },
+        {
+          heading: '7. Legislación aplicable',
+          paragraphs: [
+            'Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales del domicilio del usuario cuando proceda conforme a la normativa de consumo.',
+          ],
+        },
+      ],
+    },
+    privacidad: {
+      title: 'Política de Privacidad',
+      updated: 'Junio de 2026',
+      intro:
+        'Esta política describe cómo se tratan los datos personales de los usuarios conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).',
+      sections: [
+        {
+          heading: '1. Responsable del tratamiento',
+          list: [
+            'Responsable: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL — A COMPLETAR]',
+            'NIF / CIF: [A COMPLETAR]',
+            'Domicilio: [DOMICILIO FISCAL — A COMPLETAR], Mallorca, España',
+            'Correo electrónico: oolexpriences@gmail.com',
+          ],
+        },
+        {
+          heading: '2. Qué datos tratamos, con qué finalidad y con qué base legal',
+          paragraphs: [
+            'Reserva de citas y ceremonias (a través de Cal.eu): nombre, correo electrónico, teléfono y fecha elegida, con la finalidad de gestionar y confirmar tu reserva. Base jurídica: ejecución de un contrato o medidas precontractuales a tu solicitud (art. 6.1.b RGPD).',
+            'Consultas por WhatsApp o correo electrónico: los datos que nos facilites, con la finalidad de atender tu solicitud. Base jurídica: tu consentimiento y el interés legítimo en responderte (art. 6.1.a y 6.1.f RGPD).',
+            'Cookies y servicios de terceros: ver la Política de Cookies. Base jurídica: tu consentimiento (art. 6.1.a RGPD).',
+          ],
+        },
+        {
+          heading: '3. Conservación',
+          paragraphs: [
+            'Los datos se conservan mientras dure la relación y, después, durante los plazos legalmente exigibles para atender posibles responsabilidades. Las consultas que no deriven en contratación se conservan el tiempo necesario para gestionarlas.',
+          ],
+        },
+        {
+          heading: '4. Destinatarios y encargados del tratamiento',
+          paragraphs: [
+            'Para prestar el servicio recurrimos a proveedores que actúan como encargados del tratamiento:',
+          ],
+          list: [
+            'Cal.com (reservas, instancia europea app.cal.eu) — gestión de citas.',
+            'Google Ireland Ltd. (Google Calendar / email) — sincronización y confirmación de reservas.',
+            'Vercel Inc. (alojamiento del sitio).',
+            'Meta Platforms Ireland Ltd. (WhatsApp) — solo si decides contactar por ese canal.',
+          ],
+        },
+        {
+          heading: '5. Transferencias internacionales',
+          paragraphs: [
+            'Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En esos casos, las transferencias se amparan en las garantías previstas por el RGPD (cláusulas contractuales tipo de la Comisión Europea u otros mecanismos válidos). [Confirmar con cada proveedor — A COMPLETAR].',
+          ],
+        },
+        {
+          heading: '6. Tus derechos',
+          paragraphs: [
+            'Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a oolexpriences@gmail.com, indicando el derecho que deseas ejercer. Si consideras que el tratamiento no se ajusta a la normativa, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).',
+          ],
+        },
+        {
+          heading: '7. Seguridad y menores',
+          paragraphs: [
+            'Aplicamos medidas técnicas y organizativas razonables para proteger tus datos. Los servicios se dirigen a personas mayores de edad; no recabamos conscientemente datos de menores sin consentimiento de sus representantes legales.',
+          ],
+        },
+      ],
+    },
+    cookies: {
+      title: 'Política de Cookies',
+      updated: 'Junio de 2026',
+      intro:
+        'Esta política explica qué cookies y tecnologías similares utiliza este sitio, conforme al artículo 22.2 de la LSSI-CE y a la Guía sobre el uso de cookies de la AEPD.',
+      sections: [
+        {
+          heading: '1. Qué son las cookies',
+          paragraphs: [
+            'Una cookie es un pequeño archivo que un sitio web almacena en tu dispositivo. También usamos almacenamiento local del navegador (localStorage) con finalidad equivalente. Las técnicas o necesarias están exentas de consentimiento; el resto solo se instalan si las aceptas.',
+          ],
+        },
+        {
+          heading: '2. Cookies que utilizamos',
+          table: {
+            head: ['Nombre / Proveedor', 'Finalidad', 'Duración', 'Tipo'],
+            rows: [
+              ['blanca-lang (propia)', 'Recordar el idioma elegido (ES/EN)', 'Persistente', 'Técnica (necesaria)'],
+              ['blanca-consent (propia)', 'Guardar tu decisión sobre las cookies', 'Persistente', 'Técnica (necesaria)'],
+              ['Cal.eu / Cal.com (terceros)', 'Mostrar el calendario y gestionar la reserva', 'Según el proveedor', 'Terceros (requiere consentimiento)'],
+            ],
+          },
+        },
+        {
+          heading: '3. No usamos analítica ni publicidad',
+          paragraphs: [
+            'Este sitio no utiliza cookies de analítica (como Google Analytics) ni de publicidad o seguimiento. La única carga de terceros es el calendario de reservas Cal.eu, y solo si lo autorizas.',
+          ],
+        },
+        {
+          heading: '4. Cómo gestionar o revocar tu consentimiento',
+          paragraphs: [
+            'Puedes cambiar o retirar tu consentimiento en cualquier momento desde el enlace «Configurar cookies» del pie de página. También puedes bloquear o eliminar cookies desde la configuración de tu navegador.',
+          ],
+        },
+      ],
+    },
+    terminos: {
+      title: 'Términos, Condiciones y Política de Cancelación',
+      updated: 'Junio de 2026',
+      intro:
+        'Estas condiciones regulan la contratación de ceremonias, terapias y experiencias de OOL Experiences. Al reservar, aceptas estos términos.',
+      sections: [
+        {
+          heading: '1. Servicios',
+          paragraphs: [
+            'OOL Experiences diseña y facilita ceremonias holísticas, terapias de bienestar y eventos a medida. Cada propuesta es un punto de partida que se concreta contigo. Los servicios tienen carácter de bienestar y acompañamiento, y complementan —sin sustituir— cualquier tratamiento médico o psicológico.',
+          ],
+        },
+        {
+          heading: '2. Reservas, precios y pago',
+          paragraphs: [
+            'Algunas experiencias se reservan en línea a través de Cal.eu y otras se diseñan previa conversación. Para confirmar una reserva puede requerirse un depósito del 25 % del precio mediante Bizum; el importe restante se abona el día de la ceremonia. [Confirmar importes y método con el titular — A COMPLETAR].',
+            'Los precios mostrados incluyen los impuestos aplicables salvo que se indique lo contrario.',
+          ],
+        },
+        {
+          heading: '3. Política de cancelación y reprogramación',
+          paragraphs: [
+            'Cancelación por tu parte: [definir plazos — p. ej., cancelación con más de X días de antelación: devolución del depósito; con menos de X días: el depósito no es reembolsable. A COMPLETAR con Blanca].',
+            'Reprogramación: dentro de la disponibilidad de la agenda, se procurará reubicar la fecha sin coste adicional con un preaviso razonable.',
+            'Cancelación por parte del prestador o por causas de fuerza mayor: se ofrecerá una nueva fecha o la devolución íntegra del depósito.',
+          ],
+        },
+        {
+          heading: '4. Derecho de desistimiento',
+          paragraphs: [
+            'En los servicios de ocio o eventos que se prestan en una fecha determinada, el artículo 103.l del Texto Refundido de la Ley General para la Defensa de los Consumidores y Usuarios (R.D.L. 1/2007) excluye el derecho de desistimiento. Para el resto de servicios sin fecha cerrada, dispones de 14 días naturales para desistir conforme a la normativa de consumo.',
+          ],
+        },
+        {
+          heading: '5. Responsabilidad y salud',
+          paragraphs: [
+            'Las ceremonias y terapias son experiencias de bienestar. No constituyen un tratamiento médico, psicológico ni psiquiátrico, ni prometen resultados de curación. Si atraviesas un proceso clínico, te recomendamos informar al respecto y mantener tu tratamiento profesional.',
+          ],
+        },
+        {
+          heading: '6. Ley aplicable y resolución de conflictos',
+          paragraphs: [
+            'Estas condiciones se rigen por la legislación española. Como consumidor, puedes acudir a la plataforma de resolución de litigios en línea de la Comisión Europea (https://ec.europa.eu/consumers/odr).',
+          ],
+        },
+      ],
+    },
   },
 }

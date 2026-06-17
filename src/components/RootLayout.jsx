@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import CookieBanner from './CookieBanner'
 import useDocumentMeta from '../i18n/useDocumentMeta'
 import { EASE } from '../lib/motion'
 
@@ -57,6 +58,7 @@ export default function RootLayout() {
         </motion.div>
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   )
 }
