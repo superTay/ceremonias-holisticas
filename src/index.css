@@ -59,6 +59,12 @@
     @apply inline-flex items-center justify-center gap-2 rounded-token-lg border border-border-subtle bg-transparent px-7 py-3.5 text-[15px] font-medium tracking-wide text-foreground-primary transition-all duration-300 ease-out hover:border-accent-primary hover:bg-surface-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] active:duration-100;
   }
 
+  /* Botones del banner de cookies. Aceptar y Rechazar comparten esta clase para
+     garantizar el MISMO peso visual que exige la Guía AEPD. */
+  .btn-cookie {
+    @apply inline-flex items-center justify-center rounded-token-lg border border-accent-cacao bg-surface-primary px-5 py-2.5 text-sm font-semibold text-accent-cacao transition-all duration-300 ease-out hover:bg-accent-cacao hover:text-foreground-on-deep;
+  }
+
   .link-underline {
     @apply relative after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:scale-x-100;
   }

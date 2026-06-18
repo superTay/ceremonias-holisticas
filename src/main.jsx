@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { MotionConfig } from 'framer-motion'
 import router from './router'
+import { ConsentProvider } from './consent/ConsentContext'
 import './i18n'
+import './fonts.css'
 import './index.css'
 
 // MotionConfig reducedMotion="user": framer neutraliza transforms/layout
@@ -12,8 +14,10 @@ import './index.css'
 // parallax usa useReducedMotion() además.
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <MotionConfig reducedMotion="user">
-      <RouterProvider router={router} />
-    </MotionConfig>
+    <ConsentProvider>
+      <MotionConfig reducedMotion="user">
+        <RouterProvider router={router} />
+      </MotionConfig>
+    </ConsentProvider>
   </React.StrictMode>,
 )
