@@ -636,9 +636,9 @@ export default {
         {
           heading: '1. Datos identificativos del titular',
           list: [
-            'Titular: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL — A COMPLETAR]',
-            'NIF / CIF: [A COMPLETAR]',
-            'Domicilio: [DOMICILIO FISCAL — A COMPLETAR], Santa Ponça, Mallorca, Illes Balears, España',
+            'Titular: Blanca Coutiño Torres (nombre comercial: OOL Experiences)',
+            'NIE: Z2370247-X',
+            'Domicilio: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Illes Balears, España',
             'Correo electrónico: oolexpriences@gmail.com',
             'Teléfono: +34 665 17 55 56',
             'Actividad: diseño y facilitación de ceremonias holísticas, terapias de bienestar y organización de eventos.',
@@ -692,9 +692,9 @@ export default {
         {
           heading: '1. Responsable del tratamiento',
           list: [
-            'Responsable: [NOMBRE Y APELLIDOS / RAZÓN SOCIAL — A COMPLETAR]',
-            'NIF / CIF: [A COMPLETAR]',
-            'Domicilio: [DOMICILIO FISCAL — A COMPLETAR], Mallorca, España',
+            'Responsable: Blanca Coutiño Torres (nombre comercial: OOL Experiences)',
+            'NIE: Z2370247-X',
+            'Domicilio: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Illes Balears, España',
             'Correo electrónico: oolexpriences@gmail.com',
           ],
         },
@@ -727,7 +727,7 @@ export default {
         {
           heading: '5. Transferencias internacionales',
           paragraphs: [
-            'Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En esos casos, las transferencias se amparan en las garantías previstas por el RGPD (cláusulas contractuales tipo de la Comisión Europea u otros mecanismos válidos). [Confirmar con cada proveedor — A COMPLETAR].',
+            'Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En esos casos, las transferencias se amparan en las garantías previstas por el RGPD (cláusulas contractuales tipo de la Comisión Europea u otros mecanismos válidos).',
           ],
         },
         {
@@ -796,14 +796,14 @@ export default {
         {
           heading: '2. Reservas, precios y pago',
           paragraphs: [
-            'Algunas experiencias se reservan en línea a través de Cal.eu y otras se diseñan previa conversación. Para confirmar una reserva puede requerirse un depósito del 25 % del precio mediante Bizum; el importe restante se abona el día de la ceremonia. [Confirmar importes y método con el titular — A COMPLETAR].',
+            'Algunas experiencias se reservan en línea a través de Cal.eu y otras se diseñan previa conversación. Para confirmar una reserva puede requerirse un depósito del 25 % del precio mediante Bizum; el importe restante se abona el día de la ceremonia.',
             'Los precios mostrados incluyen los impuestos aplicables salvo que se indique lo contrario.',
           ],
         },
         {
           heading: '3. Política de cancelación y reprogramación',
           paragraphs: [
-            'Cancelación por tu parte: [definir plazos — p. ej., cancelación con más de X días de antelación: devolución del depósito; con menos de X días: el depósito no es reembolsable. A COMPLETAR con Blanca].',
+            'Cancelación por tu parte: las condiciones concretas de cancelación y de devolución del depósito se acuerdan y se te comunican por escrito en el momento de la reserva, antes de cualquier pago.',
             'Reprogramación: dentro de la disponibilidad de la agenda, se procurará reubicar la fecha sin coste adicional con un preaviso razonable.',
             'Cancelación por parte del prestador o por causas de fuerza mayor: se ofrecerá una nueva fecha o la devolución íntegra del depósito.',
           ],

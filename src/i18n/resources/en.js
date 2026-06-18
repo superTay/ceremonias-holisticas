@@ -575,9 +575,9 @@ export default {
         {
           heading: '1. Owner identification',
           list: [
-            'Owner: [FULL NAME / COMPANY NAME — TO COMPLETE]',
-            'Tax ID (NIF/CIF): [TO COMPLETE]',
-            'Address: [REGISTERED ADDRESS — TO COMPLETE], Santa Ponça, Mallorca, Balearic Islands, Spain',
+            'Owner: Blanca Coutiño Torres (trading as OOL Experiences)',
+            'Tax ID (NIE): Z2370247-X',
+            'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
             'Email: oolexpriences@gmail.com',
             'Phone: +34 665 17 55 56',
             'Activity: design and facilitation of holistic ceremonies, wellness therapies and event organisation.',
@@ -631,9 +631,9 @@ export default {
         {
           heading: '1. Data controller',
           list: [
-            'Controller: [FULL NAME / COMPANY NAME — TO COMPLETE]',
-            'Tax ID (NIF/CIF): [TO COMPLETE]',
-            'Address: [REGISTERED ADDRESS — TO COMPLETE], Mallorca, Spain',
+            'Controller: Blanca Coutiño Torres (trading as OOL Experiences)',
+            'Tax ID (NIE): Z2370247-X',
+            'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
             'Email: oolexpriences@gmail.com',
           ],
         },
@@ -666,7 +666,7 @@ export default {
         {
           heading: '5. International transfers',
           paragraphs: [
-            'Some providers may process data outside the European Economic Area. In such cases, transfers rely on the safeguards provided by the GDPR (European Commission Standard Contractual Clauses or other valid mechanisms). [Confirm with each provider — TO COMPLETE].',
+            'Some providers may process data outside the European Economic Area. In such cases, transfers rely on the safeguards provided by the GDPR (European Commission Standard Contractual Clauses or other valid mechanisms).',
           ],
         },
         {
@@ -735,14 +735,14 @@ export default {
         {
           heading: '2. Bookings, prices and payment',
           paragraphs: [
-            'Some experiences are booked online via Cal.eu and others are designed after a conversation. To confirm a booking, a deposit of 25% of the price may be required via Bizum; the remaining amount is paid on the ceremony day. [Confirm amounts and method with the owner — TO COMPLETE].',
+            'Some experiences are booked online via Cal.eu and others are designed after a conversation. To confirm a booking, a deposit of 25% of the price may be required via Bizum; the remaining amount is paid on the ceremony day.',
             'Prices shown include applicable taxes unless stated otherwise.',
           ],
         },
         {
           heading: '3. Cancellation and rescheduling policy',
           paragraphs: [
-            'Cancellation by you: [define periods — e.g. cancellation more than X days in advance: deposit refunded; less than X days: deposit non-refundable. TO COMPLETE with Blanca].',
+            'Cancellation by you: the specific cancellation and deposit-refund terms are agreed and communicated to you in writing at the time of booking, before any payment.',
             'Rescheduling: subject to calendar availability, we will aim to move the date at no extra cost with reasonable notice.',
             'Cancellation by the provider or due to force majeure: a new date or a full refund of the deposit will be offered.',
           ],
