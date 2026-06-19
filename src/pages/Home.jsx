@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Quote } from 'lucide-react'
+import { ArrowUpRight, Quote } from 'lucide-react'
 import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'
 import WhatIsOol from '../components/WhatIsOol'
@@ -21,7 +21,6 @@ export default function HomePage() {
       <OolSymbol />
       <FeaturedCeremonies />
       <SocialProofStrip />
-      <HomeCTA />
     </>
   )
 }
@@ -114,7 +113,7 @@ function SocialProofStrip() {
   const items = press.items ?? []
 
   return (
-    <section className="bg-surface-primary py-24 lg:py-28">
+    <section className="bg-surface-secondary/60 py-24 lg:py-28">
       <div className="container-page grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
         {quote && (
           <Reveal blur={6} className="lg:col-span-7">
@@ -163,30 +162,3 @@ function SocialProofStrip() {
   )
 }
 
-function HomeCTA() {
-  const { whatsapp } = useContent()
-  return (
-    <section className="bg-surface-deep py-24 text-foreground-on-deep lg:py-32">
-      <div className="container-page max-w-3xl text-center">
-        <Reveal>
-          <span className="eyebrow text-accent-clay">{whatsapp.eyebrow}</span>
-          <h2 className="heading-display mt-5 text-[clamp(2rem,3.8vw,3rem)] text-foreground-on-deep">
-            {whatsapp.headline}
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-foreground-on-deep/80">
-            {whatsapp.sub}
-          </p>
-          <a
-            href={whatsapp.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-10 inline-flex items-center gap-2 rounded-token-lg bg-accent-cacao-action px-7 py-3.5 text-[15px] font-medium text-foreground-on-deep transition-all duration-300 hover:bg-accent-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]"
-          >
-            {whatsapp.cta}
-            <ArrowRight size={16} />
-          </a>
-        </Reveal>
-      </div>
-    </section>
-  )
-}
