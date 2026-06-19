@@ -110,7 +110,7 @@ export default function Hero() {
             entrada lo hace una cortina crema que se retira hacia arriba +
             un settle de escala one-shot. Nada de opacity 0 sobre el LCP. */}
         <div className="relative lg:col-span-5">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-token-xl bg-surface-deep shadow-2xl">
+          <div className="relative mx-auto aspect-[4/5] max-w-[340px] overflow-hidden rounded-token-xl bg-surface-deep shadow-2xl lg:ml-auto">
             <motion.img
               src="/hero-entrada.webp"
               alt="Blanca Coutiño sostiene en el cuenco de las manos una ofrenda dorada del mar, vestido de lino con bordado, frente a las olas turquesa del Caribe"

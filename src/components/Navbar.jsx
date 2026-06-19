@@ -8,7 +8,7 @@ import { EASE } from '../lib/motion'
 import Logo from './Logo'
 
 export default function Navbar() {
-  const { announcement, nav, whatsapp } = useContent()
+  const { announcement, nav } = useContent()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
@@ -88,14 +88,9 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-4 lg:flex">
             <LangToggle label={nav.langLabel} />
-            <a
-              href={whatsapp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary whitespace-nowrap"
-            >
+            <Link to="/contact" className="btn-primary whitespace-nowrap">
               {nav.cta}
-            </a>
+            </Link>
           </div>
 
           {/* Mobile toggle — padding negativo-compensado: icono de 24px con
@@ -143,14 +138,9 @@ export default function Navbar() {
                   </li>
                 ))}
                 <li className="pt-2">
-                  <a
-                    href={whatsapp.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary w-full"
-                  >
+                  <Link to="/contact" className="btn-primary w-full">
                     {nav.cta}
-                  </a>
+                  </Link>
                 </li>
                 <li className="px-3 pt-3">
                   <LangToggle label={nav.langLabel} />

@@ -29,8 +29,8 @@ export default {
     brandAria: 'Inicio · OOL Experiences',
     links: [
       { label: 'Inicio', to: '/' },
-      { label: 'Ceremonias', to: '/ceremonies' },
       { label: 'Sobre Blanca', to: '/about' },
+      { label: 'Ceremonias', to: '/ceremonies' },
       { label: 'Galería', to: '/gallery' },
       { label: 'Contacto', to: '/contact' },
     ],
@@ -41,7 +41,7 @@ export default {
   },
 
   hero: {
-    eyebrow: 'OOL · CEREMONIAS DE CORAZÓN',
+    eyebrow: 'CEREMONIAS HOLÍSTICAS · MALLORCA',
     headline:
       'Ceremonias que honran tus raíces, tu historia y tu energía',
     headlineHighlight: 'raíces',
@@ -62,11 +62,11 @@ export default {
   // no renderiza la sección (defensivo).
   whatIsOol: {
     eyebrow: 'QUÉ ES OOL',
-    headline: 'Ool es la palabra maya para corazón',
+    headline: 'Qué hacemos y por qué',
     paragraphs: [
-      '*Ool* es la palabra maya para corazón. También para alma, para centro. De ahí parte todo lo que hacemos: ceremonias pensadas para que vuelvas a tu centro.',
-      'No celebramos eventos. Acompañamos momentos: una boda, la llegada de un bebé, un cierre que duele, un comienzo que pide ser honrado. Cada experiencia se diseña a tu medida, desde tu intención y tu historia.',
-      'Fusionamos las tradiciones ancestrales (maya, azteca, céltica) con el ayurveda y el cuidado de la hotelería de lujo. Lo que tiene base, lo anclamos en ella. Lo que es belleza, lo cuidamos hasta el último detalle.',
+      '*Ool* significa "corazón" en maya. Es la idea de la que parte todo lo que hacemos: ceremonias diseñadas para que pares, respires y vuelvas a lo que importa.',
+      'No organizamos eventos al uso. Acompañamos momentos que dejan huella: una boda, la llegada de un bebé, un cierre de etapa, un nuevo comienzo. Cada ceremonia se diseña contigo, a partir de tu historia y de lo que quieres celebrar.',
+      'Combinamos el cuidado y la logística de la hotelería de lujo con elementos de tradiciones ancestrales y bienestar. Lo trabajamos con criterio y cuidamos cada detalle, para que solo tengas que estar presente.',
     ],
     whyMaya: {
       title: 'Por qué lo maya',
@@ -87,23 +87,23 @@ export default {
     eyebrow: 'EL SÍMBOLO',
     headline: 'El corazón de Ool',
     intro:
-      'El logotipo nace del glifo maya *Ool*: corazón, alma, centro. Es una interpretación contemporánea, no una pieza de museo, y por eso lo entiende cualquiera sin necesidad de explicación.',
+      'Nuestro logotipo parte del glifo maya *Ool* (corazón, centro). Es una versión actual y sencilla: se entiende a primera vista, sin necesidad de explicarlo. Cada elemento tiene su porqué:',
     parts: [
       {
         part: 'El laberinto',
-        body: 'del centro es tu viaje hacia dentro.',
+        body: 'representa el camino hacia tu interior.',
       },
       {
         part: 'Las espirales',
-        body: 'son los ciclos que atraviesas: lo que se va, lo que vuelve.',
+        body: 'son los ciclos que vivimos: lo que se cierra y lo que vuelve a empezar.',
       },
       {
         part: 'La greca',
-        body: 'inspirada en Chichén Itzá y Uxmal, habla de agua, lluvia y abundancia.',
+        body: 'inspirada en Chichén Itzá y Uxmal, evoca el agua y la abundancia.',
       },
       {
         part: 'La turquesa',
-        body: 'que para los mayas valía más que el oro, es tu esencia preciosa.',
+        body: 'piedra muy valorada en la cultura maya, representa lo esencial y valioso de cada persona.',
       },
     ],
   },
@@ -494,6 +494,7 @@ export default {
       'Sin compromiso. Cero presión comercial.',
     ],
     cta: 'Hablar con Blanca por WhatsApp',
+    fabAria: 'Contactar con Blanca por WhatsApp',
     secondaryPrefix: 'o llámanos:',
     chat: {
       headerName: 'Ceremonias Holísticas',
@@ -538,6 +539,13 @@ export default {
     altPrefix: 'O si prefieres una conversación primero,',
     altCta: 'escríbele a Blanca por WhatsApp',
     loading: 'Cargando el calendario…',
+    locationNote:
+      'Las ceremonias se realizan en Santa Ponça. Fuera de Santa Ponça se aplica un coste adicional por desplazamiento, que confirmamos al diseñar tu ceremonia. En la reserva te pediremos el número de personas y la ubicación deseada.',
+    deposit: {
+      title: 'Último paso: el depósito',
+      body: 'Tu fecha queda reservada en cuanto completes el depósito del {pct} % por Bizum al {phone}, indicando tu nombre y la fecha de la ceremonia. Te enviamos también las instrucciones por email.',
+      phoneFallback: 'el número que te facilitamos por email',
+    },
     success: {
       title: 'Tu llamada está reservada ✨',
       body: 'Recibirás un email de confirmación con todos los detalles. Si quieres, adelántale tu intención a Blanca por WhatsApp para que prepare vuestra conversación.',

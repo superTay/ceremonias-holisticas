@@ -65,6 +65,7 @@ export function useContent() {
         embedJsUrl: bookingConfig.embedJsUrl,
         brandColor: bookingConfig.brandColor,
         depositPct: bookingConfig.depositPct,
+        bizumPhone: bookingConfig.bizumPhone,
         // WhatsApp pre-rellenado para el panel de confirmación tras reservar.
         whatsappUrl: `${contact.url}?text=${encodeURIComponent(
           c.booking.success.whatsappText

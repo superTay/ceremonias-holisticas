@@ -32,8 +32,8 @@ export default {
     brandAria: 'Home · OOL Experiences',
     links: [
       { label: 'Home', to: '/' },
-      { label: 'Ceremonies', to: '/ceremonies' },
       { label: 'About Blanca', to: '/about' },
+      { label: 'Ceremonies', to: '/ceremonies' },
       { label: 'Gallery', to: '/gallery' },
       { label: 'Contact', to: '/contact' },
     ],
@@ -44,7 +44,7 @@ export default {
   },
 
   hero: {
-    eyebrow: 'HOLISTIC CEREMONIES · MALLORCA & DESTINATION',
+    eyebrow: 'HOLISTIC CEREMONIES · MALLORCA',
     headline:
       'Ceremonies for the moments that never come twice. Designed as a threshold, before the Mallorcan sea.',
     headlineHighlight: 'threshold',
@@ -59,6 +59,55 @@ export default {
     },
     proof:
       '“Our wedding wasn’t an event — it was a threshold.” — Lucía & Marc, Es Trenc',
+  },
+
+  // "What is OOL" block (Home).
+  whatIsOol: {
+    eyebrow: 'WHAT IS OOL',
+    headline: 'What we do, and why',
+    paragraphs: [
+      '*Ool* means "heart" in Maya. It is the idea everything we do starts from: ceremonies designed so you can pause, breathe and return to what matters.',
+      'We don’t put on ordinary events. We accompany the moments that leave a mark: a wedding, the arrival of a baby, the close of a chapter, a new beginning. Every ceremony is designed with you, from your own story and what you want to celebrate.',
+      'We bring together the care and logistics of luxury hospitality with elements of ancestral traditions and wellbeing. We do it with judgement and look after every detail, so all you have to do is be present.',
+    ],
+    whyMaya: {
+      title: 'Why the Maya thread',
+      body: 'Maya heritage is our root, not a costume. Copal, the four elements, the quartz and the cacao aren’t there to impress. They’re there because they make sense within the ritual: they mark a before and an after, and bring you back to your body and to what counts.',
+    },
+    takeaways: {
+      title: 'What you take with you',
+      items: [
+        'A carefully held space to reconnect with yourself and with those beside you.',
+        'A ritual made to measure, with no borrowed scripts.',
+        'The calm of knowing every detail is considered and taken care of.',
+      ],
+    },
+  },
+
+  // "The OOL symbol" block (Home). Logo storytelling.
+  symbol: {
+    eyebrow: 'THE SYMBOL',
+    headline: 'The heart of Ool',
+    intro:
+      'Our logo starts from the Maya glyph *Ool* (heart, centre). It’s a contemporary, simple take: you grasp it at a glance, with no need for explanation. Each element has its reason:',
+    parts: [
+      {
+        part: 'The labyrinth',
+        body: 'stands for the path inward, towards yourself.',
+      },
+      {
+        part: 'The spirals',
+        body: 'are the cycles we live: what closes and what begins again.',
+      },
+      {
+        part: 'The fret pattern',
+        body: 'inspired by Chichén Itzá and Uxmal, evokes water and abundance.',
+      },
+      {
+        part: 'The turquoise',
+        body: 'a stone highly prized in Maya culture, represents what is essential and precious in each person.',
+      },
+    ],
   },
 
   categories: [
@@ -434,6 +483,7 @@ export default {
       'No obligation. Zero sales pressure.',
     ],
     cta: 'Talk to Blanca on WhatsApp',
+    fabAria: 'Contact Blanca on WhatsApp',
     secondaryPrefix: 'or call us:',
     chat: {
       headerName: 'Holistic Ceremonies',
@@ -478,6 +528,13 @@ export default {
     altPrefix: 'Or if you’d rather talk first,',
     altCta: 'message Blanca on WhatsApp',
     loading: 'Loading the calendar…',
+    locationNote:
+      'Ceremonies take place in Santa Ponça. Outside Santa Ponça a travel surcharge applies, confirmed when we design your ceremony. During booking we’ll ask for the number of guests and your preferred location.',
+    deposit: {
+      title: 'Last step: the deposit',
+      body: 'Your date is held as soon as you complete the {pct}% deposit by Bizum to {phone}, stating your name and the ceremony date. We’ll also send the instructions by email.',
+      phoneFallback: 'the number we send you by email',
+    },
     success: {
       title: 'Your call is booked ✨',
       body: 'You’ll receive a confirmation email with all the details. If you like, share your intention with Blanca on WhatsApp so she can prepare for your conversation.',

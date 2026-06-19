@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Cal, { getCalApi } from '@calcom/embed-react'
 import { useTranslation } from 'react-i18next'
-import { MessageCircle, CheckCircle2 } from 'lucide-react'
+import { MessageCircle, CheckCircle2, MapPin, BadgeEuro } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
 import { useConsent } from '../consent/ConsentContext'
 import CalEmbedGate from './CalEmbedGate'
@@ -15,6 +15,15 @@ export default function Booking() {
   const lang = i18n.resolvedLanguage || i18n.language
   const { calAllowed } = useConsent()
   const [confirmed, setConfirmed] = useState(false)
+
+  // Instrucciones de Bizum en el panel de confirmación (depósito del 25 %).
+  // {phone} usa el número Bizum real (shared.js); si aún no está, cae en una
+  // frase neutra para no mostrar un hueco vacío.
+  const depositBody = booking.deposit
+    ? booking.deposit.body
+        .replace('{pct}', booking.depositPct)
+        .replace('{phone}', booking.bizumPhone || booking.deposit.phoneFallback)
+    : ''
 
   useEffect(() => {
     // Sin consentimiento de terceros no tocamos Cal.eu: getCalApi descargaría
@@ -62,6 +71,14 @@ export default function Booking() {
               {booking.sub}
             </p>
           </Reveal>
+          {booking.locationNote && (
+            <Reveal delay={0.15}>
+              <p className="mx-auto mt-5 flex max-w-xl items-start gap-2 rounded-token-lg bg-surface-secondary/60 px-4 py-3 text-left text-sm leading-relaxed text-foreground-secondary">
+                <MapPin size={16} className="mt-0.5 flex-none text-accent-cacao" />
+                <span>{booking.locationNote}</span>
+              </p>
+            </Reveal>
+          )}
         </div>
 
         <Reveal delay={0.15}>
@@ -77,6 +94,17 @@ export default function Booking() {
                 <p className="mt-4 max-w-md text-[15px] leading-relaxed text-foreground-secondary">
                   {booking.success.body}
                 </p>
+                {booking.deposit && (
+                  <div className="mt-6 w-full max-w-md rounded-token-lg border border-accent-cacao/20 bg-accent-cacao/5 p-5 text-left">
+                    <p className="flex items-center gap-2 text-sm font-semibold text-accent-cacao-text">
+                      <BadgeEuro size={16} />
+                      {booking.deposit.title}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">
+                      {depositBody}
+                    </p>
+                  </div>
+                )}
                 <a
                   href={booking.whatsappUrl}
                   target="_blank"
