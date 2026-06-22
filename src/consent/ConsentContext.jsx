@@ -39,11 +39,23 @@ function persist(thirdParty) {
 }
 
 export function ConsentProvider({ children }) {
-  const stored = readStored()
-  const [thirdParty, setThirdParty] = useState(stored?.thirdParty ?? false)
-  const [decided, setDecided] = useState(stored?.decided ?? false)
+  // Estado inicial SSR-safe (rechazo por defecto, sin leer localStorage): así el
+  // HTML prerenderizado y el primer render en cliente coinciden (sin mismatch de
+  // hidratación). La decisión persistida se lee tras montar, en el efecto de abajo.
+  const [thirdParty, setThirdParty] = useState(false)
+  const [decided, setDecided] = useState(false)
+  const [hydrated, setHydrated] = useState(false)
   // Panel "Configurar": reabrible desde el banner y desde el footer.
   const [settingsOpen, setSettingsOpen] = useState(false)
+
+  useEffect(() => {
+    const stored = readStored()
+    if (stored) {
+      setThirdParty(stored.thirdParty)
+      setDecided(true)
+    }
+    setHydrated(true)
+  }, [])
 
   const commit = useCallback((value) => {
     setThirdParty(value)
@@ -59,8 +71,9 @@ export function ConsentProvider({ children }) {
   const openSettings = useCallback(() => setSettingsOpen(true), [])
   const closeSettings = useCallback(() => setSettingsOpen(false), [])
 
-  // El banner inferior se muestra mientras no haya decisión y el panel esté cerrado.
-  const bannerVisible = !decided && !settingsOpen
+  // El banner inferior se muestra solo tras hidratar (es client-only para no
+  // romper la hidratación SSG), mientras no haya decisión y el panel esté cerrado.
+  const bannerVisible = hydrated && !decided && !settingsOpen
 
   const value = {
     thirdParty,

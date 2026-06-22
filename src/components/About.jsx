@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 

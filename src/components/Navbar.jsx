@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { LangLink as Link, LangNavLink as NavLink, basePath } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import { EASE } from '../lib/motion'
 import Logo from './Logo'
@@ -154,11 +155,19 @@ export default function Navbar() {
 
 function LangToggle({ label }) {
   const { i18n } = useTranslation()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const current = i18n.resolvedLanguage || i18n.language
   const langs = [
     ['es', 'ES'],
     ['en', 'EN'],
   ]
+  // El idioma lo manda la URL: navegamos al gemelo (/ ↔ /en + misma ruta).
+  // El loader de la rama de destino sincroniza i18n al entrar.
+  const switchTo = (code) => {
+    const base = basePath(pathname)
+    navigate(code === 'en' ? (base === '/' ? '/en' : `/en${base}`) : base)
+  }
   return (
     <div
       role="group"
@@ -171,7 +180,7 @@ function LangToggle({ label }) {
           <button
             key={code}
             type="button"
-            onClick={() => i18n.changeLanguage(code)}
+            onClick={() => switchTo(code)}
             aria-pressed={active}
             className={`flex items-center gap-1.5 px-1.5 py-2 transition-colors ${
               active

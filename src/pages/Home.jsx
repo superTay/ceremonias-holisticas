@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from '../components/LangLink'
 import { ArrowUpRight, Quote } from 'lucide-react'
 import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'

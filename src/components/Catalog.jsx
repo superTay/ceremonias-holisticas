@@ -1,12 +1,14 @@
 import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from './LangLink'
 import { getCalApi } from '@calcom/embed-react'
 import { useTranslation } from 'react-i18next'
 import { Check, CalendarCheck, MessageCircle } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
 import { useConsent } from '../consent/ConsentContext'
+import { SITE_URL, prices } from '../data/shared'
 import Reveal from './Reveal'
+import JsonLd from './JsonLd'
 
 // Namespace propio del catálogo (independiente del embed inline de la llamada de
 // diseño en Booking, que usa 'reserva'). Aquí solo abrimos popups de ceremonias.
@@ -57,11 +59,47 @@ export default function Catalog() {
     return catalog.cards.filter((c) => c.category === catalog.filters[activeIdx])
   }, [activeIdx, catalog])
 
+  // Service schema (las 7 ceremonias, completas, no el filtro activo) → descubrimiento
+  // y citabilidad por intención ("boda holística Mallorca", "baby blessing Mallorca").
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: catalog.headline,
+    itemListElement: catalog.cards.map((card, i) => {
+      const p = prices[card.id]
+      const amount = p && !p.onRequest ? (p.amount || '').replace(/[^\d]/g, '') : ''
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Service',
+          name: card.title,
+          description: card.body,
+          ...(card.tag ? { serviceType: card.tag } : {}),
+          provider: { '@type': 'LocalBusiness', '@id': `${SITE_URL}/#business` },
+          areaServed: { '@type': 'Place', name: 'Mallorca' },
+          ...(amount
+            ? {
+                offers: {
+                  '@type': 'Offer',
+                  price: amount,
+                  priceCurrency: 'EUR',
+                  availability: 'https://schema.org/InStock',
+                  url: `${SITE_URL}/ceremonies`,
+                },
+              }
+            : {}),
+        },
+      }
+    }),
+  }
+
   return (
     <section
       id="ceremonias"
       className="relative bg-surface-primary py-24 lg:py-32"
     >
+      <JsonLd data={serviceSchema} />
       <div className="container-page">
         {/* Header */}
         <Reveal className="max-w-3xl">
