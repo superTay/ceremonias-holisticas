@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import CookieBanner from './CookieBanner'
 import WhatsAppFab from './WhatsAppFab'
-import useDocumentMeta from '../i18n/useDocumentMeta'
+import Seo from './Seo'
 import { EASE } from '../lib/motion'
 
 // Transición de página "enter-only": al cambiar de ruta, la página nueva
@@ -21,7 +21,6 @@ import { EASE } from '../lib/motion'
 // propósito: 'auto' heredaría el scroll-behavior smooth del CSS, que es
 // justo lo que rompía reduced-motion en el antiguo ScrollToTop.
 export default function RootLayout() {
-  useDocumentMeta()
   const location = useLocation()
   const mainRef = useRef(null)
   const reduced = useReducedMotion()
@@ -44,6 +43,7 @@ export default function RootLayout() {
 
   return (
     <div className="relative">
+      <Seo />
       <Navbar />
       <main ref={mainRef} tabIndex={-1} className="outline-none">
         <motion.div

@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import i18n from './index.js'
 import {
   contact,
   prices,
@@ -17,7 +16,7 @@ export function useContent() {
   const lang = i18nInstance.resolvedLanguage || i18nInstance.language
 
   return useMemo(() => {
-    const c = i18n.getResourceBundle(lang, 'content')
+    const c = i18nInstance.getResourceBundle(lang, 'content')
 
     const formatPrice = (id) => {
       const p = prices[id]

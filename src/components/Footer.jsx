@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Shield, Globe, Cookie } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import { useConsent } from '../consent/ConsentContext'
 import Logo from './Logo'

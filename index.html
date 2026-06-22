@@ -7,21 +7,70 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#F1ECDB" />
-    <meta
-      name="description"
-      content="OOL Experiences: ceremonias holísticas maya-contemporáneas para acompañar, celebrar y honrar los hitos que importan. Fundadas por Blanca Coutiño en Mallorca."
-    />
-    <meta property="og:title" content="OOL Experiences · Ceremonias Holísticas en Mallorca" />
-    <meta
-      property="og:description"
-      content="Ceremonias diseñadas para los momentos que no se repiten. En las calas y fincas de Mallorca."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:locale:alternate" content="en_GB" />
+    <!-- Los metadatos por ruta (title, description, canonical, hreflang, og)
+         los inyecta <Seo> (vite-react-ssg / react-helmet-async) en build y en
+         cliente. Aquí solo lo común a todas las páginas. -->
     <!-- Fuentes auto-hospedadas en /public/fonts (ver scripts/fetch-fonts.mjs y
          src/fonts.css). Sin Google Fonts CDN: cero transferencia de IP a Google. -->
-    <title>OOL Experiences · Ceremonias Holísticas en Mallorca</title>
+    <!-- Sin <title> estático: lo inyecta <Seo> por ruta. Dejarlo aquí duplicaría
+         la etiqueta en el HTML prerenderizado. -->
+
+    <!-- JSON-LD global de entidad — presente en TODAS las rutas prerenderizadas.
+         Sobrevive al render client-side: lo que la IA y los buscadores leen para
+         reconocer la entidad (negocio + persona). El dominio es el definitivo. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://oolexperience.com/#business",
+            "name": "OOL Experiences",
+            "alternateName": "Ceremonias Holísticas · Blanca Coutiño",
+            "description": "Ceremonias holísticas maya-contemporáneas en Mallorca: bodas y renovación de votos, baby blessing, despedidas, propuestas y coaching. Diseñadas a medida con la precisión de la hotelería de lujo y la profundidad de las tradiciones ancestrales.",
+            "url": "https://oolexperience.com/",
+            "image": "https://oolexperience.com/blanca-hero.webp",
+            "logo": "https://oolexperience.com/logo-full.webp",
+            "email": "oolexperiences@gmail.com",
+            "telephone": "+34 665 17 55 56",
+            "priceRange": "€€€",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Calle Ramón de Moncada 34",
+              "postalCode": "07180",
+              "addressLocality": "Santa Ponça, Calvià",
+              "addressRegion": "Islas Baleares",
+              "addressCountry": "ES"
+            },
+            "areaServed": [
+              { "@type": "Place", "name": "Mallorca" },
+              { "@type": "Place", "name": "Ibiza" },
+              { "@type": "Place", "name": "Menorca" },
+              { "@type": "Place", "name": "Valencia" }
+            ],
+            "knowsLanguage": ["es", "en"],
+            "founder": { "@id": "https://oolexperience.com/#blanca" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://oolexperience.com/#blanca",
+            "name": "Blanca Coutiño",
+            "jobTitle": "Facilitadora de ceremonias holísticas, terapeuta y wedding planner",
+            "description": "Más de 22 años de trayectoria entre México, Francia y España. Pionera en bodas legales LGBT en la Riviera Maya. Cosmetóloga y terapeuta corporal, maestra de Reiki y terapeuta de Flores de Bach.",
+            "worksFor": { "@id": "https://oolexperience.com/#business" },
+            "knowsLanguage": ["es", "en"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://oolexperience.com/#website",
+            "url": "https://oolexperience.com/",
+            "name": "OOL Experiences",
+            "inLanguage": ["es", "en"],
+            "publisher": { "@id": "https://oolexperience.com/#business" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

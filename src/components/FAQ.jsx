@@ -1,19 +1,33 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
+import JsonLd from './JsonLd'
 
 export default function FAQ() {
   const { faq } = useContent()
   const [open, setOpen] = useState(0)
+
+  // FAQPage schema — el formato Q&A es el más citable por IA y candidato a
+  // AI Overviews. Se genera del mismo contenido i18n que se muestra.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
 
   return (
     <section
       id="faq"
       className="relative bg-surface-secondary py-24 lg:py-32"
     >
+      <JsonLd data={faqSchema} />
       <div className="container-page grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
         {/* Left intro */}
         <Reveal className="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">

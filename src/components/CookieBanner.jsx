@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { LangLink as Link } from './LangLink'
 import { Cookie, X } from 'lucide-react'
 import { useConsent } from '../consent/ConsentContext'
 import { useContent } from '../i18n/useContent'

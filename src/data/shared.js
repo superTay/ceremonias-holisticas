@@ -2,12 +2,19 @@
 // Regla de marca (Fase 4): el contacto y los precios JAMÁS deben divergir entre ES/EN,
 // por eso viven aquí y no en los bundles de i18n. Las palabras traducibles del precio
 // (desde / a consultar / por persona) están en cada bundle; aquí solo el dato duro.
-// TBD Blanca: número/email de producción (ver HANDOFF).
+
+// URL base canónica — ÚNICA fuente de verdad para canonicals, og:url, hreflang,
+// sitemap y JSON-LD. El dominio actual de Vercel es provisional; el definitivo es
+// oolexperience.com. Cambiar de dominio = cambiar solo esta línea (o VITE_SITE_URL).
+// Sin barra final: las rutas se concatenan ya con '/'.
+export const SITE_URL = (
+  import.meta.env?.VITE_SITE_URL || 'https://oolexperience.com'
+).replace(/\/$/, '')
 
 export const contact = {
   url: 'https://wa.me/34665175556',
   phone: '+34 665 17 55 56',
-  email: 'oolexpriences@gmail.com',
+  email: 'oolexperiences@gmail.com',
   location: 'Santa Ponça · Mallorca · ES',
 }
 
