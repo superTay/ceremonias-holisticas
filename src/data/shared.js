@@ -32,7 +32,7 @@ export const booking = {
   calOrigin: 'https://app.cal.eu',
   embedJsUrl: 'https://app.cal.eu/embed/embed.js',
   designCallLink: 'blanca-coutino/llamada-diseno', // llamada gratuita, instantánea
-  brandColor: '#B8623F', // accent-cacao OOL (terracota del logo) — el calendario hereda la marca
+  brandColor: '#B8623F', // accent-cacao OoL (terracota del logo) — el calendario hereda la marca
   depositPct: 25,
   bizumPhone: '', // TBD Blanca — número Bizum para el depósito (hoy vive en la descripción del evento Cal)
 }
@@ -49,13 +49,17 @@ export const bookingLinks = {
 }
 
 // Precio por id de ceremonia. `amount` en formato europeo (válido en ES y EN).
-// `per: true` → precio por persona. `onRequest: true` → "a consultar / on request".
+// Flags (ver formatPrice en useContent.js):
+//   · `per: true`       → "{amount} / persona"
+//   · `from: true`      → "A partir de {amount}" (precio de partida, no cerrado)
+//   · `onRequest: true` → "a consultar / on request"
+//   · `toAgree: true`   → "Precio a convenir" (se acuerda 1 a 1, sin importe público)
 export const prices = {
-  bodas: { amount: '2.400€' },
-  baby: { amount: '480€' },
-  picnic: { amount: '95€', per: true },
-  lazo: { amount: '380€' },
-  ixchel: { amount: '75€', per: true },
-  retorno: { amount: '690€' },
-  alquimia: { onRequest: true },
+  bodas: { toAgree: true },
+  baby: { amount: '120€', per: true },
+  picnic: { amount: '85€', per: true },
+  lazo: { amount: '350€', from: true },
+  ixchel: { amount: '95€', per: true, from: true },
+  retorno: { amount: '396€' },
+  alquimia: { amount: '130€', per: true },
 }

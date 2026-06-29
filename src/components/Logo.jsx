@@ -1,4 +1,4 @@
-// Logo de OOL Experiences. Placeholder tipográfico hasta que aterrice el archivo final
+// Logo de OoL Experiences. Placeholder tipográfico hasta que aterrice el archivo final
 // (cuando llegue, sustituir el render interno por <img src="/logo/<archivo>.svg" />
 // o un <svg> en línea; el resto del sitio no se entera porque consume este componente).
 //
@@ -26,7 +26,7 @@ export default function Logo({
   return (
     <span
       className={`inline-flex items-center gap-3 ${colorClass} ${className}`}
-      aria-label="OOL Experiences"
+      aria-label="OoL Experiences"
     >
       {variant !== 'wordmark' &&
         (markSrc ? (
@@ -43,7 +43,7 @@ export default function Logo({
       {variant !== 'mark' && (
         <span className="leading-none">
           <span className="block font-heading text-lg italic tracking-tight">
-            OOL Experiences
+            OoL Experiences
           </span>
           {variant === 'full' && showTagline && (
             <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.24em] text-accent-cacao-text">

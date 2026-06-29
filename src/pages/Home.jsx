@@ -4,11 +4,12 @@ import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'
 import WhatIsOol from '../components/WhatIsOol'
 import OolSymbol from '../components/OolSymbol'
+import FAQ from '../components/FAQ'
 import { useContent } from '../i18n/useContent'
 
-// Home = Hero + "Qué es OOL" + "El símbolo" + preview de 3 ceremonias
-// + un testimonio + tira de prensa + CTA cierre. Las páginas dedicadas
-// (Ceremonias, Sobre, Galería, Contacto) cargan los bloques completos.
+// Home = Hero + "Qué es OoL" + "El símbolo" + preview de 3 ceremonias
+// + un testimonio + tira de prensa + FAQ (acordeón) + CTA cierre. Las páginas
+// dedicadas (Ceremonias, Sobre, Galería, Contacto) cargan los bloques completos.
 //
 // Si los bloques de marca (whatIsOol, symbol) faltan en el bundle del
 // idioma activo, sus componentes no renderizan nada (defensivo).
@@ -21,6 +22,7 @@ export default function HomePage() {
       <OolSymbol />
       <FeaturedCeremonies />
       <SocialProofStrip />
+      <FAQ />
     </>
   )
 }
