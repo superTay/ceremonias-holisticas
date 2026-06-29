@@ -7,10 +7,10 @@
 
 export default {
   meta: {
-    title: 'OOL Experiences · Holistic Ceremonies in Mallorca',
+    title: 'OoL Experiences · Holistic Ceremonies in Mallorca',
     description:
-      'OOL Experiences: Maya-contemporary holistic ceremonies to accompany, celebrate and honour the milestones that matter. Founded by Blanca Coutiño in Mallorca.',
-    ogTitle: 'OOL Experiences · Holistic Ceremonies in Mallorca',
+      'OoL Experiences: Maya-contemporary holistic ceremonies to accompany, celebrate and honour the milestones that matter. Founded by Blanca Coutiño in Mallorca.',
+    ogTitle: 'OoL Experiences · Holistic Ceremonies in Mallorca',
     ogDescription:
       'Ceremonies designed for the moments that never come twice. In the coves and fincas of Mallorca.',
     ogLocale: 'en_GB',
@@ -28,8 +28,8 @@ export default {
     'No-obligation design consultation · Let’s design your bespoke ceremony',
 
   nav: {
-    brand: 'OOL Experiences',
-    brandAria: 'Home · OOL Experiences',
+    brand: 'OoL Experiences',
+    brandAria: 'Home · OoL Experiences',
     links: [
       { label: 'Home', to: '/' },
       { label: 'About Blanca', to: '/about' },
@@ -46,8 +46,8 @@ export default {
   hero: {
     eyebrow: 'HOLISTIC CEREMONIES · MALLORCA',
     headline:
-      'Ceremonies for the moments that never come twice. Designed as a threshold, before the Mallorcan sea.',
-    headlineHighlight: 'threshold',
+      'Ceremonies that honour your roots, your story and your energy.',
+    headlineHighlight: 'roots',
     sub: 'Weddings, blessings and intimate rituals in the coves and fincas of Mallorca. More than 22 years between luxury hospitality and ancestral traditions — each one designed entirely around you by Blanca Coutiño.',
     primaryCta: 'Book my design call',
     secondaryCta: 'Explore Ceremonies',
@@ -55,15 +55,15 @@ export default {
     nextCeremony: {
       label: 'NEXT CEREMONY',
       date: 'Spring calendar · 2026',
-      desc: 'El Festín de las Alas · Cala Vinyes',
+      desc: 'Oráculo de Ángeles · Cala Vinyes',
     },
     proof:
-      '“Our wedding wasn’t an event — it was a threshold.” — Lucía & Marc, Es Trenc',
+      '“Our wedding wasn’t an event — it was a journey.” — Lucía & Marc, Es Trenc',
   },
 
-  // "What is OOL" block (Home).
+  // "What is OoL" block (Home).
   whatIsOol: {
-    eyebrow: 'WHAT IS OOL',
+    eyebrow: 'WHAT IS OoL',
     headline: 'What we do, and why',
     paragraphs: [
       '*Ool* means "heart" in Maya. It is the idea everything we do starts from: ceremonies designed so you can pause, breathe and return to what matters.',
@@ -84,7 +84,7 @@ export default {
     },
   },
 
-  // "The OOL symbol" block (Home). Logo storytelling.
+  // "The OoL symbol" block (Home). Logo storytelling.
   symbol: {
     eyebrow: 'THE SYMBOL',
     headline: 'The heart of Ool',
@@ -115,8 +115,8 @@ export default {
     'Engagement',
     'Baby Blessing',
     'Bridal Farewell',
-    'Picnic & Oracle',
-    'Ritual Coaching',
+    'Angel Oracle',
+    '1:1 Coaching',
     'Alchemy Workshop',
   ],
 
@@ -130,14 +130,15 @@ export default {
       'Engagement',
       'Baby Blessing',
       'Bridal Farewell',
-      'Picnic & Oracle',
-      'Ritual Coaching',
+      'Angel Oracle',
+      '1:1 Coaching',
       'Alchemy Workshop',
     ],
     allFilter: 'All',
-    priceFrom: 'from',
+    priceFrom: 'From',
     priceOnRequest: 'on request',
-    pricePer: '/person',
+    priceToAgree: 'By arrangement',
+    pricePer: ' / person',
     cardCta: 'Check Availability',
     // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
     bookCta: 'Book a date',
@@ -184,9 +185,9 @@ export default {
       },
       {
         id: 'picnic',
-        tag: 'PICNIC & ORACLE',
-        category: 'Picnic & Oracle',
-        title: 'El Festín de las Alas',
+        tag: 'ANGEL ORACLE',
+        category: 'Angel Oracle',
+        title: 'Oráculo de Ángeles',
         body: 'Fine Mediterranean cuisine and an angelic circle beside an intimate cove. The Angelic Oracle accompanies you as guidance and self-knowledge — never prediction: a gentle mirror to find clarity and decide from a place of calm.',
         bullets: [
           'A Circle of Angels and an Oracle reading (guidance, not prediction)',
@@ -202,7 +203,7 @@ export default {
         id: 'lazo',
         tag: 'ENGAGEMENT',
         category: 'Engagement',
-        title: 'El Lazo del Destino',
+        title: 'El Lazo del Compromiso',
         body: 'An intimate ceremony for the two of you alone: a marriage proposal or a conscious recommitment. Mediterranean romance and the Maya wisdom of In Lak’ech, in an ultra-private corner of the island.',
         bullets: [
           'For the two of you alone · an ultra-private spot',
@@ -216,7 +217,7 @@ export default {
       },
       {
         id: 'ixchel',
-        tag: 'BRIDAL',
+        tag: 'BRIDAL FAREWELL',
         category: 'Bridal Farewell',
         title: 'El Círculo de Ixchel',
         body: 'A hen ceremony with soul, inspired by the Maya goddess Ixchel. Far from the confetti, close to the heart: a vessel of love and feminine empowerment for the bride and her tribe.',
@@ -232,10 +233,10 @@ export default {
       },
       {
         id: 'retorno',
-        tag: 'COACHING',
-        category: 'Ritual Coaching',
-        title: 'El Retorno a la Luz',
-        body: 'A private process of three encounters to cross a life threshold: a loss, a divorce, a change of course. Therapeutic numerology and rituals of earth and fire as an accompaniment that complements your wellbeing, never as medical treatment.',
+        tag: '1:1 COACHING',
+        category: '1:1 Coaching',
+        title: 'Coaching 1 a 1 · El Retorno a la Luz',
+        body: 'A private, one-to-one accompaniment of three encounters to move through a turning point in your life: a loss, a divorce, a change of course. Therapeutic numerology and rituals of earth and fire as an accompaniment that complements your wellbeing, never as medical treatment.',
         bullets: [
           '3 sessions: closure, transition and rebirth',
           'Therapeutic numerology + Maya rituals',
@@ -250,12 +251,12 @@ export default {
         id: 'alquimia',
         tag: 'WORKSHOP',
         category: 'Alchemy Workshop',
-        title: 'Alquimia de las 3 Aguas',
-        body: 'A sensory workshop where each person alchemises their own intentioned auric mist. You choose one of three frequencies — Love, Abundance or Balance — with island botanicals, infused waters and crystals. Ideal for groups and as a complement to other ceremonies.',
+        title: 'Alquimia de las Aguas',
+        body: 'A sensory workshop, brunch-style, where each person alchemises and takes home their own intentioned lotion with island botanicals, infused waters and crystals. It includes a short Angel Oracle reading — one to three cards — as guidance. Ideal for private or open groups, in hotels, beaches or forests across Mallorca.',
         bullets: [
-          'Three frequencies: Aphrodite, Maya Gold or Tramuntana',
-          'Each guest creates and takes home their own mist',
-          'Groups from 5 people · ideal for events',
+          'Create and take home your lotion + harmonised quartz',
+          'A short Angel Oracle reading (1 to 3 cards)',
+          'Private or open groups · 1 h 30 – 2 h',
         ],
         hue: 'from-[#C9A57A] to-[#7D6B3D]',
         image: '/card-alquimia.webp',
@@ -277,7 +278,7 @@ export default {
       'My work unites two worlds that rarely meet: the precision of international luxury hospitality and the depth of certified ancestral traditions. I am a cosmetologist and body therapist, a Reiki Master and a Bach Flower therapist; trained between hotel management in France and the herbalism I learned with the peoples of the Lacandon jungle.',
       'I was a pioneer of legal LGBT weddings in the Riviera Maya, accompanying couples from all over the world. I design every ritual with you: your intention, your body and your story are the map.',
     ],
-    pullQuote: 'I don’t provide a service. I hold a threshold.',
+    pullQuote: 'I don’t provide a service. I hold a sacred moment.',
     pillars: [
       {
         title: 'Luxury precision',
@@ -319,7 +320,7 @@ export default {
       },
       {
         quote:
-          'Our wedding wasn’t an event, it was a threshold. Every guest felt it. To this day people still call us to talk about that day.',
+          'Our wedding wasn’t an event, it was a journey. Every guest felt it. To this day people still call us to talk about that day.',
         name: 'Lucía & Marc',
         context: 'Holistic Wedding · Es Trenc',
       },
@@ -339,6 +340,8 @@ export default {
     eyebrow: 'IN THE MEDIA',
     headline: 'Her work, told by the press.',
     sub: 'More than a decade designing ceremonies, weddings and events in the Riviera Maya — recognised by the local press as a reference in the field.',
+    prevLabel: 'Previous clipping',
+    nextLabel: 'Next clipping',
     items: [
       {
         outlet: 'The Playa Times',
@@ -365,7 +368,7 @@ export default {
   gallery: {
     eyebrow: 'ALBUM',
     headline: 'Blanca’s world, in images.',
-    sub: 'Portraits, ceremony details and real moments. A decade of rituals between the Riviera Maya and the Mediterranean — the same presence that will hold your threshold.',
+    sub: 'Portraits, ceremony details and real moments. A decade of rituals between the Riviera Maya and the Mediterranean — the same presence that will hold your ceremony.',
     zoomLabel: 'Enlarge photo',
     closeLabel: 'Close gallery',
     prevLabel: 'Previous photo',
@@ -434,7 +437,7 @@ export default {
   faq: {
     eyebrow: 'FREQUENTLY ASKED QUESTIONS',
     headline: 'We answer your questions before they arise.',
-    sub: 'We design every ritual from trust. Here is what people most often ask before crossing the threshold.',
+    sub: 'We design every ritual from trust. Here is what people most often ask before taking the step.',
     items: [
       {
         q: 'Do I need previous experience for a ceremony?',
@@ -504,7 +507,7 @@ export default {
         },
         {
           from: 'her',
-          text: 'Lovely to meet you, Lucía ✨ Is there a ceremony calling to your heart? (Wedding, Engagement, Baby Blessing, Bridal Farewell, Picnic & Oracle…)',
+          text: 'Lovely to meet you, Lucía ✨ Is there a ceremony calling to your heart? (Wedding, Engagement, Baby Blessing, Bridal Farewell, Angel Oracle…)',
           time: '10:44',
         },
         {
@@ -545,7 +548,7 @@ export default {
   },
 
   footer: {
-    brand: 'OOL Experiences',
+    brand: 'OoL Experiences',
     desc: 'Maya-contemporary holistic ceremonies to accompany, celebrate and honour the milestones that matter. More than 22 years of practice between the Riviera Maya and Mallorca, founded by Blanca Coutiño.',
     columns: [
       {
@@ -555,8 +558,8 @@ export default {
           { label: 'Engagement', to: '/ceremonies' },
           { label: 'Baby Blessing', to: '/ceremonies' },
           { label: 'Bridal Farewell', to: '/ceremonies' },
-          { label: 'Picnic & Oracle', to: '/ceremonies' },
-          { label: 'Ritual Coaching', to: '/ceremonies' },
+          { label: 'Angel Oracle', to: '/ceremonies' },
+          { label: '1:1 Coaching', to: '/ceremonies' },
           { label: 'Alchemy Workshop', to: '/ceremonies' },
           { label: 'Bespoke rituals', to: '/ceremonies' },
         ],
@@ -584,7 +587,7 @@ export default {
     privacy: 'Legal Notice & Privacy',
     cookies: 'Cookie settings',
     lang: 'English (EN)',
-    copy: '© 2026 OOL Experiences. Made with copal and code in Santa Ponça, Mallorca.',
+    copy: '© 2026 OoL Experiences. Made with copal and code in Santa Ponça, Mallorca.',
   },
 
   // Cookie consent banner and panel (AEPD guidance).
@@ -632,7 +635,7 @@ export default {
         {
           heading: '1. Owner identification',
           list: [
-            'Owner: Blanca Coutiño Torres (trading as OOL Experiences)',
+            'Owner: Blanca Coutiño Torres (trading as OoL Experiences)',
             'Tax ID (NIE): Z2370247-X',
             'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
             'Email: oolexperiences@gmail.com',
@@ -643,7 +646,7 @@ export default {
         {
           heading: '2. Purpose and terms of use',
           paragraphs: [
-            'This website is informational and commercial in nature regarding the services of OOL Experiences. Access and browsing imply acceptance of the terms set out in this Legal Notice.',
+            'This website is informational and commercial in nature regarding the services of OoL Experiences. Access and browsing imply acceptance of the terms set out in this Legal Notice.',
             'The user agrees to make appropriate use of the content and not to use it for unlawful purposes or purposes contrary to good faith.',
           ],
         },
@@ -688,7 +691,7 @@ export default {
         {
           heading: '1. Data controller',
           list: [
-            'Controller: Blanca Coutiño Torres (trading as OOL Experiences)',
+            'Controller: Blanca Coutiño Torres (trading as OoL Experiences)',
             'Tax ID (NIE): Z2370247-X',
             'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
             'Email: oolexperiences@gmail.com',
@@ -781,12 +784,12 @@ export default {
       title: 'Terms, Conditions and Cancellation Policy',
       updated: 'June 2026',
       intro:
-        'These terms govern the booking of ceremonies, therapies and experiences from OOL Experiences. By booking, you accept these terms.',
+        'These terms govern the booking of ceremonies, therapies and experiences from OoL Experiences. By booking, you accept these terms.',
       sections: [
         {
           heading: '1. Services',
           paragraphs: [
-            'OOL Experiences designs and facilitates holistic ceremonies, wellness therapies and bespoke events. Each proposal is a starting point shaped with you. The services are of a wellness and accompaniment nature and complement — without replacing — any medical or psychological treatment.',
+            'OoL Experiences designs and facilitates holistic ceremonies, wellness therapies and bespoke events. Each proposal is a starting point shaped with you. The services are of a wellness and accompaniment nature and complement — without replacing — any medical or psychological treatment.',
           ],
         },
         {

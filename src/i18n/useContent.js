@@ -21,8 +21,10 @@ export function useContent() {
     const formatPrice = (id) => {
       const p = prices[id]
       if (!p) return ''
+      if (p.toAgree) return c.catalog.priceToAgree
       if (p.onRequest) return c.catalog.priceOnRequest
-      return `${c.catalog.priceFrom} ${p.amount}${p.per ? c.catalog.pricePer : ''}`
+      const base = `${p.amount}${p.per ? c.catalog.pricePer : ''}`
+      return p.from ? `${c.catalog.priceFrom} ${base}` : base
     }
 
     return {

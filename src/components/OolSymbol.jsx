@@ -1,7 +1,7 @@
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
-// Bloque "El símbolo OOL" (Home). Storytelling del logo en cuatro partes.
+// Bloque "El símbolo OoL" (Home). Storytelling del logo en cuatro partes.
 // Defensivo: si no hay `symbol` en el bundle, no renderiza nada.
 export default function OolSymbol() {
   const { symbol } = useContent()
@@ -16,10 +16,10 @@ export default function OolSymbol() {
             {symbol.headline}
           </h2>
           <div className="mt-8 overflow-hidden rounded-token-xl border border-border-subtle bg-surface-primary p-6">
-            {/* Logotipo OOL real (corazón maya + wordmark + tagline). */}
+            {/* Logotipo OoL real (corazón maya + wordmark + tagline). */}
             <img
               src="/logo-full.webp"
-              alt="Logotipo de OOL Experiences: un corazón maya con greca, espirales y un glifo central en turquesa"
+              alt="Logotipo de OoL Experiences: un corazón maya con greca, espirales y un glifo central en turquesa"
               className="mx-auto w-full max-w-[280px]"
               loading="lazy"
             />

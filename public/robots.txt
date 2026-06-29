@@ -1,4 +1,4 @@
-# OOL Experiences — Ceremonias Holísticas (Mallorca)
+# OoL Experiences — Ceremonias Holísticas (Mallorca)
 # Buscadores tradicionales
 User-agent: *
 Allow: /

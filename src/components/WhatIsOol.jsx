@@ -8,7 +8,7 @@ import {
 import { useContent } from '../i18n/useContent'
 import Reveal from './Reveal'
 
-// Bloque "Qué es OOL" (Home). Defensivo: si el bundle no tiene la clave
+// Bloque "Qué es OoL" (Home). Defensivo: si el bundle no tiene la clave
 // (EN aún sin transcrear), no renderiza nada y la página sigue cuajando.
 // Los asteriscos *Ool* en el copy se renderizan como italics simples
 // (el copy ES los usa para resaltar el término maya).
