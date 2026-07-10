@@ -638,7 +638,7 @@ export default {
             'Owner: Blanca Coutiño Torres (trading as OoL Experiences)',
             'Tax ID (NIE): Z2370247-X',
             'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
-            'Email: oolexperiences@gmail.com',
+            'Email: oolexperiencesinfo@gmail.com',
             'Phone: +34 665 17 55 56',
             'Activity: design and facilitation of holistic ceremonies, wellness therapies and event organisation.',
           ],
@@ -694,7 +694,7 @@ export default {
             'Controller: Blanca Coutiño Torres (trading as OoL Experiences)',
             'Tax ID (NIE): Z2370247-X',
             'Address: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Balearic Islands, Spain',
-            'Email: oolexperiences@gmail.com',
+            'Email: oolexperiencesinfo@gmail.com',
           ],
         },
         {
@@ -732,7 +732,7 @@ export default {
         {
           heading: '6. Your rights',
           paragraphs: [
-            'You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to oolexperiences@gmail.com, stating the right you wish to exercise. If you believe the processing does not comply with the law, you may lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).',
+            'You may exercise your rights of access, rectification, erasure, objection, restriction of processing and portability by writing to oolexperiencesinfo@gmail.com, stating the right you wish to exercise. If you believe the processing does not comply with the law, you may lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).',
           ],
         },
         {

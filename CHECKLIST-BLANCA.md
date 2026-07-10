@@ -15,7 +15,7 @@ Aparecen en el **Aviso Legal** y la **Política de Privacidad**:
 - [ ] **NIF / CIF**.
 - [ ] **Domicilio fiscal** (dirección completa).
 - [ ] ¿Estás dada de alta como **autónoma**? ¿Epígrafe **IAE** de la actividad? (recomendable indicarlo).
-- [ ] Confirmar que **oolexpriences@gmail.com** y **+34 665 17 55 56** son los datos de contacto definitivos (hoy son provisionales según el HANDOFF).
+- [ ] Confirmar que **oolexperiencesinfo@gmail.com** y **+34 665 17 55 56** son los datos de contacto definitivos (hoy son provisionales según el HANDOFF).
 
 ## 2. Reservas, pagos y cancelación (Términos)
 En la página **Términos & Cancelación**:

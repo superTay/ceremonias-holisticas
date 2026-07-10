@@ -650,7 +650,7 @@ export default {
             'Titular: Blanca Coutiño Torres (nombre comercial: OoL Experiences)',
             'NIE: Z2370247-X',
             'Domicilio: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Illes Balears, España',
-            'Correo electrónico: oolexperiences@gmail.com',
+            'Correo electrónico: oolexperiencesinfo@gmail.com',
             'Teléfono: +34 665 17 55 56',
             'Actividad: diseño y facilitación de ceremonias holísticas, terapias de bienestar y organización de eventos.',
           ],
@@ -706,7 +706,7 @@ export default {
             'Responsable: Blanca Coutiño Torres (nombre comercial: OoL Experiences)',
             'NIE: Z2370247-X',
             'Domicilio: Calle Ramón de Moncada 34, ps02 L, 07180 Santa Ponça, Calvià, Illes Balears, España',
-            'Correo electrónico: oolexperiences@gmail.com',
+            'Correo electrónico: oolexperiencesinfo@gmail.com',
           ],
         },
         {
@@ -744,7 +744,7 @@ export default {
         {
           heading: '6. Tus derechos',
           paragraphs: [
-            'Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a oolexperiences@gmail.com, indicando el derecho que deseas ejercer. Si consideras que el tratamiento no se ajusta a la normativa, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).',
+            'Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad escribiendo a oolexperiencesinfo@gmail.com, indicando el derecho que deseas ejercer. Si consideras que el tratamiento no se ajusta a la normativa, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).',
           ],
         },
         {
