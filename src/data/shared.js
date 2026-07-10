@@ -14,7 +14,7 @@ export const SITE_URL = (
 export const contact = {
   url: 'https://wa.me/34665175556',
   phone: '+34 665 17 55 56',
-  email: 'oolexperiences@gmail.com',
+  email: 'oolexperiencesinfo@gmail.com',
   location: 'Santa Ponça · Mallorca · ES',
 }
 
@@ -23,6 +23,29 @@ export const contact = {
 // debe forzar la instancia europea con `calOrigin` + `embedJsUrl`, o devuelve 404.
 // Cal.eu sincroniza con su Google Calendar y envía las confirmaciones por email.
 //
+// ─────────────────────────────────────────────────────────────────────────────
+// CAMBIAR DE CUENTA CAL.COM = cambiar SOLO `CAL_USERNAME` (una línea).
+// El usuario es el handle público de la cuenta en la URL (cal.eu/<usuario>/<evento>).
+// No hacen falta email ni contraseña: el embed apunta a páginas públicas de reserva.
+// Se puede sobreescribir sin tocar código con la env var VITE_CAL_USERNAME en Vercel.
+// Requisito: la cuenta nueva debe tener los MISMOS slugs de evento (ver EVENT_SLUGS);
+// si Blanca los recrea con otros nombres, actualizar también ese mapa.
+// ─────────────────────────────────────────────────────────────────────────────
+const CAL_USERNAME = import.meta.env?.VITE_CAL_USERNAME || 'blanca-coutino'
+
+// Slugs de los tipos de evento en Cal.eu (la parte tras la '/'). El `design` es la
+// llamada de diseño; el resto son las ceremonias reservables por id de código.
+const EVENT_SLUGS = {
+  design: 'llamada-diseno',
+  baby: 'baby-blessing',
+  picnic: 'picnic-oraculo',
+  retorno: 'coaching',
+  alquimia: 'taller-alquimico',
+}
+
+// Construye el calLink completo `usuario/evento` a partir del usuario único.
+const calLink = (slug) => `${CAL_USERNAME}/${slug}`
+
 // Modelo de reserva (decisión de Blanca):
 //   · Llamada de diseño (`llamada-diseno`): gratis e instantánea.
 //   · Ceremonias reservables: «Requires confirmation» + 48 h de antelación +
@@ -31,7 +54,7 @@ export const contact = {
 export const booking = {
   calOrigin: 'https://app.cal.eu',
   embedJsUrl: 'https://app.cal.eu/embed/embed.js',
-  designCallLink: 'blanca-coutino/llamada-diseno', // llamada gratuita, instantánea
+  designCallLink: calLink(EVENT_SLUGS.design), // llamada gratuita, instantánea
   brandColor: '#B8623F', // accent-cacao OoL (terracota del logo) — el calendario hereda la marca
   depositPct: 25,
   bizumPhone: '', // TBD Blanca — número Bizum para el depósito (hoy vive en la descripción del evento Cal)
@@ -39,13 +62,13 @@ export const booking = {
 
 // Slugs de los eventos reservables en Cal.eu, por id de ceremonia.
 // OJO: los ids del código (baby/picnic/retorno/alquimia) NO coinciden con los
-// slugs de Cal.eu — este mapa es el puente. Solo las ceremonias reservables
+// slugs de Cal.eu — EVENT_SLUGS es el puente. Solo las ceremonias reservables
 // aparecen aquí; las de alta organización (bodas/lazo/ixchel) van a WhatsApp.
 export const bookingLinks = {
-  baby: 'blanca-coutino/baby-blessing',
-  picnic: 'blanca-coutino/picnic-oraculo',
-  retorno: 'blanca-coutino/coaching',
-  alquimia: 'blanca-coutino/taller-alquimico',
+  baby: calLink(EVENT_SLUGS.baby),
+  picnic: calLink(EVENT_SLUGS.picnic),
+  retorno: calLink(EVENT_SLUGS.retorno),
+  alquimia: calLink(EVENT_SLUGS.alquimia),
 }
 
 // Precio por id de ceremonia. `amount` en formato europeo (válido en ES y EN).
