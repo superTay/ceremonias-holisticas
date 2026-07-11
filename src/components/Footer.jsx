@@ -1,4 +1,12 @@
-import { Mail, Phone, MapPin, Shield, Globe, Cookie } from 'lucide-react'
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Shield,
+  Globe,
+  Cookie,
+  Instagram,
+} from 'lucide-react'
 import { LangLink as Link } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import { useConsent } from '../consent/ConsentContext'
@@ -38,6 +46,25 @@ export default function Footer() {
                 )
               })}
             </ul>
+
+            {/* Social — icono + handle (patrón editorial de lujo: sin "síguenos",
+                el @handle es bilingüe por naturaleza). Target táctil ≥44px. */}
+            <div className="mt-7">
+              <a
+                href={footer.instagram.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Instagram — ${footer.instagram.handle}`}
+                className="group inline-flex items-center gap-3"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border-subtle text-foreground-secondary transition-colors group-hover:border-accent-cacao group-hover:text-accent-cacao-text">
+                  <Instagram size={17} />
+                </span>
+                <span className="text-sm text-foreground-secondary transition-colors group-hover:text-accent-cacao-text">
+                  {footer.instagram.handle}
+                </span>
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
