@@ -16,6 +16,10 @@ export const contact = {
   phone: '+34 665 17 55 56',
   email: 'oolexperiencesinfo@gmail.com',
   location: 'Santa Ponça · Mallorca · ES',
+  instagram: {
+    handle: '@oolexperiences',
+    url: 'https://www.instagram.com/oolexperiences',
+  },
 }
 
 // Reservas (Cal.eu) — datos no textuales, idénticos en todos los idiomas.

@@ -75,6 +75,7 @@ export function useContent() {
       footer: {
         ...c.footer,
         contact: [contact.email, contact.phone, contact.location],
+        instagram: contact.instagram,
       },
     }
   }, [lang])
