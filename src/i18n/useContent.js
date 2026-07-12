@@ -57,19 +57,18 @@ export function useContent() {
         url: contact.url,
         secondary: `${c.whatsapp.secondaryPrefix} ${contact.phone}`,
       },
+      // Datos técnicos del embed de Cal.com (los consume el Catálogo de ceremonias).
+      // calOrigin + embedJsUrl fijan la instancia de la cuenta (app.cal.com).
       booking: {
-        ...c.booking,
-        // Llamada de diseño gratuita (instantánea). calOrigin + embedJsUrl fijan
-        // la instancia de Cal.com de la cuenta (app.cal.com).
-        calLink: bookingConfig.designCallLink,
         calOrigin: bookingConfig.calOrigin,
         embedJsUrl: bookingConfig.embedJsUrl,
         brandColor: bookingConfig.brandColor,
-        depositPct: bookingConfig.depositPct,
-        bizumPhone: bookingConfig.bizumPhone,
-        // WhatsApp pre-rellenado para el panel de confirmación tras reservar.
+      },
+      // Página de contacto: WhatsApp pre-rellenado a Blanca.
+      contact: {
+        ...c.contact,
         whatsappUrl: `${contact.url}?text=${encodeURIComponent(
-          c.booking.success.whatsappText
+          c.contact.whatsappText
         )}`,
       },
       footer: {

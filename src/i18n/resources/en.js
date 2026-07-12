@@ -25,7 +25,7 @@ export default {
   },
 
   announcement:
-    'No-obligation design consultation · Let’s design your bespoke ceremony',
+    'Bespoke ceremonies · Message Blanca on WhatsApp',
 
   nav: {
     brand: 'OoL Experiences',
@@ -49,7 +49,7 @@ export default {
       'Ceremonies that honour your roots, your story and your energy.',
     headlineHighlight: 'roots',
     sub: 'Weddings, blessings and intimate rituals in the coves and fincas of Mallorca. More than 22 years between luxury hospitality and ancestral traditions — each one designed entirely around you by Blanca Coutiño.',
-    primaryCta: 'Book my design call',
+    primaryCta: 'Design your ceremony',
     secondaryCta: 'Explore Ceremonies',
     badges: ['Ceremonies by the Mediterranean', '22+ years of practice'],
     nextCeremony: {
@@ -482,7 +482,7 @@ export default {
     sub: 'No endless forms. Blanca replies to you personally, listens to your intention and proposes the exact ritual you need. A brief conversation · a conscious decision.',
     features: [
       'A direct reply from Blanca (no bot).',
-      'A brief 5-minute call to design your ritual.',
+      'She suggests the exact ritual for your moment.',
       'No obligation. Zero sales pressure.',
     ],
     cta: 'Talk to Blanca on WhatsApp',
@@ -517,34 +517,24 @@ export default {
         },
         {
           from: 'her',
-          text: 'I hear you, Lucía 💛  Shall we set up a brief 5-minute call to design your ceremony together?',
+          text: 'I hear you, Lucía 💛  Tell me the date and how many of you there’ll be, and I’ll suggest right here how to shape something intimate in a cove.',
           time: '10:46  · typing…',
         },
       ],
     },
   },
 
-  booking: {
-    eyebrow: 'BOOK · DESIGN CALL',
-    headline: 'Choose your moment. We design your ceremony together.',
-    sub: 'A 30-minute call, free and with no obligation, to hear your intention and guide you. Pick the slot that suits you best; you’ll get your confirmation right away.',
-    altPrefix: 'Or if you’d rather talk first,',
-    altCta: 'message Blanca on WhatsApp',
-    loading: 'Loading the calendar…',
+  contact: {
+    eyebrow: 'CONTACT',
+    headline: 'Let’s talk about your ceremony.',
+    sub: 'Every ceremony is designed around you. Message Blanca on WhatsApp: she replies in person, with no obligation, and together you shape what you’re looking for.',
+    whatsappCta: 'Message Blanca on WhatsApp',
+    whatsappText:
+      'Hi Blanca, I’d love to talk about a ceremony. I’d like to tell you about…',
+    responseNote: 'Blanca replies in person, usually the same day.',
+    orLabel: 'Or, if you prefer',
     locationNote:
-      'Ceremonies take place in Santa Ponça. Outside Santa Ponça a travel surcharge applies, confirmed when we design your ceremony. During booking we’ll ask for the number of guests and your preferred location.',
-    deposit: {
-      title: 'Last step: the deposit',
-      body: 'Your date is held as soon as you complete the {pct}% deposit by Bizum to {phone}, stating your name and the ceremony date. We’ll also send the instructions by email.',
-      phoneFallback: 'the number we send you by email',
-    },
-    success: {
-      title: 'Your call is booked ✨',
-      body: 'You’ll receive a confirmation email with all the details. If you like, share your intention with Blanca on WhatsApp so she can prepare for your conversation.',
-      whatsappCta: 'Message Blanca on WhatsApp',
-      whatsappText:
-        'Hi Blanca, I’ve just booked a design call with you. I’d love to tell you about…',
-    },
+      'Ceremonies take place in Santa Ponça (Mallorca). Outside Santa Ponça a travel surcharge applies, confirmed when we design your ceremony.',
   },
 
   footer: {
@@ -700,7 +690,7 @@ export default {
         {
           heading: '2. What data we process, why, and on what legal basis',
           paragraphs: [
-            'Booking of calls and ceremonies (via Cal.com): name, email, phone and chosen date, in order to manage and confirm your booking. Legal basis: performance of a contract or pre-contractual measures at your request (Art. 6.1.b GDPR).',
+            'Booking of ceremonies (via Cal.com): name, email, phone and chosen date, in order to manage and confirm your booking. Legal basis: performance of a contract or pre-contractual measures at your request (Art. 6.1.b GDPR).',
             'Enquiries via WhatsApp or email: the data you provide, in order to handle your request. Legal basis: your consent and the legitimate interest in replying to you (Art. 6.1.a and 6.1.f GDPR).',
             'Cookies and third-party services: see the Cookie Policy. Legal basis: your consent (Art. 6.1.a GDPR).',
           ],
@@ -717,16 +707,17 @@ export default {
             'To provide the service we rely on providers acting as data processors:',
           ],
           list: [
-            'Cal.com (bookings, app.cal.com) — appointment management.',
+            'Cal.com, Inc. (United States) — ceremony booking platform (app.cal.com).',
             'Google Ireland Ltd. (Google Calendar / email) — booking sync and confirmation.',
-            'Vercel Inc. (website hosting).',
+            'Vercel Inc. (United States) — website hosting.',
             'Meta Platforms Ireland Ltd. (WhatsApp) — only if you choose to use that channel.',
           ],
         },
         {
           heading: '5. International transfers',
           paragraphs: [
-            'Some providers may process data outside the European Economic Area. In such cases, transfers rely on the safeguards provided by the GDPR (European Commission Standard Contractual Clauses or other valid mechanisms).',
+            'Some of our providers are located outside the European Economic Area, in particular Cal.com, Inc. and Vercel Inc. (United States). These transfers rely on the safeguards required by Articles 44 to 49 of the GDPR, such as the European Commission’s Standard Contractual Clauses or other valid adequacy mechanisms.',
+            'You may request information about these safeguards, or a copy of them, by writing to oolexperiencesinfo@gmail.com.',
           ],
         },
         {

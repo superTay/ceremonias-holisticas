@@ -37,10 +37,9 @@ export const contact = {
 // ─────────────────────────────────────────────────────────────────────────────
 const CAL_USERNAME = import.meta.env?.VITE_CAL_USERNAME || 'oolexperiences'
 
-// Slugs de los tipos de evento en Cal.com (la parte tras la '/'). El `design` es la
-// llamada de diseño; el resto son las ceremonias reservables por id de código.
+// Slugs de los tipos de evento reservables en Cal.com (la parte tras la '/'),
+// por id de ceremonia. La consulta general va por WhatsApp, no por Cal.
 const EVENT_SLUGS = {
-  design: 'llamada-diseno',
   baby: 'baby-blessing',
   picnic: 'picnic-oraculo',
   retorno: 'coaching',
@@ -50,18 +49,15 @@ const EVENT_SLUGS = {
 // Construye el calLink completo `usuario/evento` a partir del usuario único.
 const calLink = (slug) => `${CAL_USERNAME}/${slug}`
 
-// Modelo de reserva (decisión de Blanca):
-//   · Llamada de diseño (`llamada-diseno`): gratis e instantánea.
-//   · Ceremonias reservables: «Requires confirmation» + 48 h de antelación +
-//     depósito del 25 % por Bizum (instrucciones en la descripción del evento Cal).
-//     La reserva queda PENDIENTE hasta que Blanca aprueba (1 clic, no una llamada).
+// Modelo de reserva de ceremonias (decisión de Blanca):
+//   · «Requires confirmation» + 48 h de antelación + depósito del 25 % por Bizum
+//     (instrucciones en la descripción del evento Cal). La reserva queda PENDIENTE
+//     hasta que Blanca aprueba (1 clic). La consulta a medida es por WhatsApp.
+// Datos técnicos del embed de Cal.com (los consume el Catálogo de ceremonias).
 export const booking = {
   calOrigin: 'https://app.cal.com',
   embedJsUrl: 'https://app.cal.com/embed/embed.js',
-  designCallLink: calLink(EVENT_SLUGS.design), // llamada gratuita, instantánea
   brandColor: '#B8623F', // accent-cacao OoL (terracota del logo) — el calendario hereda la marca
-  depositPct: 25,
-  bizumPhone: '', // TBD Blanca — número Bizum para el depósito (hoy vive en la descripción del evento Cal)
 }
 
 // Slugs de los eventos reservables en Cal.com, por id de ceremonia.
