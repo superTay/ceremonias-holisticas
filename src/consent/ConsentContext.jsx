@@ -1,9 +1,9 @@
 import { createContext, useContext, useState, useCallback, useEffect } from 'react'
 
 // Gestión de consentimiento de cookies conforme a la Guía AEPD:
-//   · No se carga ningún tercero (Cal.eu) hasta acción afirmativa del usuario.
+//   · No se carga ningún tercero (Cal.com) hasta acción afirmativa del usuario.
 //   · Categorías: "necesarias" (siempre activas, técnicas) y "thirdParty"
-//     (funcionales/terceros = el embed de reservas Cal.eu).
+//     (funcionales/terceros = el embed de reservas Cal.com).
 //   · La decisión se persiste en localStorage; mientras no exista, el banner
 //     se muestra y `calAllowed` es false (rechazo por defecto, sin precasillas).
 //
@@ -99,7 +99,7 @@ export function useConsent() {
 }
 
 // Efecto utilitario: ejecuta `onAllowed` una sola vez cuando se concede el
-// consentimiento de terceros (para inicializar el embed de Cal.eu).
+// consentimiento de terceros (para inicializar el embed de Cal.com).
 export function useWhenCalAllowed(onAllowed) {
   const { calAllowed } = useConsent()
   useEffect(() => {

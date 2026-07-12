@@ -22,9 +22,9 @@ export default function Catalog() {
   // Filtro por índice (no por etiqueta): así sobrevive al cambio de idioma sin quedarse vacío.
   const [activeIdx, setActiveIdx] = useState(0)
 
-  // Inicializa el embed de Cal.eu solo tras consentir terceros. Sin consentimiento
-  // no cargamos app.cal.eu/embed/embed.js (art. 22.2 LSSI-CE). Forzamos la región
-  // europea con embedJsUrl + calOrigin (en cada botón), o el popup daría 404.
+  // Inicializa el embed de Cal.com solo tras consentir terceros. Sin consentimiento
+  // no cargamos app.cal.com/embed/embed.js (art. 22.2 LSSI-CE). embedJsUrl + calOrigin
+  // (en cada botón) fijan la instancia de la cuenta (app.cal.com); ver shared.js.
   useEffect(() => {
     if (!calAllowed) return
     let active = true
@@ -211,7 +211,7 @@ export default function Catalog() {
                     </span>
                     {card.bookable ? (
                       calAllowed ? (
-                        // Reservable: popup de Cal.eu (data-cal-*). Botón sólido = acción primaria.
+                        // Reservable: popup de Cal.com (data-cal-*). Botón sólido = acción primaria.
                         <button
                           type="button"
                           data-cal-namespace={NS}
@@ -224,7 +224,7 @@ export default function Catalog() {
                           {catalog.bookCta}
                         </button>
                       ) : (
-                        // Sin consentimiento aún: el popup necesita embed.js de Cal.eu.
+                        // Sin consentimiento aún: el popup necesita embed.js de Cal.com.
                         // Este clic concede el consentimiento de terceros; el calendario
                         // se inicializa y el siguiente clic ya abre la reserva.
                         <button

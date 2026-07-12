@@ -22,22 +22,22 @@ export const contact = {
   },
 }
 
-// Reservas (Cal.eu) — datos no textuales, idénticos en todos los idiomas.
-// La cuenta de Blanca vive en la región europea (cal.eu, NO cal.com): el embed
-// debe forzar la instancia europea con `calOrigin` + `embedJsUrl`, o devuelve 404.
-// Cal.eu sincroniza con su Google Calendar y envía las confirmaciones por email.
+// Reservas (Cal.com) — datos no textuales, idénticos en todos los idiomas.
+// La cuenta de Blanca (cal.com/oolexperiences) sincroniza con su Google Calendar
+// (oolexperiencesinfo@gmail.com) y envía las confirmaciones por email.
 //
 // ─────────────────────────────────────────────────────────────────────────────
 // CAMBIAR DE CUENTA CAL.COM = cambiar SOLO `CAL_USERNAME` (una línea).
-// El usuario es el handle público de la cuenta en la URL (cal.eu/<usuario>/<evento>).
+// El usuario es el handle público de la cuenta en la URL (cal.com/<usuario>/<evento>).
 // No hacen falta email ni contraseña: el embed apunta a páginas públicas de reserva.
 // Se puede sobreescribir sin tocar código con la env var VITE_CAL_USERNAME en Vercel.
 // Requisito: la cuenta nueva debe tener los MISMOS slugs de evento (ver EVENT_SLUGS);
-// si Blanca los recrea con otros nombres, actualizar también ese mapa.
+// si Blanca los recrea con otros nombres, actualizar también ese mapa. Si además
+// cambia de región (cal.com ↔ cal.eu), ajustar `calOrigin` y `embedJsUrl`.
 // ─────────────────────────────────────────────────────────────────────────────
-const CAL_USERNAME = import.meta.env?.VITE_CAL_USERNAME || 'blanca-coutino'
+const CAL_USERNAME = import.meta.env?.VITE_CAL_USERNAME || 'oolexperiences'
 
-// Slugs de los tipos de evento en Cal.eu (la parte tras la '/'). El `design` es la
+// Slugs de los tipos de evento en Cal.com (la parte tras la '/'). El `design` es la
 // llamada de diseño; el resto son las ceremonias reservables por id de código.
 const EVENT_SLUGS = {
   design: 'llamada-diseno',
@@ -56,17 +56,17 @@ const calLink = (slug) => `${CAL_USERNAME}/${slug}`
 //     depósito del 25 % por Bizum (instrucciones en la descripción del evento Cal).
 //     La reserva queda PENDIENTE hasta que Blanca aprueba (1 clic, no una llamada).
 export const booking = {
-  calOrigin: 'https://app.cal.eu',
-  embedJsUrl: 'https://app.cal.eu/embed/embed.js',
+  calOrigin: 'https://app.cal.com',
+  embedJsUrl: 'https://app.cal.com/embed/embed.js',
   designCallLink: calLink(EVENT_SLUGS.design), // llamada gratuita, instantánea
   brandColor: '#B8623F', // accent-cacao OoL (terracota del logo) — el calendario hereda la marca
   depositPct: 25,
   bizumPhone: '', // TBD Blanca — número Bizum para el depósito (hoy vive en la descripción del evento Cal)
 }
 
-// Slugs de los eventos reservables en Cal.eu, por id de ceremonia.
+// Slugs de los eventos reservables en Cal.com, por id de ceremonia.
 // OJO: los ids del código (baby/picnic/retorno/alquimia) NO coinciden con los
-// slugs de Cal.eu — EVENT_SLUGS es el puente. Solo las ceremonias reservables
+// slugs de Cal.com — EVENT_SLUGS es el puente. Solo las ceremonias reservables
 // aparecen aquí; las de alta organización (bodas/lazo/ixchel) van a WhatsApp.
 export const bookingLinks = {
   baby: calLink(EVENT_SLUGS.baby),
