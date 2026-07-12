@@ -143,7 +143,7 @@ export default {
     // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
     bookCta: 'Book a date',
     bookConsentNote:
-      'Booking loads the Cal.eu calendar (third-party cookies). Tap to accept them and open the booking.',
+      'Booking loads the Cal.com calendar (third-party cookies). Tap to accept them and open the booking.',
     bespokeCta: "Let's talk first",
     depositNote: 'Reserve with 25%. The rest, on your ceremony day.',
     bespokeNote: 'Tailored end to end, with you. Let’s start with a conversation.',
@@ -594,7 +594,7 @@ export default {
   consent: {
     banner: {
       title: 'Your privacy',
-      body: 'We use necessary technical cookies so the site works. We only load the booking calendar (Cal.eu, third-party cookies) if you accept. We use no analytics or advertising cookies.',
+      body: 'We use necessary technical cookies so the site works. We only load the booking calendar (Cal.com, third-party cookies) if you accept. We use no analytics or advertising cookies.',
       accept: 'Accept',
       reject: 'Reject',
       configure: 'Configure',
@@ -605,8 +605,8 @@ export default {
       intro: 'Choose which cookies you allow. Necessary ones are always on because the site cannot work without them. You can change your decision anytime from the footer.',
       necessaryTitle: 'Necessary',
       necessaryDesc: 'Essential for the site to work: they remember your language and your cookie decision. They do not identify individuals.',
-      thirdPartyTitle: 'Booking (Cal.eu)',
-      thirdPartyDesc: 'These load the Cal.eu booking calendar, an external provider that may set its own cookies. They are only enabled with your permission.',
+      thirdPartyTitle: 'Booking (Cal.com)',
+      thirdPartyDesc: 'These load the Cal.com booking calendar, an external provider that may set its own cookies. They are only enabled with your permission.',
       alwaysOn: 'Always on',
       rejectAll: 'Reject all',
       save: 'Save preferences',
@@ -614,9 +614,9 @@ export default {
     },
     gate: {
       title: 'Booking calendar',
-      body: 'To book, we load the Cal.eu calendar, an external service that may set third-party cookies. Nothing loads until you allow it.',
+      body: 'To book, we load the Cal.com calendar, an external service that may set third-party cookies. Nothing loads until you allow it.',
       load: 'Load booking calendar',
-      privacyNote: 'By tapping you accept Cal.eu cookies. See the Cookie Policy for details.',
+      privacyNote: 'By tapping you accept Cal.com cookies. See the Cookie Policy for details.',
     },
   },
 
@@ -665,7 +665,7 @@ export default {
         {
           heading: '5. Third-party links and services',
           paragraphs: [
-            'The site integrates the Cal.eu (Cal.com) booking service and links to WhatsApp (Meta Platforms). The owner does not control these external services, which are governed by their own terms and privacy policies.',
+            'The site integrates the Cal.com booking service and links to WhatsApp (Meta Platforms). The owner does not control these external services, which are governed by their own terms and privacy policies.',
           ],
         },
         {
@@ -700,7 +700,7 @@ export default {
         {
           heading: '2. What data we process, why, and on what legal basis',
           paragraphs: [
-            'Booking of calls and ceremonies (via Cal.eu): name, email, phone and chosen date, in order to manage and confirm your booking. Legal basis: performance of a contract or pre-contractual measures at your request (Art. 6.1.b GDPR).',
+            'Booking of calls and ceremonies (via Cal.com): name, email, phone and chosen date, in order to manage and confirm your booking. Legal basis: performance of a contract or pre-contractual measures at your request (Art. 6.1.b GDPR).',
             'Enquiries via WhatsApp or email: the data you provide, in order to handle your request. Legal basis: your consent and the legitimate interest in replying to you (Art. 6.1.a and 6.1.f GDPR).',
             'Cookies and third-party services: see the Cookie Policy. Legal basis: your consent (Art. 6.1.a GDPR).',
           ],
@@ -717,7 +717,7 @@ export default {
             'To provide the service we rely on providers acting as data processors:',
           ],
           list: [
-            'Cal.com (bookings, European instance app.cal.eu) — appointment management.',
+            'Cal.com (bookings, app.cal.com) — appointment management.',
             'Google Ireland Ltd. (Google Calendar / email) — booking sync and confirmation.',
             'Vercel Inc. (website hosting).',
             'Meta Platforms Ireland Ltd. (WhatsApp) — only if you choose to use that channel.',
@@ -762,14 +762,14 @@ export default {
             rows: [
               ['blanca-lang (first-party)', 'Remember your chosen language (ES/EN)', 'Persistent', 'Technical (necessary)'],
               ['blanca-consent (first-party)', 'Store your cookie decision', 'Persistent', 'Technical (necessary)'],
-              ['Cal.eu / Cal.com (third party)', 'Display the calendar and manage the booking', 'Per provider', 'Third party (requires consent)'],
+              ['Cal.com (third party)', 'Display the calendar and manage the booking', 'Per provider', 'Third party (requires consent)'],
             ],
           },
         },
         {
           heading: '3. No analytics or advertising',
           paragraphs: [
-            'This site uses no analytics cookies (such as Google Analytics) and no advertising or tracking cookies. The only third-party load is the Cal.eu booking calendar, and only if you allow it.',
+            'This site uses no analytics cookies (such as Google Analytics) and no advertising or tracking cookies. The only third-party load is the Cal.com booking calendar, and only if you allow it.',
           ],
         },
         {
@@ -795,7 +795,7 @@ export default {
         {
           heading: '2. Bookings, prices and payment',
           paragraphs: [
-            'Some experiences are booked online via Cal.eu and others are designed after a conversation. To confirm a booking, a deposit of 25% of the price may be required via Bizum; the remaining amount is paid on the ceremony day.',
+            'Some experiences are booked online via Cal.com and others are designed after a conversation. To confirm a booking, a deposit of 25% of the price may be required via Bizum; the remaining amount is paid on the ceremony day.',
             'Prices shown include applicable taxes unless stated otherwise.',
           ],
         },

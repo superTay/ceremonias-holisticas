@@ -26,12 +26,12 @@ export default function Booking() {
     : ''
 
   useEffect(() => {
-    // Sin consentimiento de terceros no tocamos Cal.eu: getCalApi descargaría
-    // embed.js de app.cal.eu y fijaría cookies antes de la acción del usuario.
+    // Sin consentimiento de terceros no tocamos Cal.com: getCalApi descargaría
+    // embed.js de app.cal.com y fijaría cookies antes de la acción del usuario.
     if (!calAllowed) return
     let active = true
     ;(async () => {
-      // embedJsUrl fuerza la región europea (cal.eu); sin esto el embed va a cal.com y da 404.
+      // embedJsUrl fija la instancia de la cuenta (app.cal.com); ver shared.js.
       const cal = await getCalApi({ namespace: NS, embedJsUrl: booking.embedJsUrl })
       if (!active) return
       cal('ui', {

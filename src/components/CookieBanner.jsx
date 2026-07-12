@@ -125,7 +125,7 @@ function SettingsPanel({ consent, initialThirdParty, onSave, onClose }) {
             disabled
             badge={s.alwaysOn}
           />
-          {/* Terceros (Cal.eu): desactivada por defecto. */}
+          {/* Terceros (Cal.com): desactivada por defecto. */}
           <Category
             title={s.thirdPartyTitle}
             desc={s.thirdPartyDesc}

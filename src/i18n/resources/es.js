@@ -141,7 +141,7 @@ export default {
     // CTA por vía de reserva (ver useContent): reservable → bookCta; a medida → bespokeCta.
     bookCta: 'Reservar fecha',
     bookConsentNote:
-      'Al reservar se carga el calendario de Cal.eu (cookies de terceros). Pulsa para aceptarlas y abrir la reserva.',
+      'Al reservar se carga el calendario de Cal.com (cookies de terceros). Pulsa para aceptarlas y abrir la reserva.',
     bespokeCta: 'Hablemos primero',
     depositNote: 'Reservas con el 25 %. El resto, el día de tu ceremonia.',
     bespokeNote: 'Se diseña a medida, contigo. Empecemos por una conversación.',
@@ -606,7 +606,7 @@ export default {
   consent: {
     banner: {
       title: 'Tu privacidad',
-      body: 'Usamos cookies técnicas necesarias para que el sitio funcione. Solo cargamos el calendario de reservas (Cal.eu, cookies de terceros) si tú lo aceptas. No usamos cookies de analítica ni de publicidad.',
+      body: 'Usamos cookies técnicas necesarias para que el sitio funcione. Solo cargamos el calendario de reservas (Cal.com, cookies de terceros) si tú lo aceptas. No usamos cookies de analítica ni de publicidad.',
       accept: 'Aceptar',
       reject: 'Rechazar',
       configure: 'Configurar',
@@ -617,8 +617,8 @@ export default {
       intro: 'Decide qué cookies permites. Las necesarias siempre están activas porque sin ellas el sitio no funciona. Puedes cambiar tu decisión cuando quieras desde el pie de página.',
       necessaryTitle: 'Necesarias',
       necessaryDesc: 'Imprescindibles para el funcionamiento del sitio: recuerdan tu idioma y tu decisión sobre cookies. No identifican a personas.',
-      thirdPartyTitle: 'Reservas (Cal.eu)',
-      thirdPartyDesc: 'Cargan el calendario de reservas de Cal.eu, un proveedor externo que puede instalar sus propias cookies. Solo se activan con tu permiso.',
+      thirdPartyTitle: 'Reservas (Cal.com)',
+      thirdPartyDesc: 'Cargan el calendario de reservas de Cal.com, un proveedor externo que puede instalar sus propias cookies. Solo se activan con tu permiso.',
       alwaysOn: 'Siempre activas',
       rejectAll: 'Rechazar todo',
       save: 'Guardar preferencias',
@@ -626,9 +626,9 @@ export default {
     },
     gate: {
       title: 'Calendario de reservas',
-      body: 'Para reservar cargamos el calendario de Cal.eu, un servicio externo que puede instalar cookies de terceros. No se carga nada hasta que tú lo autorices.',
+      body: 'Para reservar cargamos el calendario de Cal.com, un servicio externo que puede instalar cookies de terceros. No se carga nada hasta que tú lo autorices.',
       load: 'Cargar calendario de reservas',
-      privacyNote: 'Al pulsar aceptas las cookies de Cal.eu. Consulta la Política de Cookies para más detalle.',
+      privacyNote: 'Al pulsar aceptas las cookies de Cal.com. Consulta la Política de Cookies para más detalle.',
     },
   },
 
@@ -677,7 +677,7 @@ export default {
         {
           heading: '5. Enlaces y servicios de terceros',
           paragraphs: [
-            'El sitio integra el servicio de reservas Cal.eu (Cal.com) y enlaza a WhatsApp (Meta Platforms). El titular no controla dichos servicios externos, que se rigen por sus propias condiciones y políticas de privacidad.',
+            'El sitio integra el servicio de reservas Cal.com y enlaza a WhatsApp (Meta Platforms). El titular no controla dichos servicios externos, que se rigen por sus propias condiciones y políticas de privacidad.',
           ],
         },
         {
@@ -712,7 +712,7 @@ export default {
         {
           heading: '2. Qué datos tratamos, con qué finalidad y con qué base legal',
           paragraphs: [
-            'Reserva de citas y ceremonias (a través de Cal.eu): nombre, correo electrónico, teléfono y fecha elegida, con la finalidad de gestionar y confirmar tu reserva. Base jurídica: ejecución de un contrato o medidas precontractuales a tu solicitud (art. 6.1.b RGPD).',
+            'Reserva de citas y ceremonias (a través de Cal.com): nombre, correo electrónico, teléfono y fecha elegida, con la finalidad de gestionar y confirmar tu reserva. Base jurídica: ejecución de un contrato o medidas precontractuales a tu solicitud (art. 6.1.b RGPD).',
             'Consultas por WhatsApp o correo electrónico: los datos que nos facilites, con la finalidad de atender tu solicitud. Base jurídica: tu consentimiento y el interés legítimo en responderte (art. 6.1.a y 6.1.f RGPD).',
             'Cookies y servicios de terceros: ver la Política de Cookies. Base jurídica: tu consentimiento (art. 6.1.a RGPD).',
           ],
@@ -729,7 +729,7 @@ export default {
             'Para prestar el servicio recurrimos a proveedores que actúan como encargados del tratamiento:',
           ],
           list: [
-            'Cal.com (reservas, instancia europea app.cal.eu) — gestión de citas.',
+            'Cal.com (reservas, app.cal.com) — gestión de citas.',
             'Google Ireland Ltd. (Google Calendar / email) — sincronización y confirmación de reservas.',
             'Vercel Inc. (alojamiento del sitio).',
             'Meta Platforms Ireland Ltd. (WhatsApp) — solo si decides contactar por ese canal.',
@@ -774,14 +774,14 @@ export default {
             rows: [
               ['blanca-lang (propia)', 'Recordar el idioma elegido (ES/EN)', 'Persistente', 'Técnica (necesaria)'],
               ['blanca-consent (propia)', 'Guardar tu decisión sobre las cookies', 'Persistente', 'Técnica (necesaria)'],
-              ['Cal.eu / Cal.com (terceros)', 'Mostrar el calendario y gestionar la reserva', 'Según el proveedor', 'Terceros (requiere consentimiento)'],
+              ['Cal.com (terceros)', 'Mostrar el calendario y gestionar la reserva', 'Según el proveedor', 'Terceros (requiere consentimiento)'],
             ],
           },
         },
         {
           heading: '3. No usamos analítica ni publicidad',
           paragraphs: [
-            'Este sitio no utiliza cookies de analítica (como Google Analytics) ni de publicidad o seguimiento. La única carga de terceros es el calendario de reservas Cal.eu, y solo si lo autorizas.',
+            'Este sitio no utiliza cookies de analítica (como Google Analytics) ni de publicidad o seguimiento. La única carga de terceros es el calendario de reservas Cal.com, y solo si lo autorizas.',
           ],
         },
         {
@@ -807,7 +807,7 @@ export default {
         {
           heading: '2. Reservas, precios y pago',
           paragraphs: [
-            'Algunas experiencias se reservan en línea a través de Cal.eu y otras se diseñan previa conversación. Para confirmar una reserva puede requerirse un depósito del 25 % del precio mediante Bizum; el importe restante se abona el día de la ceremonia.',
+            'Algunas experiencias se reservan en línea a través de Cal.com y otras se diseñan previa conversación. Para confirmar una reserva puede requerirse un depósito del 25 % del precio mediante Bizum; el importe restante se abona el día de la ceremonia.',
             'Los precios mostrados incluyen los impuestos aplicables salvo que se indique lo contrario.',
           ],
         },

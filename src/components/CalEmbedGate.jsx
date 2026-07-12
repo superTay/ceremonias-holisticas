@@ -2,9 +2,9 @@ import { CalendarCheck, Lock } from 'lucide-react'
 import { useConsent } from '../consent/ConsentContext'
 import { useContent } from '../i18n/useContent'
 
-// Envuelve un embed de Cal.eu. Hasta que el usuario consiente (banner) o pulsa
+// Envuelve un embed de Cal.com. Hasta que el usuario consiente (banner) o pulsa
 // "Cargar calendario" (click-to-load), NO se renderiza el embed ni se carga
-// app.cal.eu/embed/embed.js → ninguna cookie de terceros antes del consentimiento
+// app.cal.com/embed/embed.js → ninguna cookie de terceros antes del consentimiento
 // (art. 22.2 LSSI-CE). `children` es el embed real, que solo se monta tras consentir.
 export default function CalEmbedGate({ children, className = '' }) {
   const { calAllowed, allowCal } = useConsent()

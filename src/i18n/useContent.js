@@ -33,7 +33,7 @@ export function useContent() {
         ...c.catalog,
         // Cada card se enriquece según su vía de reserva:
         //   · Reservable (baby/picnic/retorno/alquimia) → `calLink` para abrir el
-        //     popup de Cal.eu con botón «Reservar fecha».
+        //     popup de Cal.com con botón «Reservar fecha».
         //   · A medida (bodas/lazo/ixchel) → `whatsappUrl` pre-rellenado con el
         //     nombre de la ceremonia, botón «Hablemos primero».
         cards: c.catalog.cards.map((card) => {
@@ -59,8 +59,8 @@ export function useContent() {
       },
       booking: {
         ...c.booking,
-        // Llamada de diseño gratuita (instantánea). El embed fuerza la región
-        // europea con calOrigin + embedJsUrl, o Cal.eu devolvería 404.
+        // Llamada de diseño gratuita (instantánea). calOrigin + embedJsUrl fijan
+        // la instancia de Cal.com de la cuenta (app.cal.com).
         calLink: bookingConfig.designCallLink,
         calOrigin: bookingConfig.calOrigin,
         embedJsUrl: bookingConfig.embedJsUrl,
