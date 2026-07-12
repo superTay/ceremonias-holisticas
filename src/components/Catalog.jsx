@@ -10,8 +10,8 @@ import { SITE_URL, prices } from '../data/shared'
 import Reveal from './Reveal'
 import JsonLd from './JsonLd'
 
-// Namespace propio del catálogo (independiente del embed inline de la llamada de
-// diseño en Booking, que usa 'reserva'). Aquí solo abrimos popups de ceremonias.
+// Namespace del catálogo para el embed de Cal.com. Aquí solo abrimos los popups
+// de reserva de las ceremonias reservables.
 const NS = 'ceremonias'
 
 export default function Catalog() {

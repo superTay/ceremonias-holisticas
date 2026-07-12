@@ -22,7 +22,7 @@ export default {
   },
 
   announcement:
-    'Consulta de diseño sin compromiso · Diseñemos tu ceremonia a medida',
+    'Ceremonias a medida · Escríbele a Blanca por WhatsApp',
 
   nav: {
     brand: 'OoL Experiences',
@@ -493,7 +493,7 @@ export default {
     sub: 'Sin formularios eternos. Blanca te responde personalmente, escucha tu intención y te propone el ritual exacto que necesitas. Una conversación breve · una decisión consciente.',
     features: [
       'Respuesta directa de Blanca (no bot).',
-      'Llamada breve de 5 minutos para diseñar tu ritual.',
+      'Te propone el ritual exacto para tu momento.',
       'Sin compromiso. Cero presión comercial.',
     ],
     cta: 'Hablar con Blanca por WhatsApp',
@@ -528,34 +528,24 @@ export default {
         },
         {
           from: 'her',
-          text: 'Te escucho, Lucía 💛  ¿Te gustaría que agendemos una llamada breve de 5 minutos para diseñar contigo tu ceremonia?',
+          text: 'Te escucho, Lucía 💛  Cuéntame la fecha y cuántas sois, y te propongo aquí mismo cómo darle forma a algo íntimo en una cala.',
           time: '10:46  · escribiendo…',
         },
       ],
     },
   },
 
-  booking: {
-    eyebrow: 'RESERVA · LLAMADA DE DISEÑO',
-    headline: 'Elige tu momento. Diseñamos tu ceremonia juntas.',
-    sub: 'Una llamada de 30 minutos, sin coste ni compromiso, para escuchar tu intención y orientarte. Reserva el hueco que mejor te encaje; recibirás la confirmación al instante.',
-    altPrefix: 'O si prefieres una conversación primero,',
-    altCta: 'escríbele a Blanca por WhatsApp',
-    loading: 'Cargando el calendario…',
+  contact: {
+    eyebrow: 'CONTACTO',
+    headline: 'Hablemos de tu ceremonia.',
+    sub: 'Cada ceremonia se diseña a medida, contigo. Escríbele a Blanca por WhatsApp: te responde en persona, sin compromiso, y juntas dais forma a lo que buscas.',
+    whatsappCta: 'Escribir a Blanca por WhatsApp',
+    whatsappText:
+      'Hola Blanca, me gustaría hablar sobre una ceremonia. Me gustaría contarte sobre…',
+    responseNote: 'Te responde Blanca en persona, normalmente el mismo día.',
+    orLabel: 'O si lo prefieres',
     locationNote:
-      'Las ceremonias se realizan en Santa Ponça. Fuera de Santa Ponça se aplica un coste adicional por desplazamiento, que confirmamos al diseñar tu ceremonia. En la reserva te pediremos el número de personas y la ubicación deseada.',
-    deposit: {
-      title: 'Último paso: el depósito',
-      body: 'Tu fecha queda reservada en cuanto completes el depósito del {pct} % por Bizum al {phone}, indicando tu nombre y la fecha de la ceremonia. Te enviamos también las instrucciones por email.',
-      phoneFallback: 'el número que te facilitamos por email',
-    },
-    success: {
-      title: 'Tu llamada está reservada ✨',
-      body: 'Recibirás un email de confirmación con todos los detalles. Si quieres, adelántale tu intención a Blanca por WhatsApp para que prepare vuestra conversación.',
-      whatsappCta: 'Escribir a Blanca por WhatsApp',
-      whatsappText:
-        'Hola Blanca, acabo de reservar una llamada de diseño contigo. Me gustaría contarte sobre…',
-    },
+      'Las ceremonias se realizan en Santa Ponça (Mallorca). Fuera de Santa Ponça se aplica un coste adicional por desplazamiento, que confirmamos al diseñar tu ceremonia.',
   },
 
   footer: {
@@ -712,7 +702,7 @@ export default {
         {
           heading: '2. Qué datos tratamos, con qué finalidad y con qué base legal',
           paragraphs: [
-            'Reserva de citas y ceremonias (a través de Cal.com): nombre, correo electrónico, teléfono y fecha elegida, con la finalidad de gestionar y confirmar tu reserva. Base jurídica: ejecución de un contrato o medidas precontractuales a tu solicitud (art. 6.1.b RGPD).',
+            'Reserva de ceremonias (a través de Cal.com): nombre, correo electrónico, teléfono y fecha elegida, con la finalidad de gestionar y confirmar tu reserva. Base jurídica: ejecución de un contrato o medidas precontractuales a tu solicitud (art. 6.1.b RGPD).',
             'Consultas por WhatsApp o correo electrónico: los datos que nos facilites, con la finalidad de atender tu solicitud. Base jurídica: tu consentimiento y el interés legítimo en responderte (art. 6.1.a y 6.1.f RGPD).',
             'Cookies y servicios de terceros: ver la Política de Cookies. Base jurídica: tu consentimiento (art. 6.1.a RGPD).',
           ],
@@ -729,16 +719,17 @@ export default {
             'Para prestar el servicio recurrimos a proveedores que actúan como encargados del tratamiento:',
           ],
           list: [
-            'Cal.com (reservas, app.cal.com) — gestión de citas.',
+            'Cal.com, Inc. (Estados Unidos) — plataforma de reservas de ceremonias (app.cal.com).',
             'Google Ireland Ltd. (Google Calendar / email) — sincronización y confirmación de reservas.',
-            'Vercel Inc. (alojamiento del sitio).',
+            'Vercel Inc. (Estados Unidos) — alojamiento del sitio.',
             'Meta Platforms Ireland Ltd. (WhatsApp) — solo si decides contactar por ese canal.',
           ],
         },
         {
           heading: '5. Transferencias internacionales',
           paragraphs: [
-            'Algunos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En esos casos, las transferencias se amparan en las garantías previstas por el RGPD (cláusulas contractuales tipo de la Comisión Europea u otros mecanismos válidos).',
+            'Algunos de nuestros proveedores están ubicados fuera del Espacio Económico Europeo, en particular Cal.com, Inc. y Vercel Inc. (Estados Unidos). Estas transferencias se amparan en las garantías exigidas por los artículos 44 a 49 del RGPD, como las cláusulas contractuales tipo de la Comisión Europea u otros mecanismos válidos de adecuación.',
+            'Puedes solicitar información sobre estas garantías, o una copia de ellas, escribiendo a oolexperiencesinfo@gmail.com.',
           ],
         },
         {

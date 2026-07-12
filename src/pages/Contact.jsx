@@ -1,5 +1,5 @@
-import Booking from '../components/Booking'
+import ContactCTA from '../components/ContactCTA'
 
 export default function ContactPage() {
-  return <Booking />
+  return <ContactCTA />
 }
