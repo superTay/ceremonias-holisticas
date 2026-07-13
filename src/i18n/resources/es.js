@@ -145,6 +145,10 @@ export default {
     bespokeCta: 'Hablemos primero',
     depositNote: 'Reservas con el 25 %. El resto, el día de tu ceremonia.',
     bespokeNote: 'Se diseña a medida, contigo. Empecemos por una conversación.',
+    // Aviso de desplazamiento — visible en cada ficha, junto al botón. La sede es
+    // Santa Ponça; fuera de la zona hay coste de desplazamiento (se confirma al diseñar).
+    travelNote:
+      'Se realizan en Santa Ponça; fuera de la zona, coste adicional por desplazamiento (lo confirmamos al diseñar tu ceremonia).',
     // {title} se sustituye por el nombre de la ceremonia en useContent.
     whatsappTemplate:
       'Hola Blanca, me encantaría hablar sobre «{title}». Estoy pensando en…',

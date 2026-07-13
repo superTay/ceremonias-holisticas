@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { LangLink as Link } from './LangLink'
 import { getCalApi } from '@calcom/embed-react'
 import { useTranslation } from 'react-i18next'
-import { Check, CalendarCheck, MessageCircle } from 'lucide-react'
+import { Check, CalendarCheck, MessageCircle, MapPin } from 'lucide-react'
 import { useContent } from '../i18n/useContent'
 import { useConsent } from '../consent/ConsentContext'
 import { SITE_URL, prices } from '../data/shared'
@@ -253,6 +253,16 @@ export default function Catalog() {
                   <p className="mt-3 text-[11px] leading-snug text-foreground-muted">
                     {card.bookable ? catalog.depositNote : catalog.bespokeNote}
                   </p>
+                  {catalog.travelNote && (
+                    <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-foreground-muted">
+                      <MapPin
+                        size={12}
+                        className="mt-0.5 flex-none text-accent-primary"
+                        aria-hidden
+                      />
+                      {catalog.travelNote}
+                    </p>
+                  )}
                 </div>
               </motion.article>
             ))}
