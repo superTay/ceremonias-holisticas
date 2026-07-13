@@ -147,6 +147,10 @@ export default {
     bespokeCta: "Let's talk first",
     depositNote: 'Reserve with 25%. The rest, on your ceremony day.',
     bespokeNote: 'Tailored end to end, with you. Let’s start with a conversation.',
+    // Travel note — shown on every card, next to the button. Home base is Santa Ponça;
+    // outside the area a travel surcharge applies (confirmed when we design the ceremony).
+    travelNote:
+      'Held in Santa Ponça; outside the area, a travel surcharge applies (confirmed when we design your ceremony).',
     // {title} se sustituye por el nombre de la ceremonia en useContent.
     whatsappTemplate:
       'Hi Blanca, I’d love to talk about «{title}». I’m thinking about…',
