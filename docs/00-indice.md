@@ -16,6 +16,7 @@
 | Generar contenido de blog / educar sobre chakras | `05-marco-chakras.md` |
 | Tratar fotos y activos visuales | `06-activos-fotos.md` |
 | Construir el MVP (plan técnico) | `07-roadmap-mvp.md` |
+| Entender/gestionar las reservas (config de Cal.com) | `08-reservas-cal-com.md` |
 | Arrancar la sesión de desarrollo | `../HANDOFF.md` |
 
 ## Convención de mantenimiento
@@ -33,6 +34,7 @@
 - [x] Filosofía de chakras/nadis (material de contenido) → `05`
 - [x] Inventario de las 39 fotos + plan de curación → `06`
 - [x] Roadmap incremental prototipo → MVP (bilingüe ES/EN) → `07`
+- [x] Configuración de reservas en Cal.com (cuenta oolexperiences, eventos, disponibilidad, DPA) → `08`
 
 ## Información PENDIENTE de aportar / confirmar
 

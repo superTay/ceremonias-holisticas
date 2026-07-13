@@ -183,6 +183,7 @@ Detalle expansivo (cargar bajo demanda; no inflar este archivo). Empezar por `do
 | [`docs/05-marco-chakras.md`](docs/05-marco-chakras.md) | Filosofía de chakras/nadis (material de contenido y SEO) |
 | [`docs/06-activos-fotos.md`](docs/06-activos-fotos.md) | Inventario de fotos, plan de curación, home vs álbum, optimización |
 | [`docs/07-roadmap-mvp.md`](docs/07-roadmap-mvp.md) | Plan incremental prototipo → MVP, i18n, cambios concretos |
+| [`docs/08-reservas-cal-com.md`](docs/08-reservas-cal-com.md) | Config de reservas en Cal.com (cuenta oolexperiences, eventos, disponibilidad, formulario, DPA) |
 | [`HANDOFF.md`](HANDOFF.md) | Prompt para arrancar la sesión de build del MVP |
 
 > Aparte (no es contexto de marca): `portfolio-ceremonias-holisticas.md` y `handoff-sesion-portfolio.md` documentan el proyecto como pieza de portfolio de empleo; `README.md` cubre el arranque técnico. No mezclar con esta base.
