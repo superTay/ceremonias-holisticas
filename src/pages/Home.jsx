@@ -1,6 +1,7 @@
 import { LangLink as Link } from '../components/LangLink'
 import { ArrowUpRight, Quote } from 'lucide-react'
 import Hero from '../components/Hero'
+import PromoReel from '../components/PromoReel'
 import Reveal from '../components/Reveal'
 import WhatIsOol from '../components/WhatIsOol'
 import OolSymbol from '../components/OolSymbol'
@@ -18,6 +19,18 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <section
+        aria-label="Vídeo promocional"
+        className="bg-surface-deep py-[clamp(3rem,8vw,7rem)]"
+      >
+        <div className="container-page">
+          <div className="mx-auto max-w-[1000px]">
+            <div className="overflow-hidden rounded-token-xl border border-foreground-on-deep/10 shadow-[0_36px_90px_-28px_rgba(0,0,0,0.65)]">
+              <PromoReel />
+            </div>
+          </div>
+        </div>
+      </section>
       <WhatIsOol />
       <OolSymbol />
       <FeaturedCeremonies />
