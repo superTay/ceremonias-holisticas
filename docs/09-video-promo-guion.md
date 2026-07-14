@@ -243,7 +243,10 @@ WhatsApp no reproduce una animación web; necesita un **archivo de vídeo**. Dos
 
 ## 10. Cómo meterlo en la web desde Design (paso a paso)
 
-El componente ya sabe dónde va: en `src/pages/Home.jsx`, **justo después de `<Hero />`**.
+Ubicación en `src/pages/Home.jsx`: **antes de `<FAQ />`**, tras el bloque de
+testimonios/prensa (`<SocialProofStrip />`). Es decir, actúa como cierre emocional
+que recapitula antes de la zona de preguntas y contacto (decisión de colocación:
+más conversión que alcance). Historial: primero se probó justo tras `<Hero />`.
 
 **Vía Design (recomendada, ya trabaja sobre el repo `blanca`):**
 1. En el mismo chat de Design, pídele:
@@ -264,13 +267,13 @@ El componente ya sabe dónde va: en `src/pages/Home.jsx`, **justo después de `<
 
 **Vía manual (si prefieres copiar tú el código):**
 1. Copia el código que te da Design y pégalo en `src/components/PromoReel.jsx`.
-2. En `src/pages/Home.jsx` añade el import y colócalo tras `<Hero />`:
+2. En `src/pages/Home.jsx` añade el import y colócalo antes de `<FAQ />`:
    ```jsx
    import PromoReel from '../components/PromoReel'
    // ...
-   <Hero />
+   <SocialProofStrip />
    <PromoReel />
-   <WhatIsOol />
+   <FAQ />
    ```
 3. `npm run dev` para revisar → commit → push → Vercel despliega.
 

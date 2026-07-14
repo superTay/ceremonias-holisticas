@@ -19,6 +19,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <WhatIsOol />
+      <OolSymbol />
+      <FeaturedCeremonies />
+      <SocialProofStrip />
       <section
         aria-label="Vídeo promocional"
         className="bg-surface-deep py-[clamp(3rem,8vw,7rem)]"
@@ -31,10 +35,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <WhatIsOol />
-      <OolSymbol />
-      <FeaturedCeremonies />
-      <SocialProofStrip />
       <FAQ />
     </>
   )
