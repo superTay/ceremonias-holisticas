@@ -6,6 +6,7 @@ import Reveal from '../components/Reveal'
 import WhatIsOol from '../components/WhatIsOol'
 import OolSymbol from '../components/OolSymbol'
 import FAQ from '../components/FAQ'
+import EventFeature from '../components/EventFeature'
 import { useContent } from '../i18n/useContent'
 
 // Home = Hero + "Qué es OoL" + "El símbolo" + preview de 3 ceremonias
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <EventFeature />
       <WhatIsOol />
       <OolSymbol />
       <FeaturedCeremonies />

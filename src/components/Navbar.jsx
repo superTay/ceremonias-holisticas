@@ -7,9 +7,10 @@ import { LangLink as Link, LangNavLink as NavLink, basePath } from './LangLink'
 import { useContent } from '../i18n/useContent'
 import { EASE } from '../lib/motion'
 import Logo from './Logo'
+import EventRibbon from './EventRibbon'
 
 export default function Navbar() {
-  const { announcement, nav } = useContent()
+  const { announcement, nav, event } = useContent()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
@@ -28,12 +29,17 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-40">
-      {/* Announcement strip */}
-      <div className="bg-accent-secondary py-3.5 px-5 text-center">
-        <p className="text-[13px] font-medium tracking-wide text-foreground-on-deep">
-          {announcement}
-        </p>
-      </div>
+      {/* Tira superior: ribbon del evento especial si está activo (shared.js),
+          si no el anuncio genérico de siempre. */}
+      {event?.active ? (
+        <EventRibbon />
+      ) : (
+        <div className="bg-accent-secondary py-3.5 px-5 text-center">
+          <p className="text-[13px] font-medium tracking-wide text-foreground-on-deep">
+            {announcement}
+          </p>
+        </div>
+      )}
 
       {/* Navigation bar */}
       <nav

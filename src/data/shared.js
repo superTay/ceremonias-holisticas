@@ -86,3 +86,30 @@ export const prices = {
   retorno: { amount: '396€' },
   alquimia: { amount: '130€', per: true },
 }
+
+// ── Evento especial con FECHA CERRADA ──────────────────────────────────────
+// A diferencia de las 7 ceremonias (reservables a demanda), esto es un evento
+// puntual que se promociona con un ribbon global + una sección destacada en Home.
+// Datos duros no textuales, idénticos en ES/EN (el copy vive en los bundles i18n,
+// clave `event`). Para RETIRARLO tras su celebración: `active: false` → el ribbon
+// vuelve al anuncio genérico y la sección desaparece. Un solo cambio, cero deuda.
+//
+// La reserva definitiva se cableará después (Blanca lo decide): hoy el CTA enruta
+// al concierge de WhatsApp con un mensaje pre-rellenado (ver useContent → event.ctaUrl).
+// Cuando exista el event-type en Cal.eu, poner `ctaMode: 'cal'` + `calLink`.
+export const event = {
+  active: true,
+  // Fechas ISO (la sesión abre a las 19:30). El texto legible por humanos
+  // («5 y 6 de agosto de 2026» / «August 5–6, 2026») vive en los bundles i18n.
+  startDate: '2026-08-05',
+  endDate: '2026-08-06',
+  time: '19:30',
+  price: '68€',
+  seats: 8,
+  depositPct: 25,
+  image: '/album-06-corazon-cuarzo.webp', // foto real; se cambia en una línea
+  imageAlt:
+    'Manos sosteniendo un cuarzo en forma de corazón sobre lino claro, en un instante de ceremonia al atardecer',
+  ctaMode: 'whatsapp', // 'whatsapp' (hoy) | 'cal' (cuando exista el event-type)
+  calLink: '', // TBD Blanca — slug del evento en Cal.eu cuando se cree
+}

@@ -60,6 +60,46 @@ export default {
 
   // Bloque "Qué es OoL" (Home). Si falta el copy en otro idioma, el componente
   // no renderiza la sección (defensivo).
+  // Evento especial con fecha cerrada. Los datos duros (fechas ISO, precio,
+  // plazas, imagen, flag `active`) viven en shared.js → objeto `event`.
+  event: {
+    eyebrow: 'EVENTO ESPECIAL · PLAZAS LIMITADAS',
+    name: 'Corazón en Abundancia',
+    tagline: 'Ceremonia maya de reconexión, al atardecer, antes del gran eclipse solar.',
+    lead: 'Un atardecer para desconectar del ruido y volver a lo esencial —tu cuerpo, tus raíces y tu energía— en un círculo íntimo frente a la naturaleza.',
+    programTitle: 'La ceremonia',
+    program: [
+      'Armonización de los chakras con cuarzos, aromas y flores sagradas.',
+      'Un mensaje del oráculo angelical, como cierre simbólico y de autoconocimiento.',
+      'Creación de tu Brisa Áurica: una esencia natural personalizada para llevarte contigo.',
+      'Una bebida fresca para reposar y compartir la experiencia en círculo.',
+    ],
+    detailsTitle: 'Los detalles',
+    dateText: '5 y 6 de agosto de 2026',
+    dateLabel: 'Fechas',
+    timeLabel: 'Hora',
+    timeText: '19:30 h',
+    locationLabel: 'Lugar',
+    locationText: 'Costa de la Calma · Mallorca',
+    priceLabel: 'Tarifa',
+    seatsLabel: 'Plazas',
+    seatsText: '8 · cupo limitado',
+    dressCodeLabel: 'Vestimenta',
+    dressCodeText: 'En blanco',
+    includesLabel: 'Incluye',
+    includesText: 'Materiales · tu esencia Brisa Áurica · bebida refrescante',
+    depositNote: 'Reserva tu plaza con el 25 % por Bizum; el resto, el día de la ceremonia.',
+    cta: 'Reservar mi plaza',
+    // Teaser del ribbon global (se ve en todas las páginas cuando el evento está activo).
+    ribbon: {
+      text: 'Corazón en Abundancia · Ceremonia maya al atardecer — 5 y 6 de agosto',
+      cta: 'Reservar plaza',
+    },
+    // Mensaje pre-rellenado del concierge de WhatsApp (destino provisional del CTA).
+    whatsappText:
+      'Hola Blanca, me gustaría reservar plaza para «Corazón en Abundancia» (5 y 6 de agosto). ¿Me cuentas cómo hacerlo?',
+  },
+
   whatIsOol: {
     eyebrow: 'QUÉ ES OoL',
     headline: 'Qué hacemos y por qué',

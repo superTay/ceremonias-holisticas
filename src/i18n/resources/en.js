@@ -62,6 +62,46 @@ export default {
   },
 
   // "What is OoL" block (Home).
+  // Special event with a fixed date. Hard data (ISO dates, price, seats, image,
+  // the `active` flag) lives in shared.js → `event` object.
+  event: {
+    eyebrow: 'SPECIAL EVENT · LIMITED PLACES',
+    name: 'Corazón en Abundancia',
+    tagline: 'A Mayan ceremony of reconnection, at sunset, before the great solar eclipse.',
+    lead: 'An evening to switch off the noise and return to what matters —your body, your roots and your energy— in an intimate circle facing nature.',
+    programTitle: 'The ceremony',
+    program: [
+      'Chakra harmonisation with quartz, aromas and sacred flowers.',
+      'A message from the angelic oracle, as a symbolic closing and moment of self-knowledge.',
+      'Create your Brisa Áurica: a personalised natural essence to take home with you.',
+      'A fresh drink to rest and share the experience together in a circle.',
+    ],
+    detailsTitle: 'The details',
+    dateText: 'August 5–6, 2026',
+    dateLabel: 'Dates',
+    timeLabel: 'Time',
+    timeText: '7:30 pm',
+    locationLabel: 'Location',
+    locationText: 'Costa de la Calma · Mallorca',
+    priceLabel: 'Price',
+    seatsLabel: 'Places',
+    seatsText: '8 · limited',
+    dressCodeLabel: 'Dress code',
+    dressCodeText: 'White',
+    includesLabel: 'Includes',
+    includesText: 'Materials · your Brisa Áurica essence · refreshing drink',
+    depositNote: 'Reserve your place with 25 % via Bizum; the rest on the day of the ceremony.',
+    cta: 'Reserve my place',
+    // Teaser for the global ribbon (shown on every page while the event is active).
+    ribbon: {
+      text: 'Corazón en Abundancia · Mayan ceremony at sunset — August 5–6',
+      cta: 'Reserve a place',
+    },
+    // Pre-filled WhatsApp concierge message (provisional CTA destination).
+    whatsappText:
+      'Hi Blanca, I would love to reserve a place for “Corazón en Abundancia” (August 5–6). Could you tell me how?',
+  },
+
   whatIsOol: {
     eyebrow: 'WHAT IS OoL',
     headline: 'What we do, and why',

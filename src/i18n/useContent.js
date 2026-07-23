@@ -5,6 +5,7 @@ import {
   prices,
   booking as bookingConfig,
   bookingLinks,
+  event as eventConfig,
 } from '../data/shared.js'
 
 // Devuelve el objeto de contenido del idioma activo (mismo shape que el antiguo content.js),
@@ -75,6 +76,17 @@ export function useContent() {
         ...c.footer,
         contact: [contact.email, contact.phone, contact.location],
         instagram: contact.instagram,
+      },
+      // Evento especial: fusiona copy (i18n) + datos duros (shared.js) y construye
+      // el destino del CTA. Hoy `ctaMode: 'whatsapp'` → concierge pre-rellenado;
+      // cuando exista el event-type en Cal.eu, cambiar a 'cal' en shared.js.
+      event: {
+        ...c.event,
+        ...eventConfig,
+        ctaUrl:
+          eventConfig.ctaMode === 'cal' && eventConfig.calLink
+            ? `${bookingConfig.calOrigin}/${eventConfig.calLink}`
+            : `${contact.url}?text=${encodeURIComponent(c.event.whatsappText)}`,
       },
     }
   }, [lang])
