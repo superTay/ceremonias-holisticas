@@ -98,7 +98,10 @@ export const prices = {
 // al concierge de WhatsApp con un mensaje pre-rellenado (ver useContent → event.ctaUrl).
 // Cuando exista el event-type en Cal.eu, poner `ctaMode: 'cal'` + `calLink`.
 export const event = {
-  active: true,
+  // Celebrado el 5–6 de agosto de 2026 → retirado de la web (2026-08-14).
+  // El copy sigue en los bundles i18n: para reactivarlo (o anunciar otra edición)
+  // basta con volver a `true` y actualizar fechas/precio aquí.
+  active: false,
   // Fechas ISO (la sesión abre a las 19:30). El texto legible por humanos
   // («5 y 6 de agosto de 2026» / «August 5–6, 2026») vive en los bundles i18n.
   startDate: '2026-08-05',
