@@ -473,13 +473,6 @@ export default {
         alt: 'Un dedo traza una espiral en la arena, gesto de intención y apertura del ritual',
       },
       {
-        src: '/album-09-agua-cuarzo.webp',
-        thumb: '/album-09-agua-cuarzo-thumb.webp',
-        w: 675,
-        h: 1200,
-        alt: 'Una mano bajo el agua cristalina sostiene un cuarzo azul, entre reflejos de luz',
-      },
-      {
         src: '/album-10-boda-lazo.webp',
         thumb: '/album-10-boda-lazo-thumb.webp',
         w: 1200,

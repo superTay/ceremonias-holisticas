@@ -135,7 +135,7 @@ accesible). 3 retratos/figura · 6 detalles · 1 evento.
 | 6 | `233159_985` | `album-06-corazon-cuarzo.webp` | 1200×600 | Detalle (manos en corazón, hora dorada) |
 | 7 | `233232_372` | `album-07-espiral-arena.webp` | 1200×800 | Detalle (espiral en la arena; q66, textura) |
 | 8 | `222117_763` | `album-08-roca-mediterraneo.webp` | 900×1200 | Mediterráneo (cuarzos sobre roca, pinos) |
-| 9 | `222117_494` | `album-09-agua-cuarzo.webp` | 675×1200 | Detalle (cuarzo bajo el agua) |
+| 9 | `222117_494` | ~~`album-09-agua-cuarzo.webp`~~ | 675×1200 | **Retirada (2026-08-14)** — Blanca descartó la foto por la calidad del píxel |
 | 10 | `000820_794` | `album-10-boda-lazo.webp` | 1200×776 | Evento (boda, lazo rojo · caras permitidas) |
 
 > Descartadas por near-dup/solape: `_676`/`_699`/`_361` (otra toma de cristales en mano), `_999`

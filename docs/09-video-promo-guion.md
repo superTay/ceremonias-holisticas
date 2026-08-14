@@ -64,7 +64,6 @@ El reel debe referenciar **solo** estos archivos (existen y se sirven desde la r
 /album-04-espuma-cristales.webp → manos con cuarzos de chakra en la espuma del mar
 /album-06-corazon-cuarzo.webp   → manos en forma de corazón sobre cuarzo verde
 /album-07-espiral-arena.webp    → dedo trazando una espiral en la arena
-/album-09-agua-cuarzo.webp      → cuarzo azul en la mano bajo agua cristalina
 /album-10-boda-lazo.webp        → pareja recién casada, noche, lazo rojo (emoción)
 /card-bodas.webp  /card-baby-blessing.webp  /card-picnic.webp
 /card-despedidas.webp  /card-coaching.webp  /card-alquimia.webp  /card-parejas.webp
@@ -127,7 +126,7 @@ IMÁGENES (usa SOLO estas rutas, ya servidas desde /public; no inventes otras)
 - /logo-full.webp, /logo-mark.webp
 - /blanca-hero.webp, /blanca-portrait.webp
 - /album-04-espuma-cristales.webp, /album-07-espiral-arena.webp,
-  /album-09-agua-cuarzo.webp, /album-10-boda-lazo.webp
+  /album-10-boda-lazo.webp
 - /card-bodas.webp, /card-baby-blessing.webp, /card-picnic.webp, /card-despedidas.webp
 
 STORYBOARD (7 escenas)
@@ -195,7 +194,7 @@ Mismo guion, recortado a vertical y con textos más grandes. Claves del vertical
 - **Zonas seguras:** deja libres los ~250 px de arriba y ~350 px de abajo (ahí Instagram/
   TikTok ponen el usuario, la descripción y los botones). El texto importante, al centro.
 - **Fotos verticales primero** (encajan sin recortar de más): `/blanca-portrait.webp`,
-  `/album-02-retrato-cuarzo.webp`, `/album-05-huipil-cuarzos.webp`, `/album-09-agua-cuarzo.webp`.
+  `/album-02-retrato-cuarzo.webp`, `/album-05-huipil-cuarzos.webp`.
   Las horizontales se muestran con `object-fit: cover`.
 - **Primer fotograma = portada** (lo que se ve parado en el feed): que sea potente.
 - Se ve **en silencio**: como es texto sobre imagen, ya funciona muteado (bien).
@@ -211,7 +210,7 @@ Cambios respecto al 16:9:
 - Respeta zonas seguras: nada de texto clave en los 250px superiores ni en los 350px
   inferiores (los tapan los controles de la app).
 - Prioriza fotos verticales: /blanca-portrait.webp, /album-02-retrato-cuarzo.webp,
-  /album-05-huipil-cuarzos.webp, /album-09-agua-cuarzo.webp. Las demás con object-fit cover.
+  /album-05-huipil-cuarzos.webp. Las demás con object-fit cover.
 - El primer fotograma debe funcionar como portada del reel (potente y con el logo).
 - Mismo tono, mismos colores y la misma estructura de 7 escenas y textos.
 - Duración ~30s.

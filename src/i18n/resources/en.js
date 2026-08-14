@@ -462,13 +462,6 @@ export default {
         alt: 'A finger traces a spiral in the sand, a gesture of intention and the opening of the ritual',
       },
       {
-        src: '/album-09-agua-cuarzo.webp',
-        thumb: '/album-09-agua-cuarzo-thumb.webp',
-        w: 675,
-        h: 1200,
-        alt: 'A hand beneath the crystal-clear water holds a blue quartz, among reflections of light',
-      },
-      {
         src: '/album-10-boda-lazo.webp',
         thumb: '/album-10-boda-lazo-thumb.webp',
         w: 1200,
