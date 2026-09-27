@@ -5,10 +5,10 @@
 
 // URL base canónica — ÚNICA fuente de verdad para canonicals, og:url, hreflang,
 // sitemap y JSON-LD. El dominio actual de Vercel es provisional; el definitivo es
-// oolexperience.com. Cambiar de dominio = cambiar solo esta línea (o VITE_SITE_URL).
+// oolexperiences.com. Cambiar de dominio = cambiar solo esta línea (o VITE_SITE_URL).
 // Sin barra final: las rutas se concatenan ya con '/'.
 export const SITE_URL = (
-  import.meta.env?.VITE_SITE_URL || 'https://oolexperience.com'
+  import.meta.env?.VITE_SITE_URL || 'https://oolexperiences.com'
 ).replace(/\/$/, '')
 
 export const contact = {
