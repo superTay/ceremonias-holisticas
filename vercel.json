@@ -7,6 +7,20 @@
   "devCommand": "npm run dev",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.oolexperience.com" }],
+      "destination": "https://oolexperiences.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "oolexperience.com" }],
+      "destination": "https://oolexperiences.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

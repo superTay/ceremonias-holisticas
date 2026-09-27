@@ -23,4 +23,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://oolexperience.com/sitemap.xml
+Sitemap: https://oolexperiences.com/sitemap.xml

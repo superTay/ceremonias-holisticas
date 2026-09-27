@@ -18,7 +18,7 @@ const TEXTOS = {
   escena6autor: "Lucía & Marc",
   escena6prueba: "+22 años · México · Francia · España",
   escena7cta: "Diseñemos tu ceremonia",
-  escena7contacto: "oolexperience.com · WhatsApp +34 665 17 55 56",
+  escena7contacto: "oolexperiences.com · WhatsApp +34 665 17 55 56",
   replay: "Volver a reproducir",
 };
 
